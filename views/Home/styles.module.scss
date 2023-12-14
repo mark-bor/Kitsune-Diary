@@ -1,0 +1,19 @@
+@use '../../styles/colors' as *;
+@use '../../styles/mixins' as *;
+
+.hero {
+    height: $block-size;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    display: inline-block;
+    padding: 6px 15px;
+
+    border-radius: 10px;
+    background-color: $main-t-color;
+    color: antiquewhite;
+}

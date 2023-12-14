@@ -1,11 +1,13 @@
 body {
+    box-sizing: border-box;
     min-height: 100vh;
     margin: 0;
     padding: 0;
 }
 
 main {
-    padding-bottom: 200px;
+    box-sizing: border-box;
+    min-height: calc(100vh - 50px - 200px);
 }
 
 p {
