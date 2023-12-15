@@ -1,11 +1,2 @@
-import Link from 'next/link';
-
-
-
-export default function AboutMe() {
-  return (
-    <>
-      <h1>About Me</h1>
-    </>
-  )
-}
+import AboutMe from "../../views/AboutMe/index";
+export default AboutMe;
