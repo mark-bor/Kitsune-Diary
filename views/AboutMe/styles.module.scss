@@ -1,0 +1,122 @@
+@use '../../styles/colors' as *;
+@use '../../styles/mixins' as *;
+
+
+.leftPartOfBlock, .rightPartOfBlock {
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftPartOfBlock {
+    flex-direction: column;
+    gap: 30px;
+}
+
+// ------------------------------------------------------- HERO
+.hero {
+    height: $block-size;
+
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+}
+
+.name, .position, .profile {
+    display: inline-block;
+    padding: 6px 15px;
+
+    border-radius: 10px;
+    background-color: $main-t-color;
+    color: antiquewhite;
+}
+
+// .rightPartOfHero {
+// }
+
+// ------------------------------------------------------- CERTIFICATES
+.certificates {
+    height: $block-size;
+    padding: 0 50px;
+
+    display: flex;
+    align-items: center;
+    
+    overflow: hidden;
+    background-color: $main-b-color;
+}
+
+.certificatesWrap {
+    width: auto;
+    display: inline-flex;
+    gap: 30px;
+}
+
+// ------------------------------------------------------- CONTACTS
+.contacts {
+    height: $block-size;
+
+    display: flex;
+    justify-content: center;
+    gap: 30vh;
+}
+
+.phone, .email {
+    display: inline-block;
+    padding: 6px 15px;
+
+    border-radius: 10px;
+    background-color: $main-t-color;
+    color: antiquewhite;
+}
+
+.leftPartOfContacts, .rightPartOfContacts {
+    width: auto;
+}
+
+.leftPartOfContacts {
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.resumes {
+    margin-top: 15px;
+    
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    .resume {
+        width: 50px;
+        height: 50px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 10px;
+        background-color: $main-b-color;
+    }
+}
+
+.links {
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: 50px 50px;
+    gap: 20px;
+
+    .link {
+        width: 50px;
+        height: 50px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 10px;
+        background-color: $main-b-color;
+    }
+}
+
