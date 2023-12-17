@@ -1,12 +1,17 @@
-body {
+@use "./colors" as *;
+
+* {
     box-sizing: border-box;
+}
+
+body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    color: $primary-t-color;
 }
 
 main {
-    box-sizing: border-box;
     min-height: calc(100vh - 50px - 200px);
 }
 
@@ -19,4 +24,8 @@ ul, li {
     margin: 0;
     padding: 0;
     list-style-type: none;
+}
+
+a {
+    text-decoration: none;
 }

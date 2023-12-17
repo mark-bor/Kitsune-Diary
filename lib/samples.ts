@@ -48,4 +48,13 @@ export const filtersOfProjects = [
       { key: "other", label: "Other" },
     ],
   },
+  {
+    key: "type",
+    label: "Scope",
+    options: [
+      { key: "commercial", label: "Commercial" },
+      { key: "pet-project", label: "Pet-project" },
+      // { key: "volunteering", label: "Volunteering" },
+    ],
+  },
 ]
