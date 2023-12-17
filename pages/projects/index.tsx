@@ -1,11 +1,2 @@
-import Link from 'next/link';
-
-
-
-export default function Projects() {
-  return (
-    <>
-      <h1>Projects</h1>
-    </>
-  )
-}
+import Projects from "../../views/Projects/index";
+export default Projects

@@ -1,0 +1,57 @@
+@use '../../styles/colors' as *;
+@use '../../styles/mixins' as *;
+
+.projects {
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: 30% auto;
+    gap: 20px;
+    
+}
+
+.filtersWrap {
+    .filters {
+        padding: 15px;
+
+        background-color: $main-b-color;
+        border-radius: 10px;
+
+        .title {
+            margin-top: 0;
+        }
+
+        .filterSection {
+            .filterTitle {
+                margin-bottom: 10px;
+            }
+
+            .filterlist {
+                margin-left: 15px;
+
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .checkboxWrap {
+                    .checkbox {}
+                }
+            }
+        }
+    }
+}
+
+
+.projectsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .project {
+        width: calc(25% - 15px);
+        height: 200px;
+
+        background-color: $main-b-color;
+        border-radius: 10px;
+    }
+}
