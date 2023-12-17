@@ -1,11 +1,2 @@
-import Link from 'next/link';
-
-
-
-export default function Blog() {
-  return (
-    <>
-      <h1>Blog</h1>
-    </>
-  )
-}
+import Blog from "../../views/Blog/index";
+export default Blog
