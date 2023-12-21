@@ -8,12 +8,16 @@
     justify-content: space-between;
     align-items: center;
 
-    background-color: $main-b-color;
+    background-color: $primary-b-color;
+}
+
+.logo {
+    height: 36px;
 }
 
 .navigation {
     display: flex;
-    gap: 50px;
+    gap: 40px;
 }
 
 .linkWrap {
@@ -31,7 +35,7 @@
     justify-content: center;
     align-items: center;
     
-    background-color: $main-t-color;
+    color: $primary-t-color;
 }
 
 .options {
