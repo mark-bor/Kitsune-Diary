@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './styles.module.scss';
-import logo from '../../public/logo.png';
+import logo from '../../public/logo.svg';
 
 
 const links = [
