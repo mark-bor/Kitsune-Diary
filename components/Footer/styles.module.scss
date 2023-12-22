@@ -8,7 +8,7 @@
     justify-content: space-around;
     align-items: center;
     
-    background-color: $main-b-color;
+    background-color: $primary-b-color;
 }
 
 .navigation, .contacts {
@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 15px;
 }
 
 .linkWrap {
@@ -35,13 +35,8 @@
     align-items: center;
     
     border-radius: 10px;
-    background-color: $main-t-color;
+    color: $primary-t-color;
 }
-
-// .logo {
-//     height: 70%;
-//     border: 1px solid $main-t-color;
-// }
 
 .phone_mail {
     width: auto;
@@ -52,7 +47,6 @@
     align-items: center;
 
     border-radius: 10px;
-    background-color: $main-t-color;
 }
 
 .socialNetworks {
@@ -66,7 +60,6 @@
     height: 40px;
     
     border-radius: 10px;
-    background: $main-t-color;
 }
 
 .socialNetwork {
