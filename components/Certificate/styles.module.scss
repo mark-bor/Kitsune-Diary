@@ -4,7 +4,34 @@
     width: 320px;
     height: 420px;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
     background-color: #FFFFFF;
     border-radius: 10px;
+
+    text-align: center;
+
+    .name {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    .line {
+        width: 50%;
+        height: 2px;
+        border: none;
+    }
+
+    .provider {
+        font-size: 18px;
+    }
+
+    .date {
+        font-size: 12px;
+    }
 }
 

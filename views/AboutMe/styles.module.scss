@@ -22,15 +22,43 @@
     display: flex;
     justify-content: space-between;
     // align-items: center;
+
+    background-color: #672D50;
+
+    .leftPartOfBlock {
+        gap: 15px;
+    }
 }
 
 .name, .position, .profile {
     display: inline-block;
-    padding: 6px 15px;
+    width: 60%;
+    margin: 0;
 
     border-radius: 10px;
-    background-color: $main-t-color;
-    color: antiquewhite;
+    color: $secondary-t-color;
+
+    line-height: 1.2em;
+}
+
+.name {
+    font-size: 30px;
+}
+
+.position {
+    font-size: 26px;
+}
+
+.profile {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.portrait {
+    width: 40ch;
+    height: 40ch;
+
+    border-radius: 30px;
 }
 
 // .rightPartOfHero {
@@ -39,20 +67,54 @@
 // ------------------------------------------------------- CERTIFICATES
 .certificates {
     height: $block-size;
-    padding: 0 50px;
 
     display: flex;
+    justify-content: center;
     align-items: center;
     
     overflow: hidden;
-    background-color: $main-b-color;
+    background-color: $primary-b-color;
+    
+    .certificatesWrap {
+        padding: 38px 0;
+    
+        .certificate {
+            width: 320px;
+            height: 420px;
+    
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+    
+            background-color: #FFFFFF;
+            border-radius: 10px;
+    
+            text-align: center;
+    
+            .certificateName {
+                margin: 0;
+                font-size: 24px;
+            }
+    
+            .line {
+                width: 50%;
+                height: 2px;
+                border: none;
+            }
+    
+            .provider {
+                font-size: 18px;
+            }
+    
+            .date {
+                font-size: 12px;
+            }
+        }
+    }
 }
 
-.certificatesWrap {
-    width: auto;
-    display: inline-flex;
-    gap: 30px;
-}
 
 // ------------------------------------------------------- CONTACTS
 .contacts {
@@ -63,13 +125,13 @@
     gap: 30vh;
 }
 
-.phone, .email {
+.email, .phone {
     display: inline-block;
-    padding: 6px 15px;
 
     border-radius: 10px;
-    background-color: $main-t-color;
-    color: antiquewhite;
+    color: $primary-t-color;
+
+    font-size: 20px;
 }
 
 .leftPartOfContacts, .rightPartOfContacts {
@@ -82,30 +144,41 @@
 }
 
 .resumes {
-    margin-top: 15px;
-    
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    .resumesTitle {
+        font-size: 20px;
+    }
 
-    .resume {
-        width: 50px;
-        height: 50px;
-
+    .resumesList {
+        margin-top: 15px;
+        
         display: flex;
-        justify-content: center;
-        align-items: center;
-
-        border-radius: 10px;
-        background-color: $main-b-color;
+        justify-content: space-between;
+        gap: 15px;
+    
+        .resume {
+            width: 50px;
+            height: 50px;
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            border-radius: 10px;
+            color: $secondary-t-color;
+        }
     }
 }
 
 .links {
+    padding: 15px 20px;
+
     display: grid;
     grid-template-columns: 50px 50px 50px;
     grid-template-rows: 50px 50px;
     gap: 20px;
+
+    background-color: $secondary-b-color;
+    border-radius: 10px;
 
     .link {
         width: 50px;
@@ -114,9 +187,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
-        border-radius: 10px;
-        background-color: $main-b-color;
     }
 }
 
