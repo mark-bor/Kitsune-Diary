@@ -7,37 +7,24 @@
     display: grid;
     grid-template-columns: 30% auto;
     gap: 20px;
-    
 }
 
-.filtersWrap {
-    .filters {
-        padding: 15px;
+.filters {
+    padding: 30px;
 
-        background-color: $main-b-color;
-        border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 
-        .title {
-            margin-top: 0;
-        }
+    // background-color: $main-b-color;
+    border-radius: 10px;
 
-        .filterSection {
-            .filterTitle {
-                margin-bottom: 10px;
-            }
+    .title {
+        width: 80%;
 
-            .filterlist {
-                margin-left: 15px;
-
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-
-                .checkboxWrap {
-                    .checkbox {}
-                }
-            }
-        }
+        margin-top: 0;
+        margin-bottom: 10px;
     }
 }
 
@@ -51,7 +38,7 @@
         width: calc(25% - 15px);
         height: 200px;
 
-        background-color: $main-b-color;
+        background-color: $primary-b-color;
         border-radius: 10px;
     }
 }

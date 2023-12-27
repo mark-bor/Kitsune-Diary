@@ -47,7 +47,13 @@ export const certificate = [
   },
 ]
 
-export const filtersOfProjects = [
+export type ProjectFilters = {
+  key: string,
+  label: string,
+  options: { key: string, label: string }[],
+}
+
+export const filtersOfProjects: ProjectFilters[] = [
   {
     key: "status",
     label: "Status",

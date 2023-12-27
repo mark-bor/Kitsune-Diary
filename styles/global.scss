@@ -15,7 +15,7 @@ main {
     min-height: calc(100vh - 50px - 200px);
 }
 
-p, a, img, ul, li {
+p, a, img, ul, li, button {
     margin: 0;
     padding: 0;
 }
@@ -27,4 +27,9 @@ ul, li {
 a {
     text-decoration: none;
     color: $primary-t-color; 
+}
+
+button {
+    border: none;
+    background: none;
 }
