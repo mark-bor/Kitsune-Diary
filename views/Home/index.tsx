@@ -10,6 +10,8 @@ const technologies = [
   {icon: 'devicon:typescript'},
   {icon: 'devicon:react'},
   {icon: 'devicon:nextjs'},
+  {icon: 'simple-icons:swiper'},
+  {icon: 'logos:headlessui-icon'},
 ]
 
 
@@ -26,7 +28,11 @@ export default function Home() {
         <ul className={styles.technologiesList}>
           {technologies.map((t) => (
             <li className={styles.technology}>
-              <Icon icon={t.icon} width={50} />
+              <Icon 
+                icon={t.icon} 
+                width={50} 
+                color={t.icon==='simple-icons:swiper' ? '#6332F6' : undefined}
+              />
             </li>
           ))}
         </ul>
