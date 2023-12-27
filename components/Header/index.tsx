@@ -18,18 +18,20 @@ export default function Header() {
         <Image src={logo} alt='logo' height={36}/>
       </Link>
 
-      <ul className={styles.navigation}>
-        {links.map((l) => (
-          <li className={styles.linkWrap}>
-            <Link className={styles.link} href={l.url}>{l.title}</Link>
-          </li>
-        ))}
-      </ul>
+      <nav className={styles.navigation}>
+        <ul>
+          {links.map((l) => (
+            <li className={styles.linkWrap}>
+              <Link className={styles.link} href={l.url}>{l.title}</Link>
+            </li>
+          ))}
+        </ul>
 
-      <div className={styles.options}>
-        <div className={styles.option}></div>
-        <div className={styles.option}></div>
-      </div>
+        <div className={styles.options}>
+          <div className={styles.option}></div>
+          <div className={styles.option}></div>
+        </div>
+      </nav>
     </header>
   )
 }
