@@ -7,13 +7,43 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-image: url('../../public/an-abstraction-background.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position-y: center;
+    
+    .text {
+        display: inline-block;
+        width: 50vw;
+        padding: 6px 15px;
+    
+        text-align: center;
+        font-weight: 500;
+        font-size: 60px;
+        color: $secondary-t-color;
+    }
 }
 
-.text {
-    display: inline-block;
-    padding: 6px 15px;
+.technologies {
+    height: 50vh;
 
-    border-radius: 10px;
-    background-color: $main-t-color;
-    color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+        margin: 0;
+        margin-bottom: 30px;
+    }
+
+    .technologiesList {
+        display: flex;
+        gap: 40px;
+
+        // .technology {
+
+        // }
+    }
 }

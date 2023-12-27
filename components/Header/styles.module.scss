@@ -1,49 +1,58 @@
 @use '../../styles/colors' as *;
 
 .header {
-    height: 50px;
-    padding: 0 20px;
+  height: 50px;
+  padding: 0 20px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    background-color: $main-b-color;
+  background-color: $primary-b-color;
+}
+
+.logo {
+  height: 36px;
 }
 
 .navigation {
+  display: flex;
+  gap: 40px;
+
+  ul {
     display: flex;
-    gap: 50px;
-}
+    gap: 15px;
 
-.linkWrap {
-    width: 120px;
-    height: 30px;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.link {
-    width: 100%;
-    height: 100%;
+    .linkWrap {
+      width: 100px;
+      height: 30px;
+      border-radius: 10px;
+      overflow: hidden;
     
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    background-color: $main-t-color;
-}
-
-.options {
+      .link {
+        width: 100%;
+        height: 100%;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        color: $primary-t-color;
+      }
+    }
+  }
+  
+  .options {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-}
-
-.option {
-    width: 60px;
-    height: 30px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
+    
+    .option {
+      width: 60px;
+      height: 30px;
+      background-color: #FFFFFF;
+      border-radius: 10px;
+    }
+  }
 }

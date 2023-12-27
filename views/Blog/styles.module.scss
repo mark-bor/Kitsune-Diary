@@ -8,7 +8,10 @@
     justify-content: center;
     align-items: center;
 
-    background-color: $secondary-b-color;
+    background-image: url('../../public/an-abstraction-background.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position-y: 100%;
 
     .title, .linksList {
         width: 50%;
@@ -17,6 +20,7 @@
 
     .title {
         display: block;
+        color: $secondary-t-color;
     }
 
     .linksList {
@@ -24,8 +28,8 @@
         gap: 20px;
 
         .linkWrap {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             
             .link {
                 width: 100%;
@@ -33,9 +37,9 @@
 
                 display: flex;
                 justify-content: center;
-                align-items: center;
+                align-items: center;  
                 
-                background-color: $main-b-color;
+                background-color: $secondary-t-color;
                 border-radius: 50%;
             }
         }
@@ -59,7 +63,7 @@
 
             display: block;
 
-            background-color: $main-b-color;
+            background-color: $primary-b-color;
             border-radius: 10px;
         }
     }

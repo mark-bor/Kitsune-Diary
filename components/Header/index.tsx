@@ -1,29 +1,37 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './styles.module.scss';
+import logo from '../../public/logo.svg';
+
+
+const links = [
+  {title: 'Blog', url: '/blog'},
+  {title: 'Projects', url: '/projects'},
+  {title: 'About Me', url: '/about-me'},
+]
 
  
 export default function Header() {
   return (
     <header className={styles.header}>
-      <Link href={`/`}>
-        <img alt='logo' />
+      <Link href={`/`} className={styles.logo}>
+        <Image src={logo} alt='logo' height={36}/>
       </Link>
 
-      <ul className={styles.navigation}>
-        <li className={styles.linkWrap}>
-          <Link className={styles.link} href={`/blog`}>{'Blog'}</Link></li>
-        <li className={styles.linkWrap}>
-          <Link className={styles.link} href={`/projects`}>{'Projects'}</Link>
-        </li>
-        <li className={styles.linkWrap}>
-          <Link className={styles.link} href={`/about-me`}>{'About Me'}</Link>
-        </li>
-      </ul>
+      <nav className={styles.navigation}>
+        <ul>
+          {links.map((l) => (
+            <li className={styles.linkWrap}>
+              <Link className={styles.link} href={l.url}>{l.title}</Link>
+            </li>
+          ))}
+        </ul>
 
-      <div className={styles.options}>
-        <div className={styles.option}></div>
-        <div className={styles.option}></div>
-      </div>
+        <div className={styles.options}>
+          <div className={styles.option}></div>
+          <div className={styles.option}></div>
+        </div>
+      </nav>
     </header>
   )
 }

@@ -1,13 +1,15 @@
 import Link from "next/link";
+import { Icon } from "@iconify/react";
 import { articles } from "../../lib/samples";
 import styles from "./styles.module.scss";
 
 
 const links = [
-  {name: 'T', url: '#'},
-  {name: 'T', url: '#'},
-  {name: 'I', url: '#'},
+  {name: 'twiterX', icon: 'fa6-brands:square-x-twitter', url: '#'},
+  {name: 'telegram', icon: 'logos:telegram', url: '#'},
+  {name: 'instagram', icon: 'skill-icons:instagram', url: '#'},
 ]
+
 
 export default function Blog() {
   return (
@@ -18,7 +20,9 @@ export default function Blog() {
         <ul className={styles.linksList}>
           {links.map((l) => (
             <li className={styles.linkWrap}>
-              <Link href={l.url} className={styles.link}>{l.name}</Link>
+              <Link href={l.url} className={styles.link}>
+                <Icon icon={l.icon} name={l.name} width={40} />
+              </Link>
             </li>
           ))}
         </ul>
