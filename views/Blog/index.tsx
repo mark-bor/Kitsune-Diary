@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import Page from "../../components/Page/index";
 import { articles } from "../../lib/samples";
 import styles from "./styles.module.scss";
 
@@ -13,7 +14,7 @@ const links = [
 
 export default function Blog() {
   return (
-    <>
+    <Page title='The Kitsune Diary | Blog'>
       <section className={styles.links}>
         <h1 className={styles.title}>Blog in social media:</h1>
 
@@ -35,6 +36,6 @@ export default function Blog() {
           </li>
         ))}
       </ul>
-    </>
+    </Page>
   )
 }

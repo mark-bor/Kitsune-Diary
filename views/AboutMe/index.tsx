@@ -4,8 +4,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
 import { Icon } from '@iconify/react';
 import clsx from 'clsx';
-import { certificate } from '../../lib/samples';
+import Page from '../../components/Page/index';
 import Certificate from '../../components/Certificate/index';
+import { certificate } from '../../lib/samples';
 import portrait from '../../public/portrait.jpg';
 import styles from "./styles.module.scss";
 import 'swiper/css';
@@ -33,7 +34,7 @@ const links = [
 
 export default function AboutMe() {
   return (
-    <>
+    <Page title='The Kitsune Diary | About Me'>
       <section className={styles.hero}>
         <div className={styles.leftPartOfBlock}>
           <h1 className={styles.name}>Mark Bordakov</h1>
@@ -116,6 +117,6 @@ export default function AboutMe() {
           </nav>
         </div>
       </section>
-    </>
+    </Page>
   )
 }
