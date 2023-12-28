@@ -33,17 +33,33 @@
     justify-content: center;
     align-items: center;
 
+    overflow-x: hidden;
+
     .title {
         margin: 0;
         margin-bottom: 30px;
     }
+}
 
-    .technologiesList {
-        display: flex;
-        gap: 40px;
+@media screen and (max-width: 425px) {
+    .hero {    
+        background-size: auto 100%;
+        background-position-x: left;
+        
+        .text {
+            width: 70vw;
+            text-align: left;
+        }
+    }
 
-        // .technology {
+    .technologies {
+        padding: 0 30px;
+        
+        .title {
+            width: 70vw;
 
-        // }
+            text-align: center;
+            font-size: 32px;
+        }
     }
 }
