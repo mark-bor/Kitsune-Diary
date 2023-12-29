@@ -22,39 +22,24 @@
         font-size: 17px;
         line-height: 1.3em;
     
-        // .filterTitle {}
+        .filterTitle {
+            // margin-bottom: 10px;
+        }
     }
     
     .filterlist {
         margin-top: 10px;
         margin-left: 15px;
     
-        ul {            
+        ul {
+            // display: flex;
+            // flex-direction: column;
+            // gap: 10px;
+            
             li {
                 margin-bottom: 10px;
                 
-                // .checkbox {}
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .filter {
-        width: 100%;
-        padding: 0;
-
-        .filterButton {
-            font-size: 22px;
-        }
-
-        .filterlist {
-            ul {            
-                li {
-                    .checkbox {
-                        font-size: 20px;
-                    }
-                }
+                .checkbox {}
             }
         }
     }
