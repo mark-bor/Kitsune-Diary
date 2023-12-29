@@ -1,29 +1,52 @@
 @use '../../styles/colors' as *;
 @use '../../styles/mixins' as *;
 
-// .technologiesList {
 
-// }
+.technologies, .technologiesMobile {
+    height: 50vh;
 
-// .technologiesListMobile {
-//     display: none;
-// }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-.technology {
-    width: 50px;
-    height: 50px;
+    overflow-x: hidden;
+
+    .title {
+        margin: 0;
+        margin-bottom: 30px;
+    }
+
+    .technologiesList {
+        .technology {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+
+.technologiesMobile {
+    display: none;
 }
 
 @media screen and (max-width: 425px) {
-    .technologiesList > div {
-        transition-timing-function: linear;            
+    .technologies {
+        display: none;
     }
 
-    // .technologiesList {
-    //     display: none;
-    // }
+    .technologiesMobile {
+        display: flex;
+        padding: 0 30px;
+                
+        .title {
+            width: 70vw;
 
-    // .technologiesListMobile {
-    //     display: flex;
-    // }
+            text-align: center;
+            font-size: 32px;
+        }
+        
+        // .technologiesList > div {
+        //     transition-timing-function: linear;            
+        // }
+    }
 }

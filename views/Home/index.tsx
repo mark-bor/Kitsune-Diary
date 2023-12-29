@@ -12,11 +12,7 @@ export default function Home() {
         <h1 className={styles.text}>Welcome to Kitsune Diary!</h1>
       </section>
 
-      <section className={styles.technologies}>
-        <h2 className={styles.title}>Technologies that I used in this website:</h2>
-
-        <TechnologiesList />
-      </section>
+      <TechnologiesList />
     </Page>
   )
 }

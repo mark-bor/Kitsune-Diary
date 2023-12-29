@@ -25,22 +25,6 @@
     }
 }
 
-.technologies {
-    height: 50vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    overflow-x: hidden;
-
-    .title {
-        margin: 0;
-        margin-bottom: 30px;
-    }
-}
-
 @media screen and (max-width: 425px) {
     .hero {    
         background-size: auto 100%;
@@ -49,17 +33,6 @@
         .text {
             width: 70vw;
             text-align: left;
-        }
-    }
-
-    .technologies {
-        padding: 0 30px;
-        
-        .title {
-            width: 70vw;
-
-            text-align: center;
-            font-size: 32px;
         }
     }
 }

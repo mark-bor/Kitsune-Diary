@@ -20,52 +20,56 @@ const technologies = [
 
 
 export default function TechnologiesList() {
-  // const windowW = window.screen.width;
-  // console.log(windowW);
-
   return (
     <>
-      <Swiper
-        className={styles.technologiesList}
-        centeredSlides={false}
-        spaceBetween={40}
-        slidesPerView={'auto'}
-      >
-        {technologies.map((t) => (
-          <SwiperSlide className={styles.technology}>
-            <Icon 
-              icon={t.icon} 
-              width={50} 
-              color={t.icon==='simple-icons:swiper' ? '#6332F6' : undefined}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <section className={styles.technologies}>
+        <h2 className={styles.title}>Technologies that I used in this website:</h2>
 
-      {/* <Swiper
-        className={styles.technologiesListMobile}
-        modules={[FreeMode]}
-        // centeredSlides={true}
-        spaceBetween={40}
-        slidesPerView={'auto'}
-        freeMode={true}
-        // loop={true}
-        // autoplay={{
-        //   delay: 0,
-        //   duration: 3000,
-        //   disableOnInteraction: false,
-        // }}
-      >
-        {technologies.map((t) => (
-          <SwiperSlide className={styles.technology}>
-            <Icon 
-              icon={t.icon} 
-              width={50} 
-              color={t.icon==='simple-icons:swiper' ? '#6332F6' : undefined}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper> */}
+        <Swiper
+          className={styles.technologiesList}
+          centeredSlides={false}
+          spaceBetween={40}
+          slidesPerView={'auto'}
+        >
+          {technologies.map((t) => (
+            <SwiperSlide className={styles.technology}>
+              <Icon 
+                icon={t.icon} 
+                width={50} 
+                color={t.icon==='simple-icons:swiper' ? '#6332F6' : undefined}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+
+      <section className={styles.technologiesMobile}>
+        <h2 className={styles.title}>Technologies that I used in this website:</h2>
+
+        <Swiper
+          className={styles.technologiesList}
+          modules={[FreeMode, Autoplay]}
+          centeredSlides={false}
+          spaceBetween={40}
+          slidesPerView={'auto'}
+          freeMode={true}
+          loop={true}
+          autoplay={{
+            delay: 300,
+            disableOnInteraction: false,
+          }}
+        >
+          {technologies.map((t) => (
+            <SwiperSlide className={styles.technology}>
+              <Icon 
+                icon={t.icon} 
+                width={50} 
+                color={t.icon==='simple-icons:swiper' ? '#6332F6' : undefined}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
     </>
   )
 }
