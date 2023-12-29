@@ -1,0 +1,48 @@
+@use '../../styles/colors' as *;
+@use '../../styles/mixins' as *;
+
+
+.certificates, .certificatesMobile {
+    height: $block-size;
+    
+    justify-content: center;
+    align-items: center;
+    
+    overflow: hidden;
+    background-color: $primary-b-color;
+
+    .certificatesList {
+        padding: 38px 0;
+    
+        div:first-of-type {
+            display: flex;
+            align-items: center;
+            
+            .certificateWrap {
+                width: auto;
+
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+.certificates {
+    display: flex;
+}
+
+.certificatesMobile {
+    display: none;
+}
+
+
+@media screen and (max-width: 425px) {
+    .certificates {
+        display: none;
+    }
+    
+    .certificatesMobile {
+        display: flex;
+    }
+}

@@ -1,8 +1,10 @@
 @use '../../styles/colors' as *;
+@use '../../styles/mixins' as *;
+
 
 .certificate {
-    width: 320px;
-    height: 420px;
+    width: 250px;
+    height: 350px;
 
     display: flex;
     flex-direction: column;
@@ -10,12 +12,13 @@
     align-items: center;
     gap: 30px;
 
-    background-color: #FFFFFF;
+    background-color: $secondary-t-color;
     border-radius: 10px;
+    transition: 0.3s;
 
     text-align: center;
 
-    .name {
+    .certificateName {
         margin: 0;
         font-size: 24px;
     }
@@ -35,3 +38,13 @@
     }
 }
 
+.certificate.certificateActive {
+    width: 320px;
+    height: 420px;
+    transform: none;
+}
+
+
+@media screen and (max-width: 425px) {
+
+}

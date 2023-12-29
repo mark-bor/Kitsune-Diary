@@ -65,60 +65,11 @@
 // }
 
 // ------------------------------------------------------- CERTIFICATES
-.certificates {
-    height: $block-size;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    overflow: hidden;
-    background-color: $primary-b-color;
-    
-    .certificatesWrap {
-        padding: 38px 0;
-    
-        .certificate {
-            width: 320px;
-            height: 420px;
-    
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-    
-            background-color: #FFFFFF;
-            border-radius: 10px;
-    
-            text-align: center;
-    
-            .certificateName {
-                margin: 0;
-                font-size: 24px;
-            }
-    
-            .line {
-                width: 50%;
-                height: 2px;
-                border: none;
-            }
-    
-            .provider {
-                font-size: 18px;
-            }
-    
-            .date {
-                font-size: 12px;
-            }
-        }
-    }
-}
 
 
 // ------------------------------------------------------- CONTACTS
 .contacts {
-    height: $block-size;
+    height: 50vh;
 
     display: flex;
     justify-content: center;
@@ -190,3 +141,85 @@
     }
 }
 
+@media screen and (max-width: 425px) {
+    // ------------------------------------------------------- HERO MPBILE
+    .hero {
+        padding: 40px;
+
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 20px;
+
+        .leftPartOfBlock, .rightPartOfBlock {
+            width: 100%;        
+        }
+
+        .leftPartOfBlock {
+            align-items: flex-start;
+        }
+
+        .name, .position, .profile {
+            width: 100%;
+        }
+
+        .name, .position {
+            text-align: center;
+        }
+
+        .name {
+            font-size: 30px;
+        }
+
+        .position {
+            font-size: 28px;
+        }
+
+        .profile {
+            font-size: 22px;
+            font-weight: 300;
+        }
+
+        .portrait {
+            width: 17ch;
+            height: 17ch;
+        
+            border-radius: 50%;
+        }
+    }
+
+    // ------------------------------------------------------- CONTACTS
+    .contacts {
+        height: auto;
+        padding-top: 30px;
+
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 40px;
+    }
+
+    .leftPartOfContacts {
+        align-items: center;
+    }
+    
+    .email, .phone {
+        width: 80vw;
+    }
+
+    .resumes {
+        width: 80vw;
+
+        .resumesList {
+            justify-content: flex-start;
+        }
+    }
+
+    .links {
+        width: 100vw;
+        padding: 15px 0;
+    
+        display: flex;
+        justify-content: center;
+    
+        border-radius: 0;    
+    }
+}

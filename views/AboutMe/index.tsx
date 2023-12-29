@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
 import { Icon } from '@iconify/react';
 import clsx from 'clsx';
 import Page from '../../components/Page/index';
-import Certificate from '../../components/Certificate/index';
-import { certificate } from '../../lib/samples';
+import CertificatesList from '../../components/CertificatesList/index';
+import { resumes, socialNetworks } from '../../lib/samples';
 import portrait from '../../public/portrait.jpg';
 import styles from "./styles.module.scss";
 import 'swiper/css';
@@ -17,20 +15,6 @@ import 'swiper/css/effect-cards';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/effect-cube';
 
-
-const resumes = [
-  {name: 'FE 1', color: '#672D50', url: 'https://flowcv.com/resume/rrmtgok5b3'},
-  {name: 'GW', color: '#D9D9D9', url: 'https://flowcv.com/resume/vffhu00pnf'},
-  {name: 'FE 2', color: '#502C84', url: 'https://takct-server.netlify.app/CV/M%20Bordakov%20-%20Front-end.pdf'},
-]
-
-const links = [
-  {name: 'linkedin', icon: 'devicon:linkedin', url: 'https://www.linkedin.com/in/mark-bordakov-8441bb241/'},
-  {name: 'github', icon: 'devicon:github', url: 'https://github.com/mark-bor?tab=repositories'},
-  {name: 'upwork', icon: 'cib:upwork', url: 'https://www.upwork.com/freelancers/~01b8a9c8c7e06fb645'},
-  {name: 'whatsapp', icon: 'logos:whatsapp-icon', url: 'https://wa.me/+380957625669'},
-  {name: 'telegram', icon: 'logos:telegram', url: 'https://t.me/marchi003'},
-]
 
 export default function AboutMe() {
   return (
@@ -47,30 +31,7 @@ export default function AboutMe() {
         </div>
       </section>
     
-      <section className={styles.certificates}>
-        <Swiper
-          className={styles.certificatesWrap}
-          modules={[Navigation, Pagination, EffectCoverflow]}
-          effect='coverflow'
-          // spaceBetween={30}
-          centeredSlides={true}
-          slidesPerView={3}
-          // loop={true}
-          navigation
-          pagination={{clickable: true}}
-          // onSlideChange={() => console.log('slide change')}
-          // onSwiper={(swiper) => console.log(swiper)}
-        >
-          {certificate.map((c) => (
-            <SwiperSlide className={styles.certificate}>
-              <h2 className={styles.certificateName}>{c.name}</h2>
-              <hr className={styles.line} style={{backgroundColor: c.color}} />
-              <p className={styles.provider}>{c.provider}</p>
-              <p className={styles.data}>{c.date}</p>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
+      <CertificatesList />
     
       <section className={styles.contacts}>
         <div className={clsx(styles.leftPartOfBlock, styles.leftPartOfContacts)}>
@@ -100,17 +61,17 @@ export default function AboutMe() {
 
         <div className={clsx(styles.rightPartOfBlock, styles.rightPartOfContacts)}>
           <nav className={styles.links}>
-            {links.map((l) => 
+            {socialNetworks.map((sn) => 
               <Link 
                 target={'_blank'} 
-                href={l.url} 
+                href={sn.url} 
                 className={styles.link}
               >
                 <Icon 
-                  icon={l.icon} 
-                  name={l.name} 
+                  icon={sn.icon} 
+                  name={sn.name} 
                   width={50} 
-                  color={l.icon==='cib:upwork' ? '#14A800' : ''} 
+                  color={sn.icon==='cib:upwork' ? '#14A800' : ''} 
                 />
               </Link>
             )}
