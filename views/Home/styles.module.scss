@@ -25,25 +25,14 @@
     }
 }
 
-.technologies {
-    height: 50vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .title {
-        margin: 0;
-        margin-bottom: 30px;
-    }
-
-    .technologiesList {
-        display: flex;
-        gap: 40px;
-
-        // .technology {
-
-        // }
+@media screen and (max-width: 425px) {
+    .hero {    
+        background-size: auto 100%;
+        background-position-x: left;
+        
+        .text {
+            width: 70vw;
+            text-align: left;
+        }
     }
 }

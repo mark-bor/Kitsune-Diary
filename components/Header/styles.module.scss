@@ -1,6 +1,11 @@
 @use '../../styles/colors' as *;
 
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
   height: 50px;
   padding: 0 20px;
 
@@ -9,6 +14,10 @@
   align-items: center;
 
   background-color: $primary-b-color;
+}
+.header.activeHeader {
+  position: fixed;
+  width: 100%;
 }
 
 .logo {
@@ -54,5 +63,95 @@
       background-color: #FFFFFF;
       border-radius: 10px;
     }
+  }
+
+  .socialNetworks {
+    display: none;    
+  }
+}
+
+.menuButton {
+  display: none;
+}
+
+@media screen and (max-width: 425px) {
+  .navigation {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 50px);
+    padding: 30px;
+    padding-bottom: 80px;
+
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    
+    background-color: $primary-b-color;
+    transform: translateX(100vw);
+    transition: 0.5s;
+  
+    ul {
+      flex-direction: column;
+      gap: 20px;
+  
+      .linkWrap {
+        width: auto;
+      
+        .link {
+          justify-content: flex-start;
+
+          font-size: 29px;
+          line-height: 1.2;
+        }
+      }
+    }
+    
+    .options {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+
+      // .option {
+
+      // }
+    }
+
+    .socialNetworks {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      
+      .socialNetworkWrap {
+        width: 40px;
+        height: 40px;
+        
+        border-radius: 10px;
+        
+        .socialNetwork {
+          width: 100%;
+          height: 100%;
+      
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+  .navigation.activeMenu {
+    transform: translateX(0);
+  }
+    
+  .menuButton {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
   }
 }
