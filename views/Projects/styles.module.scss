@@ -28,6 +28,9 @@
     }
 }
 
+.filterButtonOpen, .filterButtonClose {
+    display: none;
+}
 
 .projectsList {
     display: flex;
@@ -40,5 +43,61 @@
 
         background-color: $primary-b-color;
         border-radius: 10px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .projects {
+        display: block;
+        padding: 30px;
+    }
+    
+    .filterButtonOpen, .filterButtonClose {
+        display: block;
+        height: 30px;
+        margin-bottom: 30px;
+    }
+
+    .filterButtonOpen {
+        margin-left: auto;
+    }
+
+    .filterButtonClose {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+
+    .filters {
+        width: 100vw;
+        height: $block-size;
+        position: absolute;
+        top: 50px;
+        left: 0;
+
+        display: none;
+        align-items: flex-start;
+        
+        background-color: $secondary-b-color;
+        border-radius: 0;
+
+        .title {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+    }
+    .filters.filtersActive {
+        display: flex;
+    }
+
+    .projectsList {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .project {
+            width: auto;
+            height: 250px;
+        }
     }
 }
