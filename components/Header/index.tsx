@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
 import { Icon } from '@iconify/react';
+import { linksForContact } from '../../lib/samples';
 import styles from './styles.module.scss';
 import logo from '../../public/logo.svg';
 
@@ -11,24 +12,6 @@ const links = [
   {title: 'Blog', url: '/blog'},
   {title: 'Projects', url: '/projects'},
   {title: 'About Me', url: '/about-me'},
-]
-
-const socialMedia = [
-  {
-    title: 'linkedin', 
-    icon: 'mingcute:linkedin-line', 
-    url: 'https://www.linkedin.com/in/mark-bordakov-8441bb241/'
-  },
-  {
-    title: 'whatsapp', 
-    icon: 'mingcute:whatsapp-line', 
-    url: 'https://wa.me/+380957625669'
-  },
-  {
-    title: 'telegram', 
-    icon: 'mingcute:telegram-line', 
-    url: 'https://t.me/marchi003'
-  },
 ]
 
  
@@ -43,8 +26,8 @@ export default function Header() {
 
       <nav className={clsx(styles.navigation, menu ? styles.activeMenu : null)}>
         <ul>
-          {links.map((l) => (
-            <li className={styles.linkWrap}>
+          {links.map((l, i) => (
+            <li key={i} className={styles.linkWrap}>
               <Link className={styles.link} href={l.url}>{l.title}</Link>
             </li>
           ))}
@@ -56,10 +39,10 @@ export default function Header() {
         </div>
 
         <ul className={styles.socialNetworks}>
-          {socialMedia.map((sml) => (
-            <li className={styles.socialNetworkWrap}>
-              <Link href={sml.url} target={'_blank'} className={styles.socialNetwork}>
-                <Icon icon={sml.icon} width={40} color='#000000' />  
+          {linksForContact.map((lfc, i) => (
+            <li key={i} className={styles.socialNetworkWrap}>
+              <Link href={lfc.url} target={'_blank'} className={styles.socialNetwork}>
+                <Icon icon={lfc.icon} width={40} color='#000000' />  
               </Link>
             </li>
           ))}

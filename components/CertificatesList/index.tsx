@@ -24,8 +24,9 @@ export default function CertificatesList() {
           navigation
           pagination={{clickable: true}}
         >
-          {certificate.map((c) => (
+          {certificate.map((c, i) => (
             <SwiperSlide 
+              key={i}
               className={styles.certificateWrap} 
               style={{width: 'auto', marginRight: 0}}
             >
@@ -45,8 +46,8 @@ export default function CertificatesList() {
           slidesPerView={1}
           pagination={{clickable: true}}
         >
-          {certificate.map((c) => (
-            <SwiperSlide className={styles.certificateWrap}>
+          {certificate.map((c, i) => (
+            <SwiperSlide key={i} className={styles.certificateWrap}>
               <Certificate data={c} />
             </SwiperSlide>
           ))}

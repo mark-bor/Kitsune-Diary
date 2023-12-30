@@ -23,8 +23,8 @@ const Chevron = ({open}: {open: boolean}) => {
 export default function ProjectFilters({filters}: ProjectFiltersProps) {
   return (
     <>
-      {filters.map((filter) => (
-        <div className={styles.filter}>
+      {filters.map((filter, i) => (
+        <div key={i} className={styles.filter}>
           <Disclosure>
             {({ open }) => (
               <>
@@ -35,8 +35,8 @@ export default function ProjectFilters({filters}: ProjectFiltersProps) {
 
                 <Disclosure.Panel className={styles.filterlist}>
                   <ul>
-                    {filter.options.map((o) => (
-                      <li>
+                    {filter.options.map((o, i) => (
+                      <li key={i}>
                         <Checkbox
                           className={styles.checkbox}
                           key={o.key}

@@ -1,3 +1,21 @@
+export const linksForContact = [
+  {
+    title: 'linkedin', 
+    icon: 'mingcute:linkedin-line', 
+    url: 'https://www.linkedin.com/in/mark-bordakov-8441bb241/'
+  },
+  {
+    title: 'whatsapp', 
+    icon: 'mingcute:whatsapp-line', 
+    url: 'https://wa.me/+380957625669'
+  },
+  {
+    title: 'telegram', 
+    icon: 'mingcute:telegram-line', 
+    url: 'https://t.me/marchi003'
+  },
+]
+
 export const projects = [
   { id: 1 },
   { id: 2 },

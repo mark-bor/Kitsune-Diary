@@ -31,8 +31,8 @@ export default function TechnologiesList() {
           spaceBetween={40}
           slidesPerView={'auto'}
         >
-          {technologies.map((t) => (
-            <SwiperSlide className={styles.technology}>
+          {technologies.map((t, i) => (
+            <SwiperSlide key={i} className={styles.technology}>
               <Icon 
                 icon={t.icon} 
                 width={50} 
@@ -59,8 +59,8 @@ export default function TechnologiesList() {
             disableOnInteraction: false,
           }}
         >
-          {technologies.map((t) => (
-            <SwiperSlide className={styles.technology}>
+          {technologies.map((t, i) => (
+            <SwiperSlide key={i} className={styles.technology}>
               <Icon 
                 icon={t.icon} 
                 width={50} 
