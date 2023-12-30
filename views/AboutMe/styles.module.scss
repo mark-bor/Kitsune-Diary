@@ -74,6 +74,15 @@
     display: flex;
     justify-content: center;
     gap: 30vh;
+    
+    .leftPartOfBlock, .rightPartOfBlock {
+        width: auto;
+    }
+    
+    .leftPartOfBlock {
+        align-items: flex-start;
+        gap: 10px;
+    }
 }
 
 .email, .phone {
@@ -83,15 +92,6 @@
     color: $primary-t-color;
 
     font-size: 20px;
-}
-
-.leftPartOfContacts, .rightPartOfContacts {
-    width: auto;
-}
-
-.leftPartOfContacts {
-    align-items: flex-start;
-    gap: 10px;
 }
 
 .resumes {
@@ -144,6 +144,7 @@
 @media screen and (max-width: 425px) {
     // ------------------------------------------------------- HERO MPBILE
     .hero {
+        height: auto;
         padding: 40px;
 
         flex-direction: column-reverse;
@@ -190,15 +191,15 @@
     // ------------------------------------------------------- CONTACTS
     .contacts {
         height: auto;
-        padding-top: 30px;
+        padding-bottom: 40px;
 
-        flex-direction: column;
+        flex-direction: column-reverse;
         justify-content: flex-start;
         gap: 40px;
-    }
-
-    .leftPartOfContacts {
-        align-items: center;
+    
+        .leftPartOfBlock {
+            align-items: center;
+        }
     }
     
     .email, .phone {
@@ -215,7 +216,7 @@
 
     .links {
         width: 100vw;
-        padding: 15px 0;
+        padding: 25px 0;
     
         display: flex;
         justify-content: center;

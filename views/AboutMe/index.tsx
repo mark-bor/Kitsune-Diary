@@ -34,7 +34,7 @@ export default function AboutMe() {
       <CertificatesList />
     
       <section className={styles.contacts}>
-        <div className={clsx(styles.leftPartOfBlock, styles.leftPartOfContacts)}>
+        <div className={styles.leftPartOfBlock}>
           <p className={styles.email}>mark12bord@gmail.com</p>
           <p className={styles.phone}>+380957625669</p>
 
@@ -59,7 +59,7 @@ export default function AboutMe() {
           </section>
         </div>
 
-        <div className={clsx(styles.rightPartOfBlock, styles.rightPartOfContacts)}>
+        <div className={styles.rightPartOfBlock}>
           <nav className={styles.links}>
             {socialNetworks.map((sn) => 
               <Link 
