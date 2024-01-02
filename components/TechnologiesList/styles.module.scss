@@ -15,6 +15,9 @@
     .title {
         margin: 0;
         margin-bottom: 30px;
+
+        font-size: 22px;
+        font-weight: 600;
     }
 
     .technologiesList {
@@ -27,6 +30,14 @@
 
 .technologiesMobile {
     display: none;
+}
+
+@media screen and (min-width: 1440px) {
+    .technologies, .technologiesMobile {
+        .title {
+            font-size: 29px;
+        }
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -42,7 +53,7 @@
             width: 70vw;
 
             text-align: center;
-            font-size: 32px;
+            font-size: 26px;
         }
         
         // .technologiesList > div {

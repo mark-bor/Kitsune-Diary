@@ -1,5 +1,6 @@
 @use '../../styles/colors' as *;
 @use '../../styles/mixins' as *;
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
 .hero {
     height: $block-size;
@@ -15,13 +16,41 @@
     
     .text {
         display: inline-block;
-        width: 50vw;
+        width: auto;
         padding: 6px 15px;
     
         text-align: center;
+        font-family: 'Rubik Mono One', monospace;
         font-weight: 500;
-        font-size: 60px;
+        font-size: 100px;
         color: $secondary-t-color;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .hero {    
+        .text {
+            width: 80vw;
+            font-size: 120px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hero {    
+        .text {
+            width: auto;
+            font-size: 100px;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .hero {    
+        .text {
+            width: 86vw;
+            font-size: 70px;
+        }
     }
 }
 
@@ -31,8 +60,19 @@
         background-position-x: left;
         
         .text {
-            width: 70vw;
+            width: 86vw;
             text-align: left;
+            font-size: 50px;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .hero {            
+        .text {
+            width: 86vw;
+            text-align: left;
+            font-size: 40px;
         }
     }
 }

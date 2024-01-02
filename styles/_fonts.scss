@@ -1,0 +1,6 @@
+$nav-link: 17px;
+
+@mixin naw-link-text {
+    font-size: $nav-link;
+    font-weight: 500;
+}
