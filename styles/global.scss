@@ -19,6 +19,7 @@ main {
 p, a, img, ul, li, button {
     margin: 0;
     padding: 0;
+    color: $primary-t-color;
 }
 
 ul, li {
@@ -27,7 +28,6 @@ ul, li {
 
 a {
     text-decoration: none;
-    color: $primary-t-color; 
 }
 
 button {

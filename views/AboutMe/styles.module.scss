@@ -27,31 +27,31 @@
 
     .leftPartOfBlock {
         gap: 15px;
+        
+        .name, .position, .profile {
+            display: inline-block;
+            width: 60%;
+            margin: 0;
+        
+            border-radius: 10px;
+            color: $secondary-t-color;
+        
+            line-height: 1.2em;
+        }
+        
+        .name {
+            font-size: 30px;
+        }
+        
+        .position {
+            font-size: 26px;
+        }
+        
+        .profile {
+            margin-top: 20px;
+            font-size: 16px;
+        }
     }
-}
-
-.name, .position, .profile {
-    display: inline-block;
-    width: 60%;
-    margin: 0;
-
-    border-radius: 10px;
-    color: $secondary-t-color;
-
-    line-height: 1.2em;
-}
-
-.name {
-    font-size: 30px;
-}
-
-.position {
-    font-size: 26px;
-}
-
-.profile {
-    margin-top: 20px;
-    font-size: 16px;
 }
 
 .portrait {
@@ -91,17 +91,18 @@
     border-radius: 10px;
     color: $primary-t-color;
 
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .resumes {
     .resumesTitle {
+        margin:10px 0 10px 0;
         font-size: 20px;
+        font-weight: 600;
     }
 
     .resumesList {
-        margin-top: 15px;
-        
         display: flex;
         justify-content: space-between;
         gap: 15px;
@@ -141,6 +142,29 @@
     }
 }
 
+@media screen and (min-width: 1440px) {
+    .hero {
+        .leftPartOfBlock {
+            .name, .position, .profile {
+                width: 80%;
+            }
+            
+            .name {
+                font-size: 36px;
+            }
+            
+            .position {
+                font-size: 32px;
+            }
+            
+            .profile {
+                margin-top: 20px;
+                font-size: 22px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 425px) {
     // ------------------------------------------------------- HERO MPBILE
     .hero {
@@ -157,27 +181,27 @@
 
         .leftPartOfBlock {
             align-items: flex-start;
-        }
-
-        .name, .position, .profile {
-            width: 100%;
-        }
-
-        .name, .position {
-            text-align: center;
-        }
-
-        .name {
-            font-size: 30px;
-        }
-
-        .position {
-            font-size: 28px;
-        }
-
-        .profile {
-            font-size: 22px;
-            font-weight: 300;
+       
+            .name, .position, .profile {
+                width: 100%;
+            }
+    
+            .name, .position {
+                text-align: center;
+            }
+    
+            .name {
+                font-size: 30px;
+            }
+    
+            .position {
+                font-size: 28px;
+            }
+    
+            .profile {
+                font-size: 22px;
+                font-weight: 300;
+            }
         }
 
         .portrait {
@@ -204,10 +228,15 @@
     
     .email, .phone {
         width: 80vw;
+        font-size: 17px;
     }
 
     .resumes {
         width: 80vw;
+
+        .resumesTitle {
+            font-size: 21px;
+        }
 
         .resumesList {
             justify-content: flex-start;

@@ -7,7 +7,6 @@ type PageProps = {
     title: string
 }
 
- 
 export default function Page({ children, title }: PageProps) {
   return (
     <>
