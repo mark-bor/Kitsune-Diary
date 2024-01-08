@@ -34,7 +34,7 @@
             margin: 0;
         
             border-radius: 10px;
-            color: $secondary-t-color;
+            color: var(--secondary-t-color);
         
             line-height: 1.2em;
         }
@@ -89,7 +89,7 @@
     display: inline-block;
 
     border-radius: 10px;
-    color: $primary-t-color;
+    color: var(--primary-t-color);
 
     font-size: 16px;
     font-weight: 400;
@@ -116,7 +116,7 @@
             align-items: center;
     
             border-radius: 10px;
-            color: $secondary-t-color;
+            color: var(--secondary-t-color);
         }
     }
 }
@@ -129,7 +129,7 @@
     grid-template-rows: 50px 50px;
     gap: 20px;
 
-    background-color: $secondary-b-color;
+    background-color: var(--secondary-bg-color);
     border-radius: 10px;
 
     .link {

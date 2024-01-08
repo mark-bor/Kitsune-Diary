@@ -10,7 +10,7 @@
   justify-content: space-around;
   align-items: center;
 
-  background-color: $primary-b-color;
+  background-color: var(--primary-bg-color);
 }
 
 .navigation, .contacts {

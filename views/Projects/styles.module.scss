@@ -41,7 +41,7 @@
         width: calc(25% - 15px);
         height: 200px;
 
-        background-color: $primary-b-color;
+        background-color: var(--primary-bg-color);
         border-radius: 10px;
     }
 }
@@ -78,7 +78,7 @@
         display: none;
         align-items: flex-start;
         
-        background-color: $secondary-b-color;
+        background-color: var(--secondary-bg-color);
         border-radius: 0;
 
         .title {

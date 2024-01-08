@@ -1,6 +1,44 @@
-$primary-b-color: #D9D9D9;
-$secondary-b-color: #F5F5F5;
+$primary-bg: #D9D9D9;
+$secondary-bg: #F5F5F5;
+$primary-bg-dark: #D9D9D9;
+$secondary-bg-dark: #F5F5F5;
 
-// $primary-t-color: #1D1A39;
-$primary-t-color: #000000;
-$secondary-t-color: #FFFFFF;
+// $primary-t: #1D1A39;
+$primary-t: #000000;
+$secondary-t: #FFFFFF;
+$primary-t-dark: #FFFFFF;
+$secondary-t-dark: #000000;
+
+@mixin light-theme {
+    --primary-bg-color: #{$primary-bg};
+    --secondary-bg-color: #{$secondary-bg};
+
+    --primary-t-color: #{$primary-t};
+    --secondary-t-color: #{$secondary-t};
+}
+
+@mixin dark-theme {
+    --primary-bg-color: #{$primary-bg-dark};
+    --secondary-bg-color: #{$secondary-bg-dark};
+
+    --primary-t-color: #{$primary-t-dark};
+    --secondary-t-color: #{$secondary-t-dark};
+}
+
+@mixin detirmine-theme {
+    [data-theme='light'] {
+        @include light-theme;
+    }
+    
+    [data-theme='dark'] {
+        @include dark-theme;
+    }
+
+    [data-theme='auto'] {
+        @include light-theme;
+    }
+
+    // [data-theme] {
+    //     @include light-theme;
+    // }
+}

@@ -3,7 +3,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
 import { Icon } from '@iconify/react';
+import { useAppDispatch } from '../../lib/redux/hook'
+import { setTheme } from '../../lib/theme/themeSlice'
 import { linksForContact } from '../../lib/samples';
+import Dropdown from '../../components/Dropdown/index';
 import styles from './styles.module.scss';
 import logo from '../../public/logo.svg';
 
@@ -12,11 +15,18 @@ const links = [
   {title: 'Blog', url: '/blog'},
   {title: 'Projects', url: '/projects'},
   {title: 'About Me', url: '/about-me'},
-]
+];
+
+const themeItems = ['light', 'dark', 'auto'];
 
  
 export default function Header() {
   const [menu, setMenu] = useState(false);
+  const dispatch = useAppDispatch();
+
+  const changeTheme = (theme: string) => {
+    dispatch(setTheme({ theme }));
+  }
 
   return (
     <header className={clsx(styles.header, menu ? styles.activeHeader : null)}>
@@ -34,8 +44,10 @@ export default function Header() {
         </ul>
 
         <div className={styles.options}>
-          <div className={styles.option}></div>
-          <div className={styles.option}></div>
+          {/* <div className={styles.option}></div> */}
+          <Dropdown items={themeItems} click={changeTheme}>
+            <Icon icon={'tabler:sun-moon'} width={24} />
+          </Dropdown>
         </div>
 
         <ul className={styles.socialNetworks}>

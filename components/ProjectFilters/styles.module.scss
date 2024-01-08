@@ -5,7 +5,7 @@
     width: 80%;
     padding: 5px;
 
-    background-color: $secondary-b-color;
+    background-color: var(--secondary-bg-color);
     border-radius: 10px;
     
     .filterButton {
@@ -16,7 +16,7 @@
         justify-content: space-between;
         align-items: center;
 
-        background-color: $primary-b-color;
+        background-color: var(--primary-bg-color);
         border-radius: 7px;
     
         font-size: 17px;

@@ -14,8 +14,6 @@ type CertificateProps = {
 
  
 export default function Certificate({data, isActive = true}: CertificateProps) {
-  console.log(isActive);
-
   return (
     <section className={clsx(styles.certificate, isActive ? styles.certificateActive : null)}>
       <h2 className={styles.certificateName}>{data.name}</h2>

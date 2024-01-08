@@ -20,7 +20,7 @@
 
     .title {
         display: block;
-        color: $secondary-t-color;
+        color: var(--secondary-t-color);
         font-size: 23px;
         font-weight: 500;
     }
@@ -45,7 +45,7 @@
                 justify-content: center;
                 align-items: center;  
                 
-                background-color: $secondary-t-color;
+                background-color: var(--secondary-t-color);
                 border-radius: 50%;
             }
         }
@@ -69,7 +69,7 @@
 
             display: block;
 
-            background-color: $primary-b-color;
+            background-color: var(--primary-bg-color);
             border-radius: 10px;
         }
     }

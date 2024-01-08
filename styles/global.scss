@@ -1,14 +1,23 @@
 @use "./colors" as *;
+@use "./fonts" as *;
+@use "./mixins" as *;
 
 * {
     box-sizing: border-box;
 }
 
-body {
-    min-height: 100vh;
+html, body {
     margin: 0;
     padding: 0;
-    color: $primary-t-color;
+}
+
+:root {
+    @include detirmine-theme;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--primary-t-color);
 }
 
 main {
@@ -19,7 +28,7 @@ main {
 p, a, img, ul, li, button {
     margin: 0;
     padding: 0;
-    color: $primary-t-color;
+    color: var(--primary-t-color);
 }
 
 ul, li {
