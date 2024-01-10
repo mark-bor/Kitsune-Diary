@@ -2,7 +2,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
-import { Icon } from '@iconify/react';
+import { Icon as Brand } from '@iconify/react';
+import Icon from '../Icon/index';
 import { useAppDispatch } from '../../lib/redux/hook'
 import { setTheme } from '../../lib/theme/themeSlice'
 import { linksForContact } from '../../lib/samples';
@@ -46,7 +47,7 @@ export default function Header() {
         <div className={styles.options}>
           {/* <div className={styles.option}></div> */}
           <Dropdown items={themeItems} click={changeTheme}>
-            <Icon icon={'tabler:sun-moon'} width={24} />
+            <Icon name='sun-moon' width={30} height={30} />
           </Dropdown>
         </div>
 
@@ -54,7 +55,7 @@ export default function Header() {
           {linksForContact.map((lfc, i) => (
             <li key={i} className={styles.socialNetworkWrap}>
               <Link href={lfc.url} target={'_blank'} className={styles.socialNetwork}>
-                <Icon icon={lfc.icon} width={40} />  
+                <Brand icon={lfc.icon} width={40} />  
               </Link>
             </li>
           ))}
@@ -62,7 +63,7 @@ export default function Header() {
       </nav>
 
       <button className={styles.menuButton} onClick={() => setMenu(!menu)}>
-        <Icon icon={menu ? 'akar-icons:cross' : 'radix-icons:hamburger-menu'} width={30} />
+        <Icon name={menu ? 'x' : 'menu'} width={30} height={30} />
       </button>
     </header>
   )

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Icon } from '@iconify/react';
+import Icon from '../../components/Icon/index';
 import Page from '../../components/Page/index';
 import { projects, filtersOfProjects } from '../../lib/samples';
 import ProjectFilters from '../../components/ProjectFilters/index';
@@ -13,7 +13,7 @@ export default function Projects() {
     <Page title='The Kitsune Diary | Projects'>
       <section className={styles.projects}>
         <button className={styles.filterButtonOpen} onClick={() => setFilters(!filters)}>
-          <Icon icon={'ion:filter'} width={30} />
+          <Icon name='filter' width={30} height={30} />
         </button>
 
         <div>

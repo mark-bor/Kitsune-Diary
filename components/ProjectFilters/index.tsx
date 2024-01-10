@@ -1,6 +1,6 @@
 import React from 'react';
 import { Disclosure } from '@headlessui/react'
-import { Icon } from '@iconify/react';
+import Icon from '../../components/Icon/index';
 import clsx from 'clsx';
 import { ProjectFilters } from '../../lib/samples';
 import Checkbox from '../../components/Checkbox/index';
@@ -18,7 +18,7 @@ export default function ProjectFilters({filters, isFilters, setIsFilters}: Proje
   return (
     <section className={clsx(styles.filters, isFilters ? styles.filtersActive : null)}>
       <button className={styles.filterButtonClose} onClick={() => setIsFilters(!filters)}>
-        <Icon icon={'radix-icons:cross-2'} width={30} />
+        <Icon name='x' width={30} height={30} />
       </button>
 
       <h2 className={styles.title}>Filter by</h2>
@@ -31,9 +31,9 @@ export default function ProjectFilters({filters, isFilters, setIsFilters}: Proje
                 <Disclosure.Button className={styles.filterButton}>
                   <span className={styles.filterTitle}>{filter.label}</span>
                   <Icon 
-                    icon={open ? 'formkit:up' : 'formkit:down'}
-                    name='chevron button'
-                    width={20}
+                    name={open ? 'chevron-up' : 'chevron-down'}
+                    width={25}
+                    height={25}
                   />
                 </Disclosure.Button>
 
