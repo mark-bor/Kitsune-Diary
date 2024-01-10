@@ -1,0 +1,19 @@
+@use "../../styles/colors" as *;
+
+.appWrap {
+    position: relative;
+    padding: 15px;
+    
+    background-color: var(--primary-bg-color);
+    background-image: var(--image-bg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position-y: center;
+    background-attachment: fixed;
+}
+
+@media screen and (max-width: 425px){
+    .appWrap {
+        background-size: auto 100%;
+    }
+}

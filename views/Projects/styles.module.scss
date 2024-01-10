@@ -2,33 +2,14 @@
 @use '../../styles/mixins' as *;
 
 .projects {
-    padding: 20px;
+    padding: 20px 0;
 
     display: grid;
     grid-template-columns: 30% auto;
     gap: 20px;
 }
 
-.filters {
-    padding: 30px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-
-    // background-color: $main-b-color;
-    border-radius: 10px;
-
-    .title {
-        width: 80%;
-
-        margin-top: 0;
-        margin-bottom: 10px;
-    }
-}
-
-.filterButtonOpen, .filterButtonClose {
+.filterButtonOpen {
     display: none;
 }
 
@@ -38,7 +19,7 @@
     gap: 20px;
 
     .project {
-        width: calc(25% - 15px);
+        width: calc(25% - (20px * 3 / 4));
         height: 200px;
 
         background-color: var(--primary-bg-color);
@@ -46,48 +27,26 @@
     }
 }
 
+@media screen and (max-width: 768px) {
+    .projectsList {    
+        .project {
+            width: calc(33% - (20px * 2 / 3));
+            height: 160px;
+        }
+    }
+}
+
 @media screen and (max-width: 425px) {
     .projects {
         display: block;
-        padding: 30px;
+        padding: 30px 0;
     }
     
-    .filterButtonOpen, .filterButtonClose {
+    .filterButtonOpen {
         display: block;
         height: 30px;
         margin-bottom: 30px;
-    }
-
-    .filterButtonOpen {
         margin-left: auto;
-    }
-
-    .filterButtonClose {
-        position: absolute;
-        top: 30px;
-        right: 30px;
-    }
-
-    .filters {
-        width: 100vw;
-        height: $block-size;
-        position: absolute;
-        top: 50px;
-        left: 0;
-
-        display: none;
-        align-items: flex-start;
-        
-        background-color: var(--secondary-bg-color);
-        border-radius: 0;
-
-        .title {
-            margin-bottom: 20px;
-            font-size: 28px;
-        }
-    }
-    .filters.filtersActive {
-        display: flex;
     }
 
     .projectsList {
@@ -97,7 +56,7 @@
 
         .project {
             width: auto;
-            height: 250px;
+            height: 290px;
         }
     }
 }

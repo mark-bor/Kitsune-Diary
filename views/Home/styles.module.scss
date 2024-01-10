@@ -8,11 +8,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background-image: url('../../public/an-abstraction-background.png');
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position-y: center;
     
     .text {
         display: inline-block;
@@ -23,7 +18,8 @@
         font-family: 'Rubik Mono One', monospace;
         font-weight: 500;
         font-size: 100px;
-        color: var(--secondary-t-color);
+        color: var(--primary-t-color);
+        // color: $secondary-t;
     }
 }
 

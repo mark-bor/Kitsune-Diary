@@ -35,6 +35,25 @@ export default function AboutMe() {
     
       <section className={styles.contacts}>
         <div className={styles.leftPartOfBlock}>
+          <nav className={styles.links}>
+            {socialNetworks.map((sn) => 
+              <Link 
+                target={'_blank'} 
+                href={sn.url} 
+                className={styles.link}
+              >
+                <Icon 
+                  icon={sn.icon} 
+                  name={sn.name} 
+                  width={40} 
+                  color={sn.icon==='cib:upwork' ? '#14A800' : ''} 
+                />
+              </Link>
+            )}
+          </nav>
+        </div>
+
+        <div className={styles.rightPartOfBlock}>
           <p className={styles.email}>mark12bord@gmail.com</p>
           <p className={styles.phone}>+380957625669</p>
 
@@ -57,25 +76,6 @@ export default function AboutMe() {
               )}
             </ul>
           </section>
-        </div>
-
-        <div className={styles.rightPartOfBlock}>
-          <nav className={styles.links}>
-            {socialNetworks.map((sn) => 
-              <Link 
-                target={'_blank'} 
-                href={sn.url} 
-                className={styles.link}
-              >
-                <Icon 
-                  icon={sn.icon} 
-                  name={sn.name} 
-                  width={50} 
-                  color={sn.icon==='cib:upwork' ? '#14A800' : ''} 
-                />
-              </Link>
-            )}
-          </nav>
         </div>
       </section>
     </Page>

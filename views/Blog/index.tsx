@@ -22,7 +22,12 @@ export default function Blog() {
           {links.map((l) => (
             <li className={styles.linkWrap}>
               <Link href={l.url} className={styles.link}>
-                <Icon icon={l.icon} name={l.name} width={40} />
+                <Icon 
+                  icon={l.icon} 
+                  name={l.name} 
+                  width={40}
+                  color={l.name='twiterX' ? '#000000' : ''}
+                />
               </Link>
             </li>
           ))}

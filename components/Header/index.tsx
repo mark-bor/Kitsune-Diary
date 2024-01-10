@@ -54,7 +54,7 @@ export default function Header() {
           {linksForContact.map((lfc, i) => (
             <li key={i} className={styles.socialNetworkWrap}>
               <Link href={lfc.url} target={'_blank'} className={styles.socialNetwork}>
-                <Icon icon={lfc.icon} width={40} color='#000000' />  
+                <Icon icon={lfc.icon} width={40} />  
               </Link>
             </li>
           ))}

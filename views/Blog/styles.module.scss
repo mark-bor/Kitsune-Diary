@@ -2,26 +2,29 @@
 @use '../../styles/mixins' as *;
 
 .links {
-    height: 150px;
+    height: 90px;
+    margin-top: 46px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-image: url('../../public/an-abstraction-background.png');
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position-y: 100%;
+    backdrop-filter: blur(6px);
+    border-radius: 15px;
+    // background-image: url('../../public/an-abstraction-background.png');
+    // background-repeat: no-repeat;
+    // background-size: 100% auto;
+    // background-position-y: 100%;
 
     .title, .linksList {
         width: 50%;
-        padding-left: 15vw;
+        padding-left: 30px;
     }
 
     .title {
         display: block;
-        color: var(--secondary-t-color);
-        font-size: 23px;
+        color: var(--primary-t-color);
+        font-size: 22px;
         font-weight: 500;
     }
 
@@ -45,7 +48,7 @@
                 justify-content: center;
                 align-items: center;  
                 
-                background-color: var(--secondary-t-color);
+                background-color: $secondary-t;
                 border-radius: 50%;
             }
         }
@@ -53,7 +56,7 @@
 }
 
 .articles {
-    padding: 45px;
+    padding: 30px;
 
     display: flex;
     flex-wrap: wrap;
@@ -71,6 +74,42 @@
 
             background-color: var(--primary-bg-color);
             border-radius: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .articles {
+        padding: 20px;
+        gap: 35px;
+    
+        .articleLinkWrap {
+            width: calc(25% - (35px * 3 / 4));
+            height: 220px;    
+        }
+    }
+
+    .links {
+        .title, .linksList {
+            padding-left: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .articles {
+        padding: 15px;
+        gap: 30px;
+    
+        .articleLinkWrap {
+            width: calc(33% - (30px * 2 / 3));
+            height: 200px;    
+        }
+    }
+
+    .links {
+        .title, .linksList {
+            padding-left: 15px;
         }
     }
 }

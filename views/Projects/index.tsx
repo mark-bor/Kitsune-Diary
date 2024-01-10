@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
-import clsx from 'clsx';
 import Page from '../../components/Page/index';
 import { projects, filtersOfProjects } from '../../lib/samples';
 import ProjectFilters from '../../components/ProjectFilters/index';
@@ -17,19 +16,17 @@ export default function Projects() {
           <Icon icon={'ion:filter'} width={30} />
         </button>
 
-        <section className={clsx(styles.filters, filters ? styles.filtersActive : null)}>
-          <button className={styles.filterButtonClose} onClick={() => setFilters(!filters)}>
-            <Icon icon={'radix-icons:cross-2'} width={30} />
-          </button>
-
-          <h2 className={styles.title}>Filter by</h2>
-
-          <ProjectFilters filters={filtersOfProjects} />
-        </section>
+        <div>
+          <ProjectFilters 
+            filters={filtersOfProjects} 
+            isFilters={filters} 
+            setIsFilters={setFilters} 
+          />
+        </div>
 
         <ul className={styles.projectsList}>
-          {projects.map((p) => (
-            <li className={styles.project}></li>
+          {projects.map((p, i) => (
+            <li key={i} className={styles.project}></li>
           ))}
         </ul>
       </section>

@@ -1,5 +1,7 @@
 import { useAppSelector } from '../../lib/redux/hook'
 import { Inter } from 'next/font/google'
+import clsx from 'clsx'
+import styles from './styles.module.scss'
 
 const inter = Inter({
     variable: '--font-inter',
@@ -13,11 +15,11 @@ type AppThemeData = {
     children: any
 }
 
-export default function AppTheme({children}: AppThemeData) {
+export default function AppWrap({children}: AppThemeData) {
     const theme = useAppSelector(state => state.theme);
 
     return (
-        <div className={inter.className} data-theme={theme}>
+        <div className={clsx(inter.className, styles.appWrap)} data-theme={theme}>
             {children}
         </div>
     )
