@@ -1,61 +1,135 @@
 @use '../../styles/colors' as *;
 @use '../../styles/mixins' as *;
 
-.filter {
-    width: 80%;
-    padding: 5px;
+.filters {
+    padding: 30px 0;
 
-    background-color: $secondary-b-color;
-    border-radius: 10px;
-    
-    .filterButton {
-        width: 100%;
-        padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    backdrop-filter: blur(6px);
+    border-radius: 15px;
 
-        background-color: $primary-b-color;
-        border-radius: 7px;
-    
-        font-size: 17px;
-        line-height: 1.3em;
-    
-        // .filterTitle {}
+    .filterButtonClose {
+        display: none;
     }
     
-    .filterlist {
-        margin-top: 10px;
-        margin-left: 15px;
+    .title {
+        width: 70%;
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: var(--primary-t-color);
+    }
     
-        ul {            
-            li {
-                margin-bottom: 10px;
-                
-                // .checkbox {}
+    .filter {
+        width: 70%;
+        padding: 2px;
+    
+        background-color: var(--secondary-bg-color);
+        border-radius: 10px;
+        
+        .filterButton {
+            width: 100%;
+            padding: 5px;
+    
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    
+            background-color: var(--primary-bg-color);
+            border-radius: 7px;
+        
+            font-size: 17px;
+            line-height: 1.3em;    
+        }
+        
+        .filterlist {
+            margin-top: 10px;
+            margin-left: 5px;
+        
+            ul {            
+                li {
+                    margin-bottom: 10px;                
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .filters {
+        .title {
+            width: 90%;
+        }
+        
+        .filter {
+            width: 90%;
+    
+            .filterButton {
+                padding: 3px;
+            }
+            .filterlist {
+                margin-left: 3px;
             }
         }
     }
 }
 
 @media screen and (max-width: 425px) {
-    .filter {
-        width: 100%;
-        padding: 0;
+    .filters {
+        width: calc(100vw - 30px);
+        height: calc(100vh - 30px);
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 15;
 
-        .filterButton {
-            font-size: 22px;
+        display: none;
+        align-items: center;
+        
+        background-color: var(--primary-bg-color);
+        border-radius: 15px;
+
+        .filterButtonClose {
+            display: block;
+            height: 30px;
+            margin-bottom: 30px;
+            position: absolute;
+            top: 30px;
+            right: 30px;
         }
 
-        .filterlist {
-            ul {            
-                li {
-                    .checkbox {
-                        font-size: 20px;
+        .title {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .filter {
+            padding: 0;
+            background-color: var(--primary-bg-color);
+    
+            .filterButton {
+                padding: 5px;
+                background-color: var(--secondary-bg-color);
+                color: $primary-t;
+                font-size: 22px;
+            }
+    
+            .filterlist {
+                ul {            
+                    li {
+                        .checkbox {
+                            font-size: 20px;
+                        }
                     }
                 }
             }
         }
+    }
+    
+    .filters.filtersActive {
+        display: flex;
     }
 }

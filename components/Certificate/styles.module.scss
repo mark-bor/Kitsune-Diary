@@ -3,8 +3,8 @@
 
 
 .certificate {
-    width: 250px;
-    height: 350px;
+    width: 220px;
+    height: 330px;
 
     display: flex;
     flex-direction: column;
@@ -12,11 +12,15 @@
     align-items: center;
     gap: 30px;
 
-    background-color: $secondary-t-color;
+    background-color: $secondary-t;
     border-radius: 10px;
     transition: 0.3s;
 
     text-align: center;
+    
+    .certificateName, .provider, .date {
+        color: $primary-t;
+    }
 
     .certificateName {
         margin: 0;
@@ -39,12 +43,31 @@
 }
 
 .certificate.certificateActive {
-    width: 320px;
-    height: 420px;
+    width: 280px;
+    height: 400px;
     transform: none;
 }
 
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
+    .certificate {
+        width: 180px;
+        height: 280px;
 
+        .certificateName {
+            font-size: 20px;
+        }    
+        .provider {
+            font-size: 14px;
+        }
+    
+        .date {
+            font-size: 10px;
+        }
+    }
+    .certificate.certificateActive {
+        width: 260px;
+        height: 360px;
+        transform: none;
+    }
 }

@@ -14,6 +14,7 @@ const technologies = [
   {icon: 'devicon:typescript'},
   {icon: 'devicon:react'},
   {icon: 'devicon:nextjs'},
+  {icon: 'devicon:redux'},
   {icon: 'simple-icons:swiper'},
   {icon: 'logos:headlessui-icon'},
 ]

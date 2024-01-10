@@ -2,8 +2,12 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
-import { Icon } from '@iconify/react';
+import { Icon as Brand } from '@iconify/react';
+import Icon from '../Icon/index';
+import { useAppDispatch } from '../../lib/redux/hook'
+import { setTheme } from '../../lib/theme/themeSlice'
 import { linksForContact } from '../../lib/samples';
+import Dropdown from '../../components/Dropdown/index';
 import styles from './styles.module.scss';
 import logo from '../../public/logo.svg';
 
@@ -12,11 +16,18 @@ const links = [
   {title: 'Blog', url: '/blog'},
   {title: 'Projects', url: '/projects'},
   {title: 'About Me', url: '/about-me'},
-]
+];
+
+const themeItems = ['light', 'dark', 'auto'];
 
  
 export default function Header() {
   const [menu, setMenu] = useState(false);
+  const dispatch = useAppDispatch();
+
+  const changeTheme = (theme: string) => {
+    dispatch(setTheme({ theme }));
+  }
 
   return (
     <header className={clsx(styles.header, menu ? styles.activeHeader : null)}>
@@ -34,15 +45,17 @@ export default function Header() {
         </ul>
 
         <div className={styles.options}>
-          <div className={styles.option}></div>
-          <div className={styles.option}></div>
+          {/* <div className={styles.option}></div> */}
+          <Dropdown items={themeItems} click={changeTheme}>
+            <Icon name='sun-moon' width={30} height={30} />
+          </Dropdown>
         </div>
 
         <ul className={styles.socialNetworks}>
           {linksForContact.map((lfc, i) => (
             <li key={i} className={styles.socialNetworkWrap}>
               <Link href={lfc.url} target={'_blank'} className={styles.socialNetwork}>
-                <Icon icon={lfc.icon} width={40} color='#000000' />  
+                <Brand icon={lfc.icon} width={40} />  
               </Link>
             </li>
           ))}
@@ -50,7 +63,7 @@ export default function Header() {
       </nav>
 
       <button className={styles.menuButton} onClick={() => setMenu(!menu)}>
-        <Icon icon={menu ? 'akar-icons:cross' : 'radix-icons:hamburger-menu'} width={30} />
+        <Icon name={menu ? 'x' : 'menu'} width={30} height={30} />
       </button>
     </header>
   )

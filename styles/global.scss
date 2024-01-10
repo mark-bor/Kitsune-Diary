@@ -1,25 +1,36 @@
 @use "./colors" as *;
+@use "./fonts" as *;
+@use "./mixins" as *;
 
 * {
     box-sizing: border-box;
 }
 
-body {
-    min-height: 100vh;
+html, body {
+    position: relative;
     margin: 0;
     padding: 0;
-    color: $primary-t-color;
+}
+
+:root {
+    @include detirmine-theme;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--primary-t-color);
 }
 
 main {
-    min-height: calc(100vh - 50px - 200px);
-    margin-top: 50px;
+    position: relative;
+    min-height: calc(100vh - 36px - 200px);
+    margin-top: 36px;
 }
 
 p, a, img, ul, li, button {
     margin: 0;
     padding: 0;
-    color: $primary-t-color;
+    color: var(--primary-t-color);
 }
 
 ul, li {
