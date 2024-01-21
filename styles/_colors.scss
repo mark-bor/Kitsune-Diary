@@ -1,13 +1,12 @@
-$primary-bg: #E5C457;
-$primary-bg-dark: #69235B;
-$secondary-bg: #F5F5F5;
-$secondary-bg-dark: #F5F5F5;
+$primary-bg: #FFFAFA;
+$primary-bg-dark: #0B0B0B;
+$secondary-bg: #F5C63C;
+$secondary-bg-dark: #925FF0;
 
-// $primary-t: #1D1A39;
-$primary-t: #000000;
-$primary-t-dark: #FFFFFF;
-$secondary-t: #FFFFFF;
-$secondary-t-dark: #000000;
+$primary-t: #0B0B0B;
+$primary-t-dark: #FFFAFA;
+$secondary-t: #F5C63C;
+$secondary-t-dark: #925FF0;
 
 @mixin light-theme {
     --primary-bg-color: #{$primary-bg};
@@ -37,12 +36,4 @@ $secondary-t-dark: #000000;
     [data-theme='dark'] {
         @include dark-theme;
     }
-
-    [data-theme='auto'] {
-        @include light-theme;
-    }
-
-    // [data-theme] {
-    //     @include light-theme;
-    // }
 }

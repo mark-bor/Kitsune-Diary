@@ -1,17 +1,20 @@
 @use '../../styles/colors' as *;
+@use '../../styles/mixins' as *;
 @use '../../styles/fonts' as *;
 
 .header {
   position: absolute;
-  width: calc(100% - (15px * 2));
-  height: 36px;
-  padding: 0 5px;
+  width: calc(100% - (10px * 2));
+  height: 50px;
+  padding: 7px 15px;
   z-index: 10;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+  background-color: var(--primary-bg-color);
+  border-radius: $secondary-radius;
   border: none;
   transition: 0.5s;
 }
@@ -44,7 +47,7 @@
         align-items: center;
         
         @include naw-link-text;
-        color: var(--primary-t-color);
+        color: var(--secondary-t-color);
       }
     }
   }
@@ -58,7 +61,7 @@
     .option {
       width: 60px;
       height: 30px;
-      background-color: #FFFFFF;
+      color: var(--secondary-t-color);
       border-radius: 10px;
     }
   }
@@ -84,15 +87,13 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .header {
     height: auto;
-    padding: 0;
-    border-radius: 15px 15px 0 0;
   }
   .header.activeHeader {
     position: fixed;
-    padding: 20px 20px 0 20px;    
+    border-radius: 10px 10px 0 0;
     background-color: var(--primary-bg-color);
   }
 
@@ -131,10 +132,6 @@
     .options {
       justify-content: flex-start;
       gap: 30px;
-
-      // .option {
-
-      // }
     }
 
     .socialNetworks {
@@ -160,13 +157,13 @@
           justify-content: center;
           align-items: center;
 
-          color: var(--primary-t-color);
+          color: var(--secondary-t-color);
         }
       }
     }
   }
   .navigation.activeMenu {
-    height: calc(100vh - 100% - (15px * 2));
+    height: calc(100vh - 100% - (10px * 2));
     padding: 30px;
     padding-bottom: 80px;
 

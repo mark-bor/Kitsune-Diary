@@ -2,9 +2,9 @@
 
 .appWrap {
     position: relative;
-    padding: 15px;
+    padding: 10px;
     
-    background-color: var(--primary-bg-color);
+    background-color: var(--secondary-bg-color);
     background-image: var(--image-bg);
     background-repeat: no-repeat;
     background-size: 100% auto;
@@ -14,12 +14,12 @@
 
 @media screen and (max-width: 630px){
     .appWrap {
-        background-size: auto 100%;
+        background-size: auto 100vh;
     }
 }
 
 @media screen and (max-width: 425px){
     .appWrap {
-        background-size: auto 100%;
+        background-size: auto 100vh;
     }
 }

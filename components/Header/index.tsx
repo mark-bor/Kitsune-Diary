@@ -47,7 +47,7 @@ export default function Header() {
         <div className={styles.options}>
           {/* <div className={styles.option}></div> */}
           <Dropdown items={themeItems} click={changeTheme}>
-            <Icon name='sun-moon' width={30} height={30} />
+            <Icon className={styles.option} name='sun-moon' width={30} height={30} />
           </Dropdown>
         </div>
 

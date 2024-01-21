@@ -10,7 +10,6 @@
     align-items: center;
     
     .text {
-        display: inline-block;
         width: auto;
         padding: 6px 15px;
     
@@ -19,7 +18,6 @@
         font-weight: 500;
         font-size: 100px;
         color: var(--primary-t-color);
-        // color: $secondary-t;
     }
 }
 

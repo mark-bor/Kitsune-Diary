@@ -18,7 +18,7 @@
 // ------------------------------------------------------- HERO
 .hero {
     height: $block-size;
-    margin-top: 46px;
+    margin-top: 50px;
     margin-bottom: 15px;
 
     display: flex;
@@ -134,7 +134,8 @@
     grid-template-rows: 50px 50px;
     gap: 20px;
 
-    backdrop-filter: $blur-bg;
+    // backdrop-filter: $blur-bg;
+    // background-color: $primary-bg;
     border-radius: $secondary-radius;
 
     .link {
@@ -144,6 +145,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        background-color: $primary-bg;
+        border-radius: $secondary-radius;
     }
 }
 

@@ -12,14 +12,14 @@
     align-items: center;
     gap: 30px;
 
-    background-color: $secondary-t;
+    background-color: var(--primary-bg-color);
     border-radius: 10px;
     transition: 0.3s;
 
     text-align: center;
     
     .certificateName, .provider, .date {
-        color: $primary-t;
+        color: var(--primary-t-color);
     }
 
     .certificateName {
