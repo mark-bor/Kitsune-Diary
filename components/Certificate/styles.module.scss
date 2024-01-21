@@ -3,71 +3,117 @@
 
 
 .certificate {
+    position: relative;
     width: 220px;
     height: 330px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+    padding: 20px;
 
     background-color: var(--primary-bg-color);
-    border-radius: 10px;
+    border-radius: $secondary-radius;
     transition: 0.3s;
-
-    text-align: center;
     
-    .certificateName, .provider, .date {
-        color: var(--primary-t-color);
+    .certificateHeader {
+        margin-bottom: 15px;
+
+        display: flex;
+        justify-content: space-between;
+        
+        .brand {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+    
+        .provider {
+            font-size: 18px;
+        }
     }
 
     .certificateName {
         margin: 0;
+        margin-bottom: 10px;
+
+        text-align: center;
         font-size: 24px;
+        font-weight: 500;
     }
 
     .line {
-        width: 50%;
-        height: 2px;
+        width: 100%;
+        height: 1px;
         border: none;
     }
 
-    .provider {
-        font-size: 18px;
+    .descriptionList {
+        margin-left: 8px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+
+        .description {
+            padding-left: 5px;
+            list-style-type: disc;
+            list-style-position: outside;
+            
+            font-size: 14px;
+            line-height: 1.15;
+        }
+
+        .description::marker {
+            content: '•';
+
+            font-size: 14px;
+            line-height: 1.15;
+        }
+    }
+
+    .link {
+        width: 20px;
+        height: 20px;
+
+        position: absolute;
+        left: 15px;
+        bottom: 10px; 
     }
 
     .date {
+        position: absolute;
+        right: 15px;
+        bottom: 10px;
+
         font-size: 12px;
     }
-}
-
-.certificate.certificateActive {
-    width: 280px;
-    height: 400px;
-    transform: none;
 }
 
 
 @media screen and (max-width: 768px) {
     .certificate {
-        width: 180px;
-        height: 280px;
+        width: 260px;
+        height: 360px;
+
+        .certificateHeader {
+            .provider {
+                font-size: 16px;
+            }
+        }
 
         .certificateName {
             font-size: 20px;
-        }    
-        .provider {
-            font-size: 14px;
+        }   
+        
+        .descriptionList {
+            .description {
+                font-size: 15px;
+            }
+    
+            .description::marker {
+                font-size: 15px;
+            }
         }
     
         .date {
-            font-size: 10px;
+            font-size: 12px;
         }
-    }
-    .certificate.certificateActive {
-        width: 260px;
-        height: 360px;
-        transform: none;
     }
 }
