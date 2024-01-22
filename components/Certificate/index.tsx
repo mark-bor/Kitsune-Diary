@@ -29,8 +29,8 @@ export default function Certificate({data, isActive = true}: CertificateProps) {
       <hr className={styles.line} style={{backgroundColor: data.color}} />
 
       <ul className={styles.descriptionList}>
-        {data.description.map(d => (
-          <li className={styles.description}>{d}</li>
+        {data.description.map((d, i) => (
+          <li key={i} className={styles.description}>{d}</li>
         ))}
       </ul>
 

@@ -27,9 +27,8 @@ export default function TechnologiesList() {
 
       <ul className={styles.technologiesList}>
         {technologies.map((t, i) => (
-          <li className={styles.technology}>
+          <li key={i} className={styles.technology}>
             <Icon 
-              key={i}
               icon={t.icon} 
               width={32} 
               color={t.icon==='simple-icons:swiper' ? '#6332F6' : undefined}
