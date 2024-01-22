@@ -18,28 +18,30 @@ type AppThemeData = {
 
 export default function AppWrap({children}: AppThemeData) {
     const theme = useAppSelector(state => state.theme);
-    const [position, setPosition] = useState(0);
+    // const [position, setPosition] = useState(0);
 
-    const scroll = () => {
-        const appWraper = document.getElementById('app-wraper');
-        const imageLeft = Number(appWraper?.clientWidth) - window.innerHeight;
-        const y: number = 100 * window.pageYOffset / imageLeft;
-        setPosition(y);
-    }
+    // const scroll = () => {
+    //     const appWraper = document.getElementById('app-wraper');
+    //     const imageLeft = Number(appWraper?.clientWidth) - window.innerHeight;
+    //     const y: number = 100 * window.pageYOffset / imageLeft;
+    //     setPosition(y);
+    // }
 
-    useEffect(() => {
-        if (window.innerWidth > 425) {
-            window.addEventListener('scroll', scroll);
-        }
-    })
+    // useEffect(() => {
+    //     if (window.innerWidth > 425) {
+    //         scroll();
+    //         window.addEventListener('scroll', scroll);
+    //     }
+    // })
 
     return (
         <div 
             id='app-wraper'
             className={clsx(inter.className, styles.appWrap)} 
             data-theme={theme}
-            style={{backgroundPositionY: `-${position}px`}}
+            // style={{backgroundPositionY: `-${position}px`}}
         >
+            <div className={styles.gradient}></div>
             {children}
         </div>
     )

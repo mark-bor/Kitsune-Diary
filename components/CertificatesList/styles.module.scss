@@ -3,7 +3,7 @@
 
 
 .certificates, .certificatesMobile {
-    height: $block-size;
+    padding: 50px 0;
     
     justify-content: center;
     align-items: center;
@@ -36,7 +36,7 @@
 }
 
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
     .certificates {
         display: none;
     }

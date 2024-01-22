@@ -42,26 +42,34 @@ export const certificate = [
   { 
     name: "TypeScript",
     provider: "ITVDN",
-    date: "",
-    color: "#457fd6",
+    description: ["TypeScript", "Classes and interfaces", "Universals", "Variables and date types", "Modules"],
+    date: "Jun 25, 2023",
+    color: "#457FD6",
+    url: "https://takct-server.netlify.app/Certificates/TypeScript.pdf",
   },
   { 
     name: "Front-end",
     provider: "Prometheus",
-    date: "",
+    description: ["HTML", "CSS", "Sass/SCSS", "JavaScript", "React", "Bootstrap"],
+    date: "Dec 10, 2022",
     color: "#6B237D",
+    url: "https://takct-server.netlify.app/Certificates/Front-end.pdf",
   },
   { 
     name: "QA course",
     provider: "DataArt",
-    date: "",
+    description: ["Manual Testing", "Agile/Scrum", "Test Documentation", "Test Planning", "Test Case Design"],
+    date: "May 26, 2022",
     color: "#FF9900",
+    url: "https://takct-server.netlify.app/Certificates/QA.pdf",
   },
   { 
     name: "UX/UI design",
     provider: "ITVDN",
-    date: "",
+    description: ["UX/UI", "Responsive Design", "Web Design", "Mobile Design"],
+    date: "May 5, 2022",
     color: "#78A2E1",
+    url: "https://takct-server.netlify.app/Certificates/UXUI-design.pdf",
   },
 ]
 
@@ -122,27 +130,27 @@ export const resumes = [
 
 export const socialNetworks = [
   {
-    name: 'linkedin', 
+    name: 'LinkedIn', 
     icon: 'devicon:linkedin', 
     url: 'https://www.linkedin.com/in/mark-bordakov-8441bb241/'
   },
     {
-      name: 'github', 
+      name: 'GitHub', 
     icon: 'devicon:github', 
     url: 'https://github.com/mark-bor?tab=repositories'
   },
     {
-      name: 'upwork', 
+      name: 'Upwork', 
     icon: 'cib:upwork', 
     url: 'https://www.upwork.com/freelancers/~01b8a9c8c7e06fb645'
   },
     {
-      name: 'whatsapp', 
+      name: 'WhatsApp', 
     icon: 'logos:whatsapp-icon', 
     url: 'https://wa.me/+380957625669'
   },
     {
-      name: 'telegram', 
+      name: 'Telegram', 
     icon: 'logos:telegram', 
     url: 'https://t.me/marchi003'
   },

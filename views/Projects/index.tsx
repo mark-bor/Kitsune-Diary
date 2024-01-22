@@ -24,11 +24,13 @@ export default function Projects() {
           />
         </div>
 
-        <ul className={styles.projectsList}>
-          {projects.map((p, i) => (
-            <li key={i} className={styles.project}></li>
-          ))}
-        </ul>
+        <div>
+          <ul className={styles.projectsList}>
+            {projects.map((p, i) => (
+              <li key={i} className={styles.project}></li>
+            ))}
+          </ul>
+        </div>
       </section>
     </Page>
   )
