@@ -3,11 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
 .hero {
-    height: $block-size;
+    height: 100vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-image: var(--image-bg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
     
     .text {
         width: auto;

@@ -20,13 +20,12 @@ export default function AboutMe() {
     <Page title='The Kitsune Diary | About Me'>
       <section className={styles.hero}>
         <div className={styles.leftPartOfBlock}>
-          <h1 className={styles.name}>Mark Bordakov</h1>
-          <p className={styles.position}>Front-end developer</p>
           <p className={styles.profile}>Dedicated and enthusiastic Junior Front-end Developer with a passion for crafting seamless and user-centric web applications using React and TypeScript. With a solid foundation in web development, I am eager to leverage my skills and creativity to contribute to projects that demand innovative solutions and exceptional user experiences.</p>
         </div>
 
         <div className={styles.rightPartOfBlock}>
           <Image src={portrait} alt='portrait' className={styles.portrait} />
+          <i className={styles.name}>Mark Bordakov - Front-end developer</i>
         </div>
       </section>
     

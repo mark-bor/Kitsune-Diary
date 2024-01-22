@@ -3,35 +3,44 @@
 
 
 .technologies, .technologiesMobile {
-    height: 50vh;
+    padding: 70px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    overflow-x: hidden;
+    gap: 30px;
 
     .title {
-        margin: 0;
-        margin-bottom: 30px;
-
-        font-size: 22px;
-        font-weight: 600;
-
+        text-align: center;
         color: var(--primary-t-color);
+        font-size: 22px;
+        font-weight: 500;
     }
 
     .technologiesList {
+        width: 70vw;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        
         .technology {
-            width: 50px;
-            height: 50px;
+            padding: 5px 10px;
+    
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            background-color: $primary-bg;
+            border-radius: 8px;
+            
+            span {
+                color: $primary-t;
+            }
         }
     }
-}
-
-.technologiesMobile {
-    display: none;
 }
 
 @media screen and (min-width: 1440px) {
@@ -44,22 +53,8 @@
 
 @media screen and (max-width: 425px) {
     .technologies {
-        display: none;
-    }
-
-    .technologiesMobile {
-        display: flex;
-        padding: 0 30px;
-                
-        .title {
-            width: 70vw;
-
-            text-align: center;
-            font-size: 26px;
+        .technologiesList {
+            width: 80vw;            
         }
-        
-        // .technologiesList > div {
-        //     transition-timing-function: linear;            
-        // }
     }
 }

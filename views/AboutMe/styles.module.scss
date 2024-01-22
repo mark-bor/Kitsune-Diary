@@ -17,55 +17,51 @@
 
 // ------------------------------------------------------- HERO
 .hero {
-    height: $block-size;
-    margin-top: 50px;
+    height: 100vh;
+    padding-top: 50px;
     margin-bottom: 15px;
 
     display: flex;
     justify-content: space-between;
 
-    border-radius: $primary-radius;
-
     .leftPartOfBlock {
         align-items: flex-end;
         gap: 15px;
-        
-        .name, .position, .profile {
+                                
+        .profile {
             display: inline-block;
-            width: 80%;
-            margin: 0;
+            width: 70%;
+            margin-top: 5px;
+
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.3em;
+            letter-spacing: 0.7px;
+        }
+    }
+
+    .rightPartOfBlock {
+        flex-direction: column;
+        gap: 10px;
+
+        .portrait {
+            width: 25vw;
+            height: 25vw;
         
-            border-radius: 10px;
-            color: var(--primary-t-color);
-        
-            line-height: 1.2em;
+            border-radius: 30px;
         }
         
         .name {
-            font-size: 30px;
-        }
-        
-        .position {
-            font-size: 26px;
-        }
-        
-        .profile {
-            margin-top: 20px;
+            width: 25vw;
+
+            color: var(--primary-t-color);
+            text-align: center;
             font-size: 16px;
+            font-weight: 300;
+            line-height: 1.2em;
         }
     }
 }
-
-.portrait {
-    width: 25vw;
-    height: 25vw;
-
-    border-radius: 30px;
-}
-
-
-// ------------------------------------------------------- CERTIFICATES
-
 
 // ------------------------------------------------------- CONTACTS
 .contacts {
@@ -122,7 +118,6 @@
     flex-direction: column;
     gap: 20px;
 
-    color: var(--primary-t-color);
     font-size: 16px;
     font-weight: 400;
 
@@ -162,21 +157,19 @@
 @media screen and (min-width: 1440px) {
     .hero {
         .leftPartOfBlock {
-            .name, .position, .profile {
-                width: 80%;
-            }
-            
-            .name {
-                font-size: 36px;
-            }
-            
-            .position {
-                font-size: 32px;
-            }
-            
             .profile {
-                margin-top: 20px;
+                width: 80%;
                 font-size: 22px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hero {
+        .rightPartOfBlock {    
+            .name {
+                font-size: 15px;
             }
         }
     }
@@ -198,6 +191,12 @@
             
             .profile {
                 margin-top: 15px;
+                font-size: 12px;
+            }
+        }
+        
+        .rightPartOfBlock {    
+            .name {
                 font-size: 12px;
             }
         }
@@ -239,33 +238,28 @@
         .leftPartOfBlock {
             align-items: flex-start;
        
-            .name, .position, .profile {
-                width: 100%;
-            }
-    
-            .name, .position {
-                text-align: center;
-            }
-    
-            .name {
-                font-size: 30px;
-            }
-    
-            .position {
-                font-size: 28px;
-            }
-    
             .profile {
+                width: 100%;
+
                 font-size: 22px;
                 font-weight: 300;
             }
         }
 
-        .portrait {
-            width: 17ch;
-            height: 17ch;
-        
-            border-radius: 50%;
+        .rightPartOfBlock {
+            gap: 14px;
+
+            .portrait {
+                width: 17ch;
+                height: 17ch;
+            
+                border-radius: 50%;
+            }
+            
+            .name {
+                width: 80vw;
+                font-size: 30px;
+            }
         }
     }
 
