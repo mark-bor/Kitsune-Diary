@@ -1,15 +1,27 @@
 @use "../../styles/colors" as *;
 
+.gradient {
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-image: var(--gradient-bg-color);
+}
+
 .appWrap {
     position: relative;
     padding: 10px;
     
-    background-color: var(--secondary-bg-color);
-    background-image: var(--image-bg);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center;
-    background-attachment: fixed;
+    // background-color: var(--secondary-bg-color);
+    // background-image: var(--gradient-bg-color);
+    // background-image: var(--image-bg);
+    // background-repeat: no-repeat;
+    // background-size: 100% auto;
+    // background-position: center;
+    // background-attachment: fixed;
 }
 
 @media screen and (max-width: 630px){

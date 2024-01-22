@@ -34,10 +34,10 @@ export default function Certificate({data, isActive = true}: CertificateProps) {
         ))}
       </ul>
 
+      <p className={styles.date}>{data.date}</p>
       <a className={styles.link} href={data.url} target='_blank'>
         <Icon name={'external-link'} width={20} height={20} />
       </a>
-      <p className={styles.date}>{data.date}</p>
     </section>
   )
 }

@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
-import clsx from 'clsx';
 import Page from '../../components/Page/index';
 import CertificatesList from '../../components/CertificatesList/index';
 import { resumes, socialNetworks } from '../../lib/samples';
@@ -34,29 +33,32 @@ export default function AboutMe() {
       <CertificatesList />
     
       <section className={styles.contacts}>
+        <nav className={styles.links}>
+          {socialNetworks.map((sn) => 
+            <Link 
+              target={'_blank'} 
+              href={sn.url} 
+              className={styles.link}
+            >
+              <Icon 
+                icon={sn.icon} 
+                name={sn.name} 
+                width={25} 
+                color={sn.icon==='cib:upwork' ? '#14A800' : ''} 
+              />
+              <span className={styles.linkName}>{sn.name}</span>
+            </Link>
+          )}
+        </nav>
+
         <div className={styles.leftPartOfBlock}>
-          <nav className={styles.links}>
-            {socialNetworks.map((sn) => 
-              <Link 
-                target={'_blank'} 
-                href={sn.url} 
-                className={styles.link}
-              >
-                <Icon 
-                  icon={sn.icon} 
-                  name={sn.name} 
-                  width={40} 
-                  color={sn.icon==='cib:upwork' ? '#14A800' : ''} 
-                />
-              </Link>
-            )}
-          </nav>
+          <p className={styles.emailAndPhone}>
+            <span>mark12bord@gmail.com</span>
+            <span>+380957625669</span>
+          </p>
         </div>
 
         <div className={styles.rightPartOfBlock}>
-          <p className={styles.email}>mark12bord@gmail.com</p>
-          <p className={styles.phone}>+380957625669</p>
-
           <section className={styles.resumes}>
             <h2 className={styles.resumesTitle}>Resumes:</h2>
 

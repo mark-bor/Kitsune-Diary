@@ -130,27 +130,27 @@ export const resumes = [
 
 export const socialNetworks = [
   {
-    name: 'linkedin', 
+    name: 'LinkedIn', 
     icon: 'devicon:linkedin', 
     url: 'https://www.linkedin.com/in/mark-bordakov-8441bb241/'
   },
     {
-      name: 'github', 
+      name: 'GitHub', 
     icon: 'devicon:github', 
     url: 'https://github.com/mark-bor?tab=repositories'
   },
     {
-      name: 'upwork', 
+      name: 'Upwork', 
     icon: 'cib:upwork', 
     url: 'https://www.upwork.com/freelancers/~01b8a9c8c7e06fb645'
   },
     {
-      name: 'whatsapp', 
+      name: 'WhatsApp', 
     icon: 'logos:whatsapp-icon', 
     url: 'https://wa.me/+380957625669'
   },
     {
-      name: 'telegram', 
+      name: 'Telegram', 
     icon: 'logos:telegram', 
     url: 'https://t.me/marchi003'
   },

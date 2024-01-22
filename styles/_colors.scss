@@ -3,6 +3,11 @@ $primary-bg-dark: #0B0B0B;
 $secondary-bg: #F5C63C;
 $secondary-bg-dark: #925FF0;
 
+// $gradient-bg: linear-gradient(to right top, #f5c63c, #ffc86b, #ffce93, #ffd7b9, #ffe4da, #ffe4da, #FFFAFA, #ffe4da, #ffe4da, #ffd7b9, #ffce93, #ffc86b, #f5c63c);
+// $gradient-bg-dark: linear-gradient(to right top, #925ff0, #7151c2, #544295, #3c336a, #272340, #272340, #272340, #272340, #3c336a, #544295, #7151c2, #925ff0);
+$gradient-bg: linear-gradient(to right top, #fffafa, #f5c63c);
+$gradient-bg-dark: linear-gradient(to right top, #0b0b0b, #925ff0);
+
 $primary-t: #0B0B0B;
 $primary-t-dark: #FFFAFA;
 $secondary-t: #F5C63C;
@@ -11,6 +16,8 @@ $secondary-t-dark: #925FF0;
 @mixin light-theme {
     --primary-bg-color: #{$primary-bg};
     --secondary-bg-color: #{$secondary-bg};
+
+    --gradient-bg-color: #{$gradient-bg};
 
     --primary-t-color: #{$primary-t};
     --secondary-t-color: #{$secondary-t};
@@ -21,6 +28,8 @@ $secondary-t-dark: #925FF0;
 @mixin dark-theme {
     --primary-bg-color: #{$primary-bg-dark};
     --secondary-bg-color: #{$secondary-bg-dark};
+
+    --gradient-bg-color: #{$gradient-bg-dark};
 
     --primary-t-color: #{$primary-t-dark};
     --secondary-t-color: #{$secondary-t-dark};

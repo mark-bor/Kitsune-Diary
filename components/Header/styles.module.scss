@@ -15,8 +15,6 @@
 
   background-color: var(--primary-bg-color);
   border-radius: $secondary-radius;
-  border: none;
-  transition: 0.5s;
 }
 
 .logo {
@@ -90,6 +88,9 @@
 @media screen and (max-width: 768px) {
   .header {
     height: auto;
+    
+    border: none;
+    transition: 0.5s;
   }
   .header.activeHeader {
     position: fixed;
@@ -123,8 +124,8 @@
         .link {
           justify-content: flex-start;
 
-          font-size: 29px;
-          line-height: 1.2;
+          font-size: 27px;
+          line-height: 1.3;
         }
       }
     }

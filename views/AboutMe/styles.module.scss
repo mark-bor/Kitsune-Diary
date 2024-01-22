@@ -69,41 +69,74 @@
 
 // ------------------------------------------------------- CONTACTS
 .contacts {
-    height: 50vh;
+    padding: 50px 0;
 
     display: flex;
     justify-content: center;
-    gap: 30vh;
+    flex-wrap: wrap;
+    row-gap: 50px;
+    column-gap: 30vh;
     
     .leftPartOfBlock, .rightPartOfBlock {
         width: auto;
+        height: auto;
     }
 
     .leftPartOfBlock {
         flex-direction: row;
+        align-items: flex-start;
     }
     
     .rightPartOfBlock {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
     }
 }
 
-.email, .phone {
-    display: inline-block;
+.links {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+
+    .link {
+        padding: 3px 10px 3px 5px;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        background-color: $primary-bg;
+        border-radius: 7px;
+
+        .linkName {
+            color: $primary-t;
+            font-size: 15px;
+        }
+    }
+}
+
+.emailAndPhone {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
 
     color: var(--primary-t-color);
-
     font-size: 16px;
     font-weight: 400;
+
+    span {
+        display: inline-block;
+    }
 }
 
 .resumes {
     .resumesTitle {
-        margin:10px 0 10px 0;
+        margin-bottom: 10px;
+
         font-size: 20px;
-        font-weight: 600;
+        font-weight: 500;
         color: var(--primary-t-color);
     }
 
@@ -123,31 +156,6 @@
             border-radius: 10px;
             color: var(--secondary-t-color);
         }
-    }
-}
-
-.links {
-    padding: 15px 20px;
-
-    display: grid;
-    grid-template-columns: 50px 50px 50px;
-    grid-template-rows: 50px 50px;
-    gap: 20px;
-
-    // backdrop-filter: $blur-bg;
-    // background-color: $primary-bg;
-    border-radius: $secondary-radius;
-
-    .link {
-        width: 50px;
-        height: 50px;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        background-color: $primary-bg;
-        border-radius: $secondary-radius;
     }
 }
 
@@ -196,7 +204,7 @@
     }
 
     // ------------------------------------------------------- CONTACTS
-    .email, .phone {
+    .emailAndPhone {
         font-size: 14px;
     }
 
@@ -210,16 +218,6 @@
                 width: 45px;
                 height: 45px;
             }
-        }
-    }
-
-    .links {
-        grid-template-columns: 40px 40px 40px;
-        grid-template-rows: 40px 40px;
-
-        .link {
-            width: 40px;
-            height: 40px;
         }
     }
 }
@@ -273,20 +271,20 @@
 
     // ------------------------------------------------------- CONTACTS
     .contacts {
-        height: auto;
-        padding-bottom: 40px;
+        padding: 50px 15px;
 
         flex-direction: column;
         justify-content: flex-start;
-        gap: 40px;
-    
-        .rightPartOfBlock {
-            align-items: center;
-        }
+        align-items: flex-start;
+        gap: 30px;    
+    }
+
+    .links {
+        justify-content: flex-start;
+        flex-wrap: wrap;
     }
     
-    .email, .phone {
-        width: 80vw;
+    .emailAndPhone {
         font-size: 17px;
     }
 
@@ -300,13 +298,5 @@
         .resumesList {
             justify-content: flex-start;
         }
-    }
-
-    .links {
-        width: 100vw;
-        padding: 25px 0;
-    
-        display: flex;
-        justify-content: center;    
     }
 }
