@@ -24,7 +24,10 @@ export default function Certificate({data, isActive = true}: CertificateProps) {
         <p className={styles.provider}>{data.provider}</p>
       </div>
 
-      <h2 className={styles.certificateName}>{data.name}</h2>
+      <a className={styles.certificateName} href={data.url} target='_blank'>
+        <span>{data.name}</span>
+        <Icon name={'external-link'} width={20} height={20} />
+      </a>
 
       <hr className={styles.line} style={{backgroundColor: data.color}} />
 
@@ -35,9 +38,6 @@ export default function Certificate({data, isActive = true}: CertificateProps) {
       </ul>
 
       <p className={styles.date}>{data.date}</p>
-      <a className={styles.link} href={data.url} target='_blank'>
-        <Icon name={'external-link'} width={20} height={20} />
-      </a>
     </section>
   )
 }
