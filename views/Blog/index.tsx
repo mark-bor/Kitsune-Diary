@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import Page from "../../components/Page/index";
 import { articles } from "../../lib/samples";
+import Page from "../../components/Page/index";
+import Article from "../../components/Article/index";
 import styles from "./styles.module.scss";
 
 
@@ -21,7 +22,11 @@ export default function Blog() {
         <ul className={styles.linksList}>
           {links.map((l) => (
             <li className={styles.linkWrap}>
-              <Link href={l.url} className={styles.link}>
+              <Link 
+                href={l.url} 
+                className={styles.link} 
+                style={{backgroundColor: l.name='twiterX' ? '#FFFFFF' : ''}}
+              >
                 <Icon 
                   icon={l.icon} 
                   name={l.name} 
@@ -37,7 +42,7 @@ export default function Blog() {
       <ul className={styles.articles}>
         {articles.map((a) => (
           <li className={styles.articleLinkWrap}>
-            <Link href={a.url} className={styles.articleLink}></Link> 
+            <Article data={a} />
           </li>
         ))}
       </ul>

@@ -1,0 +1,85 @@
+@use '../../styles/colors' as *;
+@use '../../styles/mixins' as *;
+
+.article {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    overflow: hidden;
+
+    .image {
+        display: block;
+        width: 100%;
+        height: 200px;
+
+        background-color: var(--primary-bg-color);
+        border-radius: $secondary-radius;
+    }
+
+    .title {
+        display: inline-block;
+        margin: 7px 0;
+        font-size: 20px;
+        font-weight: 700;        
+    }
+    .image:hover + .title, .title:hover {
+        text-decoration: 1px solid;
+        text-decoration-color: var(--primary-t-color);
+        text-decoration-line: underline;
+    }
+
+    .articleFooter {
+        padding-right: 5px;
+
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        span {
+            display: inline-block;
+    
+            font-size: 14px;
+            font-weight: 400;
+        }
+    
+        .readingTime {}
+    
+        .date {}
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .article {    
+        .image {
+            height: 120px;
+        }
+
+        .title {
+            font-size: 17px;
+        }
+
+        .articleFooter {    
+            span {        
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .article {    
+        .image {
+            height: 200px;
+        }
+
+        .title {
+            font-size: 19px;
+        }
+
+        .articleFooter {    
+            padding: 0;
+        }
+    }
+}

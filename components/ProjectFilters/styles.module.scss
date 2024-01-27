@@ -2,8 +2,6 @@
 @use '../../styles/mixins' as *;
 
 .filters {
-    padding: 20px 0;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,8 +14,11 @@
     .title {
         width: 70%;
         margin-top: 0;
-        margin-bottom: 10px;
-        color: var(--primary-t-color);
+        margin-bottom: 2px;
+
+        font-size: 24px;
+        font-weight: 700;
+        // letter-spacing: 0.7px;
     }
     
     .filter {
@@ -36,7 +37,7 @@
             align-items: center;
     
             background-color: var(--primary-bg-color);
-            border-radius: 7px;
+            border-radius: calc(10px - 2px);
         
             font-size: 17px;
             line-height: 1.3em;    
@@ -76,41 +77,32 @@
 
 @media screen and (max-width: 425px) {
     .filters {
-        width: calc(100vw - 30px);
-        height: calc(100vh - 30px);
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        z-index: 15;
-
         display: none;
-        align-items: center;
         
-        background-color: var(--primary-bg-color);
-        border-radius: 15px;
-
         .filterButtonClose {
             display: block;
+            width: 30px;
             height: 30px;
             margin-bottom: 30px;
             position: absolute;
-            top: 30px;
-            right: 30px;
+            top: 20px;
+            right: 20px;
         }
 
         .title {
+            width: 100%;
             margin-bottom: 20px;
             font-size: 28px;
         }
 
         .filter {
+            width: 100%;
             padding: 0;
             background-color: var(--primary-bg-color);
     
             .filterButton {
                 padding: 5px;
                 background-color: var(--secondary-bg-color);
-                color: $primary-t;
                 font-size: 22px;
             }
     
@@ -127,6 +119,18 @@
     }
     
     .filters.filtersActive {
+        width: 100vw;
+        height: 100vh;
+        padding: 20px;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+
         display: flex;
+        align-items: center;
+        
+        background-color: var(--primary-bg-color);
     }
 }
