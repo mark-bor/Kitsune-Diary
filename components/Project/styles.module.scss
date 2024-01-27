@@ -1,0 +1,91 @@
+@use '../../styles/colors' as *;
+@use '../../styles/mixins' as *;
+
+.project {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+
+    background-color: var(--primary-bg-color);
+    border-radius: 10px;
+
+    h2 {
+        margin-bottom: 5px;
+
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: wrap;
+        column-gap: 5px;
+
+        .title {
+            font-size: 20px;
+            font-weight: 700;
+        }
+    
+        .status {
+            padding: 3px 7px;
+        
+            border-radius: 10px;
+    
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+        .statusOpen {
+            background-color: #76a1e080;
+        }
+        .statusClose {
+            background-color: #90d85580;
+        }
+    }
+
+    .description {
+        max-height: calc(1.15em * 3);
+        overflow: hidden;
+        
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.15em;
+    }
+
+    .kindOf {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+.project:hover {
+    .title {
+        text-decoration: 1px solid;
+        text-decoration-color: var(--primary-t-color);
+        text-decoration-line: underline;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .project {
+        h2 {    
+            .title {
+                font-size: 28px;
+            } 
+            
+            .status {
+                font-size: 14px;
+            }
+        }
+
+        .description {
+            max-height: calc(1.15em * 4);
+            font-size: 17px;
+        }
+
+        .kindOf {    
+            font-size: 17px;
+        }
+    }
+}

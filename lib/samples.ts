@@ -1,41 +1,86 @@
 export const linksForContact = [
   {
-    title: 'linkedin', 
-    icon: 'mingcute:linkedin-line', 
-    url: 'https://www.linkedin.com/in/mark-bordakov-8441bb241/'
+    title: "linkedin", 
+    icon: "mingcute:linkedin-line", 
+    url: "https://www.linkedin.com/in/mark-bordakov-8441bb241/"
   },
   {
-    title: 'whatsapp', 
-    icon: 'mingcute:whatsapp-line', 
-    url: 'https://wa.me/+380957625669'
+    title: "whatsapp", 
+    icon: "mingcute:whatsapp-line", 
+    url: "https://wa.me/+380957625669"
   },
   {
-    title: 'telegram', 
-    icon: 'mingcute:telegram-line', 
-    url: 'https://t.me/marchi003'
+    title: "telegram", 
+    icon: "mingcute:telegram-line", 
+    url: "https://t.me/marchi003"
+  },
+]
+
+export const articles = [
+  { 
+    id: 1, 
+    url: "#", 
+    title: "Article One, First Article",
+    date: "2023-01-01T00:00:00",
+    readingTime: 0,
+  },
+  { id: 2, 
+    url: "#",
+    title: "Article Two, Second Article",
+    date: "2023-01-01T00:00:00",
+    readingTime: 0,
+  },
+  { id: 3, 
+    url: "#",
+    title: "Article Three, Third Article",
+    date: "2023-01-01T00:00:00",
+    readingTime: 0,
+  },
+  { id: 4, 
+    url: "#",
+    title: "Article Four, Fourth Article",
+    date: "2023-01-01T00:00:00",
+    readingTime: 0,
   },
 ]
 
 export const projects = [
-  { id: 1 },
-  { id: 2 },
-  { id: 3 },
-  { id: 4 },
-  { id: 5 },
-  { id: 6 },
-  { id: 7 },
-  { id: 8 },
-]
-
-export const articles = [
-  { id: 1, url: '#' },
-  { id: 2, url: '#' },
-  { id: 3, url: '#' },
-  { id: 4, url: '#' },
-  { id: 5, url: '#' },
-  { id: 6, url: '#' },
-  { id: 7, url: '#' },
-  { id: 8, url: '#' },
+  { 
+    id: 1,
+    url: "#",
+    title: "Lanze",
+    description: "Platform for freelancers and work searching that is base on blockchain.",
+    kindOf: "commercial",
+    category: "other",
+    staus: "in process",
+  },
+  { 
+    id: 2,
+    url: "#",
+    title: "Pasword Generator",
+    description: "Website for password generating. Numbers, upper and lower case letters, symbols are available.",
+    kindOf: "pet-project",
+    category: "generators",
+    staus: "completed",
+  },
+  { 
+    id: 3,
+    url: "#",
+    title: "Event Timer",
+    description: "Timer for counting time to a certain day or event.",
+    kindOf: "pet-project",
+    category: "timers",
+    staus: "in process",
+  },
+  { 
+    id: 4,
+    url: "#",
+    title: "Percent or Deposit Calculator",
+    description: "Calculator for counting deposit percent.",
+    kindOf: "pet-project",
+    category: "calculators",
+    staus: "completed",
+  },
 ]
 
 export const certificate = [
@@ -84,13 +129,13 @@ export const filtersOfProjects: ProjectFilters[] = [
     key: "status",
     label: "Status",
     options: [
-      { key: "open", label: "In process" },
-      { key: "closed", label: "Completed" },
+      { key: "in-process", label: "In process" },
+      { key: "completed", label: "Completed" },
     ],
   },
   {
-    key: "type",
-    label: "Scope",
+    key: "kind",
+    label: "Kind",
     options: [
       { key: "commercial", label: "Commercial" },
       { key: "pet-project", label: "Pet-project" },
@@ -98,8 +143,8 @@ export const filtersOfProjects: ProjectFilters[] = [
     ],
   },
   {
-    key: "type",
-    label: "Type",
+    key: "category",
+    label: "Category",
     options: [
       { key: "calculator", label: "Calculators" },
       { key: "timer", label: "Timers" },
