@@ -56,8 +56,8 @@
     gap: 20px;
     
     .option {
-      width: 60px;
-      height: 30px;
+      width: 24px;
+      height: 24px;
       color: var(--primary-t-color);
       border-radius: 10px;
     }
@@ -136,6 +136,11 @@
     .options {
       justify-content: flex-start;
       gap: 30px;
+      
+      .option {
+        width: 30px;
+        height: 30px;
+      }
     }
 
     .socialNetworks {
@@ -179,5 +184,44 @@
     height: 30px;
 
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+
+    transition: 200ms;
+
+  }
+  .menuButton::before, 
+  .menuButton::after {
+    content: "";
+    display: block;
+    height: 3px;
+    
+    background-color: var(--primary-t-color);
+    border-radius: 2px;
+    transition: 200ms;
+  }
+  .menuButton::before {
+    width: 100%;
+  }
+  .menuButton::after {
+    width: 70%;
+  }
+
+  .menuButton.close {
+    position: relative;
+    justify-content: center;
+  }
+  .menuButton.close::before, 
+  .menuButton.close::after {
+    position: absolute;
+  }
+  .menuButton.close::before {
+    width: 100%;
+    transform: rotateZ(-45deg);
+  }
+  .menuButton.close::after {
+    width: 100%;
+    transform: rotateZ(45deg);
   }
 }

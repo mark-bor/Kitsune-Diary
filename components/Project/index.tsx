@@ -18,7 +18,7 @@ type ProjectProps = {
 
 export default function Project({data}: ProjectProps) {
   return (
-    <Link href={data.url} className={styles.project}>
+    <Link href={data.url} target='_blank' className={styles.project}>
       <h2>
         <span className={styles.title}>{data.title}</span>
         <span 

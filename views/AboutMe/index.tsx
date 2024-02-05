@@ -62,8 +62,8 @@ export default function AboutMe() {
             <h2 className={styles.resumesTitle}>Resumes:</h2>
 
             <ul className={styles.resumesList}>
-              {resumes.map((r) => 
-                <li>
+              {resumes.map((r, i) => 
+                <li key={i}>
                   <Link 
                     target={'_blank'} 
                     href={r.url} 

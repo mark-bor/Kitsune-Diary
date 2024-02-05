@@ -45,9 +45,8 @@ export default function Header() {
         </ul>
 
         <div className={styles.options}>
-          {/* <div className={styles.option}></div> */}
           <Dropdown items={themeItems} click={changeTheme}>
-            <Icon className={styles.option} name='sun-moon' width={30} height={30} />
+            <Icon className={styles.option} name='sun-moon' width={26} height={26} />
           </Dropdown>
         </div>
 
@@ -62,8 +61,10 @@ export default function Header() {
         </ul>
       </nav>
 
-      <button className={styles.menuButton} onClick={() => setMenu(!menu)}>
-        <Icon name={menu ? 'x' : 'menu'} width={30} height={30} />
+      <button 
+        className={clsx(styles.menuButton, menu ? styles.close : null)} 
+        onClick={() => setMenu(!menu)}
+      >
       </button>
     </header>
   )
