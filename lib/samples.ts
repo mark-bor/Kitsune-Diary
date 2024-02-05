@@ -47,7 +47,7 @@ export const articles = [
 export const projects = [
   { 
     id: 1,
-    url: "#",
+    url: "https://lanze.org/",
     title: "Lanze",
     description: "Platform for freelancers and work searching that is base on blockchain.",
     kindOf: "commercial",
@@ -61,16 +61,16 @@ export const projects = [
     description: "Website for password generating. Numbers, upper and lower case letters, symbols are available.",
     kindOf: "pet-project",
     category: "generators",
-    staus: "completed",
+    staus: "in process",
   },
   { 
     id: 3,
-    url: "#",
+    url: "https://calendar-timer.netlify.app/",
     title: "Event Timer",
     description: "Timer for counting time to a certain day or event.",
     kindOf: "pet-project",
     category: "timers",
-    staus: "in process",
+    staus: "completed",
   },
   { 
     id: 4,
@@ -79,7 +79,7 @@ export const projects = [
     description: "Calculator for counting deposit percent.",
     kindOf: "pet-project",
     category: "calculators",
-    staus: "completed",
+    staus: "in process",
   },
 ]
 

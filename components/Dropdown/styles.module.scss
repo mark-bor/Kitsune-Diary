@@ -25,22 +25,26 @@
     align-items: flex-end;
     gap: 5px;
 
-    background-color: var(--secondary-bg-color);
+    background-color: var(--primary-bg-color);
     border-radius: 10px;
 
     .item {
         width: 80px;
         padding: 3px 5px;
         
-        border-radius: 7px;
+        border-radius: 5px;
         cursor: pointer;
         outline: none;
+        transition: 100ms;
         
         font-family: '__Inter_Fallback_725fdb', '__Inter_Fallback_Fallback_725fdb', sans-serif;
         font-style: normal;
         font-size: 18px;
         font-weight: 500;
         color: var(--primary-t-color);
+    }
+    .item:hover {
+        background-color: var(--secondary-bg-color);
     }
 }
 
