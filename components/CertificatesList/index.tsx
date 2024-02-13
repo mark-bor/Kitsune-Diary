@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
-import { certificate } from '../../lib/samples';
+import { certificate } from '../../lib/samples/samples';
 import Certificate from '../Certificate/index';
 import styles from "./styles.module.scss";
 import 'swiper/css';

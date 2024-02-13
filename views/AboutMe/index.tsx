@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Icon } from '@iconify/react';
 import Page from '../../components/Page/index';
 import CertificatesList from '../../components/CertificatesList/index';
-import { resumes, socialNetworks } from '../../lib/samples';
+import { resumes, socialNetworks } from '../../lib/samples/samples';
 import portrait from '../../public/portrait.jpg';
 import styles from "./styles.module.scss";
 import 'swiper/css';
@@ -17,7 +17,7 @@ import 'swiper/css/effect-cube';
 
 export default function AboutMe() {
   return (
-    <Page title='The Kitsune Diary | About Me'>
+    <Page title='About Me'>
       <section className={styles.hero}>
         <div className={styles.leftPartOfBlock}>
           <p className={styles.profile}>Dedicated and enthusiastic Junior Front-end Developer with a passion for crafting seamless and user-centric web applications using React and TypeScript. With a solid foundation in web development, I am eager to leverage my skills and creativity to contribute to projects that demand innovative solutions and exceptional user experiences.</p>
@@ -33,8 +33,9 @@ export default function AboutMe() {
     
       <section className={styles.contacts}>
         <nav className={styles.links}>
-          {socialNetworks.map((sn) => 
+          {socialNetworks.map((sn, i) => 
             <Link 
+              key={i}
               target={'_blank'} 
               href={sn.url} 
               className={styles.link}

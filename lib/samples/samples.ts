@@ -20,66 +20,27 @@ export const articles = [
   { 
     id: 1, 
     url: "#", 
-    title: "Article One, First Article",
+    title: "Article",
     date: "2023-01-01T00:00:00",
     readingTime: 0,
   },
   { id: 2, 
     url: "#",
-    title: "Article Two, Second Article",
+    title: "Article",
     date: "2023-01-01T00:00:00",
     readingTime: 0,
   },
   { id: 3, 
     url: "#",
-    title: "Article Three, Third Article",
+    title: "Article",
     date: "2023-01-01T00:00:00",
     readingTime: 0,
   },
   { id: 4, 
     url: "#",
-    title: "Article Four, Fourth Article",
+    title: "Article",
     date: "2023-01-01T00:00:00",
     readingTime: 0,
-  },
-]
-
-export const projects = [
-  { 
-    id: 1,
-    url: "https://lanze.org/",
-    title: "Lanze",
-    description: "Platform for freelancers and work searching that is base on blockchain.",
-    kindOf: "commercial",
-    category: "other",
-    staus: "in process",
-  },
-  { 
-    id: 2,
-    url: "#",
-    title: "Pasword Generator",
-    description: "Website for password generating. Numbers, upper and lower case letters, symbols are available.",
-    kindOf: "pet-project",
-    category: "generators",
-    staus: "in process",
-  },
-  { 
-    id: 3,
-    url: "https://calendar-timer.netlify.app/",
-    title: "Event Timer",
-    description: "Timer for counting time to a certain day or event.",
-    kindOf: "pet-project",
-    category: "timers",
-    staus: "completed",
-  },
-  { 
-    id: 4,
-    url: "#",
-    title: "Percent or Deposit Calculator",
-    description: "Calculator for counting deposit percent.",
-    kindOf: "pet-project",
-    category: "calculators",
-    staus: "in process",
   },
 ]
 
@@ -115,43 +76,6 @@ export const certificate = [
     date: "May 5, 2022",
     color: "#78A2E1",
     url: "https://takct-server.netlify.app/Certificates/UXUI-design.pdf",
-  },
-]
-
-export type ProjectFilters = {
-  key: string,
-  label: string,
-  options: { key: string, label: string }[],
-}
-
-export const filtersOfProjects: ProjectFilters[] = [
-  {
-    key: "status",
-    label: "Status",
-    options: [
-      { key: "in-process", label: "In process" },
-      { key: "completed", label: "Completed" },
-    ],
-  },
-  {
-    key: "kind",
-    label: "Kind",
-    options: [
-      { key: "commercial", label: "Commercial" },
-      { key: "pet-project", label: "Pet-project" },
-      // { key: "volunteering", label: "Volunteering" },
-    ],
-  },
-  {
-    key: "category",
-    label: "Category",
-    options: [
-      { key: "calculator", label: "Calculators" },
-      { key: "timer", label: "Timers" },
-      { key: "generator", label: "Generators" },
-      { key: "game", label: "Games" },
-      { key: "other", label: "Other" },
-    ],
   },
 ]
 

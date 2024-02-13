@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import { articles } from "../../lib/samples";
+import { articles } from "../../lib/samples/samples";
 import Page from "../../components/Page/index";
 import Article from "../../components/Article/index";
 import styles from "./styles.module.scss";
@@ -15,13 +15,13 @@ const links = [
 
 export default function Blog() {
   return (
-    <Page title='The Kitsune Diary | Blog'>
+    <Page title='Blog'>
       <section className={styles.links}>
         <h1 className={styles.title}>Blog in social media:</h1>
 
         <ul className={styles.linksList}>
-          {links.map((l) => (
-            <li className={styles.linkWrap}>
+          {links.map((l, i) => (
+            <li key={i} className={styles.linkWrap}>
               <Link href={l.url} className={styles.link}>
                 <Icon icon={l.icon} name={l.name} width={40}/>
               </Link>
@@ -31,8 +31,8 @@ export default function Blog() {
       </section>
 
       <ul className={styles.articles}>
-        {articles.map((a) => (
-          <li className={styles.articleLinkWrap}>
+        {articles.map((a, i) => (
+          <li key={i} className={styles.articleLinkWrap}>
             <Article data={a} />
           </li>
         ))}

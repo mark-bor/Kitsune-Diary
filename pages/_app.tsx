@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import AppWrap from '../components/AppWrap/index';
 import { makeStore, AppStore } from '../lib/redux/store'
@@ -15,6 +16,9 @@ export default function TheKitsuneDiary({ Component, pageProps }: AppProps) {
   return (
     <Provider store={storeRef.current}>
       <AppWrap>
+        <Head>
+          <link rel="icon" href="./logo.svg"/>
+        </Head>
         <Component {...pageProps} />
       </AppWrap>
     </Provider>

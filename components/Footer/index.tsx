@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
-import { linksForContact } from '../../lib/samples';
+import { linksForContact } from '../../lib/samples/samples';
 import styles from './styles.module.scss';
 import logo from '../../public/logo.svg';
 
