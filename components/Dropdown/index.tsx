@@ -6,6 +6,7 @@ type DropdownProps = {
   children: any
   items: string[]
   click: any
+  className?: any
 }
 
 export default function Dropdown(props: DropdownProps) {
@@ -15,7 +16,7 @@ export default function Dropdown(props: DropdownProps) {
         {props.children}
       </Menu.Button>
 
-      <Menu.Items className={styles.items}>
+      <Menu.Items className={clsx(styles.items, props.className)}>
         {props.items.map((item, i) => (
           <button 
             key={i} 

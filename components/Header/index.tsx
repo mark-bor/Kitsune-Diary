@@ -6,7 +6,7 @@ import { Icon as Brand } from '@iconify/react';
 import Icon from '../Icon/index';
 import { useAppDispatch } from '../../lib/redux/hook'
 import { setTheme } from '../../lib/theme/themeSlice'
-import { linksForContact } from '../../lib/samples';
+import { linksForContact } from '../../lib/samples/samples';
 import Dropdown from '../../components/Dropdown/index';
 import styles from './styles.module.scss';
 import logo from '../../public/logo.svg';
@@ -45,7 +45,7 @@ export default function Header() {
         </ul>
 
         <div className={styles.options}>
-          <Dropdown items={themeItems} click={changeTheme}>
+          <Dropdown items={themeItems} click={changeTheme} className={styles.dropdown}>
             <Icon className={styles.option} name='sun-moon' width={26} height={26} />
           </Dropdown>
         </div>

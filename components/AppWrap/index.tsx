@@ -12,34 +12,23 @@ const inter = Inter({
     weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 })
 
-type AppThemeData = {
+type AppWrapProps = {
     children: any
 }
 
-export default function AppWrap({children}: AppThemeData) {
-    const theme = useAppSelector(state => state.theme);
-    // const [position, setPosition] = useState(0);
+export default function AppWrap({children}: AppWrapProps) {
+    const appTheme = useAppSelector(state => state.theme);
+    const [theme, setTheme] = useState('dark');
 
-    // const scroll = () => {
-    //     const appWraper = document.getElementById('app-wraper');
-    //     const imageLeft = Number(appWraper?.clientWidth) - window.innerHeight;
-    //     const y: number = 100 * window.pageYOffset / imageLeft;
-    //     setPosition(y);
-    // }
-
-    // useEffect(() => {
-    //     if (window.innerWidth > 425) {
-    //         scroll();
-    //         window.addEventListener('scroll', scroll);
-    //     }
-    // })
-
+    useEffect(() => {
+        setTheme(appTheme)
+    }, [appTheme])
+    
     return (
         <div 
             id='app-wraper'
             className={clsx(inter.className, styles.appWrap)} 
             data-theme={theme}
-            // style={{backgroundPositionY: `-${position}px`}}
         >
             <div className={styles.gradient}></div>
             {children}
