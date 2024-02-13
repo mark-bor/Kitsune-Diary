@@ -4,14 +4,14 @@ import Footer from "../Footer/index";
 
 type PageProps = {
     children: any
-    title: string
+    title?: string
 }
 
 export default function Page({ children, title }: PageProps) {
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>Kitsune Diary {title ? `| ${title}` : ''}</title>
       </Head>
       
       <Header />

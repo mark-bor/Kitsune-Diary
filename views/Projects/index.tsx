@@ -14,7 +14,7 @@ export default function Projects() {
   const [projects, setProjects] = useState([...projectsList]);
 
   return (
-    <Page title='The Kitsune Diary | Projects'>
+    <Page title='Projects'>
       <section className={styles.projects}>
         <button className={styles.filterButtonOpen} onClick={() => setFilter(true)}>
           <Icon name='filter' width={30} height={30} />

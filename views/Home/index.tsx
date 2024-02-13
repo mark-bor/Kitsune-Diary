@@ -11,7 +11,7 @@ const rubik = Rubik({
 
 export default function Home() {
   return (
-    <Page title='The Kitsune Diary'>
+    <Page>
       <section className={styles.hero}>
         <h1 className={clsx(rubik.className, styles.text)}>Welcome to Kitsune Diary!</h1>
       </section>
