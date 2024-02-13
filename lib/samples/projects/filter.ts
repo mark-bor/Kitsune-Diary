@@ -17,7 +17,7 @@ async function changeFilter(filters: string[], optional: OptionalData) {
   return filter;
 }
 
-export async function useFilter(
+export async function filter(
   filters: string[], filterBy: any, projects: ProjectData[], 
   optional?: OptionalData
 ) {

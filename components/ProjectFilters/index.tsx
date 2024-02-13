@@ -9,7 +9,7 @@ import {
   ProjectData 
 } from '../../lib/samples/projects/projects';
 import {
-  useFilter,
+  filter,
   useFilterByStatus,
   useFilterByKind,
   useFilterByCategory,
@@ -38,20 +38,26 @@ export default function ProjectFilters({
   setIsFilter
 }: ProjectFiltersProps) {
 
-  const localDB: LocalDBData = hasCookie('projects_filter') 
-  ? JSON.parse(getCookie('projects_filter')) as LocalDBData
-  : {status:[], kind:[], category:[]}
+  let localDB: LocalDBData;
+
+  if (hasCookie('projects_filter')) {
+    const localData: any = getCookie('projects_filter');
+    localDB = JSON.parse(localData);
+  }
+  else {
+    localDB = {status: [], kind: [], category: []}
+  }
 
   const [status, setStatus] = useState<string[]>([...localDB.status])
   const [kind, setKind] = useState<string[]>([...localDB.kind])
   const [category, setCategory] = useState<string[]>([...localDB.category])
   const [ldb, setLDB] = useState<boolean>(false)
 
-  const checkFilters = (filter: string, value: string) => {
+  const checkFilters = (filterName: string, value: string) => {
     if (localDB) {
-      if (filter==='status') return localDB.status.includes(value) || false
-      if (filter==='kind') return localDB.kind.includes(value) || false
-      if (filter==='category') return localDB.category.includes(value) || false
+      if (filterName==='status') return localDB.status.includes(value) || false
+      if (filterName==='kind') return localDB.kind.includes(value) || false
+      if (filterName==='category') return localDB.category.includes(value) || false
     }
   }
 
@@ -59,18 +65,18 @@ export default function ProjectFilters({
     return filter.useFilterBy(projects, value).length
   }
 
-  const filterProjects = (filter?: string, value?: string) => {
-    useFilter(
+  const filterProjects = (filterName?: string, value?: string) => {
+    filter(
       status, useFilterByStatus, projects,
-      (filter==='status' && value) ? {setFilter: setStatus, value} : undefined
+      (filterName==='status' && value) ? {setFilter: setStatus, value} : undefined
     ).then((arrByStatus) =>
-      useFilter(
+      filter(
         kind, useFilterByKind, arrByStatus, 
-        (filter==='kind' && value) ? {setFilter: setKind, value} : undefined
+        (filterName==='kind' && value) ? {setFilter: setKind, value} : undefined
       ).then((arrByKind) =>
-        useFilter(
+        filter(
           category, useFilterByCategory, arrByKind, 
-          (filter==='category' && value) ? {setFilter: setCategory, value} : undefined
+          (filterName==='category' && value) ? {setFilter: setCategory, value} : undefined
         ).then(async (arrByCategory) => {
 
           await setProjects(arrByCategory);

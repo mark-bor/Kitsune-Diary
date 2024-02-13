@@ -1,4 +1,4 @@
-export * from './useFilter'
+export * from './filter'
 
 export * from './useStatusFilter'
 export * from './useKindFilter'
