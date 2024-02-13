@@ -1,37 +1,60 @@
+import { useState } from "react";
 import Link from "next/link";
 import clsx from "clsx";
+import Icon from "../Icon/index";
+import { ProjectData } from "../../lib/samples/projects/projects";
 import styles from "./styles.module.scss";
 
 
 type ProjectProps = {
-  data: {
-    id: number,
-    url: string,
-    title: string,
-    description: string,
-    kindOf: string,
-    category: string,
-    staus: string,
-  },
+  data: ProjectData,
 }
 
 
 export default function Project({data}: ProjectProps) {
+  const [inform, setInform] = useState(false);
+  
+  const toggleInform = (event: any) => {
+    event.preventDefault();
+    setInform(!inform)
+  }
+
   return (
     <Link href={data.url} target='_blank' className={styles.project}>
+      <div className={clsx(styles.information, inform ? styles.active : null)}>
+        <button 
+          className={styles.button}
+          onClick={toggleInform}
+        >
+          <Icon name={inform ? 'x' : 'info'} width={20} height={20} />
+        </button>
+
+        {inform ? (
+          <>
+            <p className={styles.description}>{data.description}</p>
+
+            <ul className={styles.steckList}>
+              {data.steck.map((s, i) => (
+                <li key={i} className={styles.steckItem}>{s}</li>
+              ))}
+            </ul>
+          </>
+        ) : null}
+      </div>
+
       <h2>
         <span className={styles.title}>{data.title}</span>
         <span 
           className={clsx(
             styles.status, 
-            data.staus==='in process' ? styles.statusOpen : styles.statusClose
+            data.status==='completed' ? styles.statusClose : styles.statusOpen
           )}
-        >{data.staus}</span>
+        >{data.status}</span>
       </h2>
 
       <p className={styles.description}>{data.description}</p>
 
-      <p className={styles.kindOf}>{data.kindOf}</p>
+      <p className={styles.kindOf}>{data.kind}</p>
     </Link> 
   )
 }

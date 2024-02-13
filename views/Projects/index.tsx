@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Icon from '../../components/Icon/index';
 import Page from '../../components/Page/index';
-import { projects, filtersOfProjects } from '../../lib/samples';
+import { projects as projectsList } from '../../lib/samples/projects/projects';
 import ProjectFilters from '../../components/ProjectFilters/index';
 import Project from '../../components/Project/index';
 import clsx from "clsx";
@@ -9,21 +9,23 @@ import styles from "./styles.module.scss";
 
 
 export default function Projects() {
-  const [filters, setFilters] = useState(false);
+  const [filter, setFilter] = useState(false);
   const [listStyle, setListStyle] = useState('grid');
+  const [projects, setProjects] = useState([...projectsList]);
 
   return (
     <Page title='The Kitsune Diary | Projects'>
       <section className={styles.projects}>
-        <button className={styles.filterButtonOpen} onClick={() => setFilters(!filters)}>
+        <button className={styles.filterButtonOpen} onClick={() => setFilter(true)}>
           <Icon name='filter' width={30} height={30} />
         </button>
 
         <div>
           <ProjectFilters 
-            filters={filtersOfProjects} 
-            isFilters={filters} 
-            setIsFilters={setFilters} 
+            projects={projectsList} 
+            setProjects={setProjects}
+            isFilter={filter} 
+            setIsFilter={setFilter} 
           />
         </div>
 
