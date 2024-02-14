@@ -67,7 +67,7 @@
                 padding: 3px 7px;
 
                 background-color: var(--secondary-bg-color);
-                border-radius: 15px;
+                border-radius: 5px;
 
                 font-size: 14px;
                 font-weight: 400;
@@ -90,23 +90,29 @@
 
     h2 {
         margin-right: 25px;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
 
         display: inline-flex;
         align-items: center;
         flex-wrap: wrap;
-        column-gap: 5px;
+        gap: 7px;
         
         .title {
             cursor: pointer;
             font-size: 20px;
             font-weight: 700;
+            line-height: 1.07em;
+        }
+        .title:hover {
+            text-decoration: 1px solid;
+            text-decoration-color: var(--primary-t-color);
+            text-decoration-line: underline;
         }
     
         .status {
             padding: 3px 7px;
         
-            border-radius: 10px;
+            border-radius: 5px;
     
             font-size: 12px;
             font-weight: 400;
@@ -131,18 +137,11 @@
 
     .kindOf {
         position: absolute;
-        bottom: 10px;
+        bottom: 8px;
         left: 10px;
 
         font-size: 14px;
         font-weight: 600;
-    }
-}
-.project:hover {
-    .title {
-        text-decoration: 1px solid;
-        text-decoration-color: var(--primary-t-color);
-        text-decoration-line: underline;
     }
 }
 
