@@ -7,13 +7,13 @@ import Checkbox from '../../components/Checkbox/index';
 import { 
   projectsFilters, ProjectsFiltersData, 
   ProjectData 
-} from '../../lib/samples/projects/projects';
+} from '../../lib/samples/PROJECTS';
 import {
   filter,
   useFilterByStatus,
-  useFilterByKind,
   useFilterByCategory,
-} from '../../lib/samples/projects/index';
+  useFilterByType,
+} from '../../lib/projects/index';
 import styles from "./styles.module.scss";
 
 
@@ -26,8 +26,8 @@ type ProjectFiltersProps = {
 
 type LocalDBData = {
   status: string[], 
-  kind: string[], 
-  category: string[]
+  category: string[],
+  type: string[], 
 }
 
 
@@ -45,19 +45,19 @@ export default function ProjectFilters({
     localDB = JSON.parse(localData);
   }
   else {
-    localDB = {status: [], kind: [], category: []}
+    localDB = {status: [], category: [], type: []}
   }
 
   const [status, setStatus] = useState<string[]>([...localDB.status])
-  const [kind, setKind] = useState<string[]>([...localDB.kind])
   const [category, setCategory] = useState<string[]>([...localDB.category])
+  const [type, setType] = useState<string[]>([...localDB.type])
   const [ldb, setLDB] = useState<boolean>(false)
 
   const checkFilters = (filterName: string, value: string) => {
     if (localDB) {
       if (filterName==='status') return localDB.status.includes(value) || false
-      if (filterName==='kind') return localDB.kind.includes(value) || false
       if (filterName==='category') return localDB.category.includes(value) || false
+      if (filterName==='type') return localDB.type.includes(value) || false
     }
   }
 
@@ -71,15 +71,15 @@ export default function ProjectFilters({
       (filterName==='status' && value) ? {setFilter: setStatus, value} : undefined
     ).then((arrByStatus) =>
       filter(
-        kind, useFilterByKind, arrByStatus, 
-        (filterName==='kind' && value) ? {setFilter: setKind, value} : undefined
-      ).then((arrByKind) =>
+        category, useFilterByCategory, arrByStatus, 
+        (filterName==='category' && value) ? {setFilter: setCategory, value} : undefined
+      ).then((arrByCategory) =>
         filter(
-          category, useFilterByCategory, arrByKind, 
-          (filterName==='category' && value) ? {setFilter: setCategory, value} : undefined
-        ).then(async (arrByCategory) => {
+          type, useFilterByType, arrByCategory, 
+          (filterName==='type' && value) ? {setFilter: setType, value} : undefined
+        ).then(async (arrByType) => {
 
-          await setProjects(arrByCategory);
+          await setProjects(arrByType);
           setLDB(!ldb);
 
         })
@@ -94,7 +94,7 @@ export default function ProjectFilters({
   useMemo(() => {
     setCookie(
       'projects_filter', 
-      JSON.stringify({ status, kind, category })
+      JSON.stringify({ status, category, type })
     )
   }, [ldb])
 

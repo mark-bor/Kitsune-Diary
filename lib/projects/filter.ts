@@ -1,4 +1,4 @@
-import { ProjectData } from './projects';
+import { ProjectData } from '../samples/PROJECTS';
 
 type OptionalData = {
   setFilter: any

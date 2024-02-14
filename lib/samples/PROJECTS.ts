@@ -1,8 +1,8 @@
 import {
   useFilterByStatus,
-  useFilterByKind,
   useFilterByCategory,
-} from './index';
+  useFilterByType,
+} from '../projects/index';
 
 export type ProjectsFiltersData = {
   key: string,
@@ -21,8 +21,8 @@ export type ProjectData = {
   description: string
   steck: string[]
   status: string
-  kind: string
   category: string
+  type: string
 }
 
 export const projectsFilters: ProjectsFiltersData[] = [
@@ -36,18 +36,19 @@ export const projectsFilters: ProjectsFiltersData[] = [
     useFilterBy: useFilterByStatus,
   },
   {
-    key: "kind",
-    label: "Kind",
+    key: "category",
+    label: "Category",
     options: [
       { key: "commercial", label: "Commercial" },
+      { key: "personal", label: "Personal" },
       { key: "pet-project", label: "Pet-project" },
       // { key: "volunteering", label: "Volunteering" },
     ],
-    useFilterBy: useFilterByKind,
+    useFilterBy: useFilterByCategory,
   },
   {
-    key: "category",
-    label: "Category",
+    key: "type",
+    label: "Type",
     options: [
       { key: "calculators", label: "Calculators" },
       { key: "timers", label: "Timers" },
@@ -55,49 +56,69 @@ export const projectsFilters: ProjectsFiltersData[] = [
       { key: "games", label: "Games" },
       { key: "other", label: "Other" },
     ],
-    useFilterBy: useFilterByCategory,
+    useFilterBy: useFilterByType,
   },
 ]
 
-export const projects: ProjectData[] = [
+export const PROJECTS: ProjectData[] = [
   { 
     id: 1,
     url: "https://lanze.org/",
     title: "Lanze",
     description: "Platform for freelancers and work searching that is base on blockchain.",
-    steck: ["HTML", "CSS", "SCSS", "TypeScript", "React.js", "Next.js", "Redux"],
+    steck: ["HTML", "CSS", "SCSS", "TypeScript", "React", "Next", "Redux"],
     status: "in-process",
-    kind: "commercial",
-    category: "other",
+    category: "commercial",
+    type: "other",
   },
   { 
     id: 2,
-    url: "#",
-    title: "Pasword Generator",
-    description: "Website for password generating. Numbers, upper and lower case letters, symbols are available.",
-    steck: ["HTML", "CSS", "JavaScript", "Vue.js", "Vite", "Pinia"],
+    url: "https://kitsune-diary.vercel.app/",
+    title: "Kitsune Diary",
+    description: "Personal website with blog and professional information.",
+    steck: ["HTML", "CSS", "SCSS", "TypeScript", "React", "Next", "Redux"],
     status: "in-process",
-    kind: "pet-project",
-    category: "generators",
+    category: "personal",
+    type: "other",
   },
   { 
     id: 3,
-    url: "https://calendar-timer.netlify.app/",
-    title: "Event Timer",
-    description: "Timer for counting time to a certain day or event.",
-    steck: ["HTML", "CSS", "JavaScript", "TypeScript", "Vue.js", "Vite", "Pinia"],
-    status: "completed",
-    kind: "pet-project",
-    category: "timers",
+    url: "#",
+    title: "Pasword Generator",
+    description: "Website for password generating. Numbers, upper and lower case letters, symbols are available.",
+    steck: ["HTML", "CSS", "JavaScript", "Vue", "Vite", "Pinia"],
+    status: "in-process",
+    category: "pet-project",
+    type: "generators",
   },
   { 
     id: 4,
+    url: "https://calendar-timer.netlify.app/",
+    title: "Event Timer",
+    description: "Timer for counting time to a certain day or event.",
+    steck: ["HTML", "CSS", "JavaScript", "TypeScript", "Vue", "Vite", "Pinia"],
+    status: "completed",
+    category: "pet-project",
+    type: "timers",
+  },
+  { 
+    id: 5,
     url: "#",
     title: "Calculator",
     description: "Calculator for counting deposit percent.",
     steck: [],
     status: "in-process",
-    kind: "pet-project",
-    category: "calculators",
+    category: "pet-project",
+    type: "calculators",
+  },
+  { 
+    id: 6,
+    url: "https://github.com/mark-bor/React-Native-CV-Application",
+    title: "My Mobile App",
+    description: "Mobile app made with React Native. It can be started through Expo.",
+    steck: ["JavaScript", "CSS", "React", "React Native", "Expo", "React Navigation"],
+    status: "completed",
+    category: "pet-project",
+    type: "other",
   },
 ]

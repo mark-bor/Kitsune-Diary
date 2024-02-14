@@ -1,4 +1,4 @@
-import { ProjectData } from './projects';
+import { ProjectData } from '../samples/PROJECTS';
 
 export function useFilterByStatus(projects: ProjectData[], value: string) {
   return projects?.filter((project) => {
