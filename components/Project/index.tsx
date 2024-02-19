@@ -25,7 +25,13 @@ export default function Project({data}: ProjectProps) {
           className={styles.button}
           onClick={toggleInform}
         >
-          <Icon name={inform ? 'x' : 'info'} width={20} height={20} />
+          {
+            inform ? (
+              <Icon name={inform ? 'x' : 'info'} width={20} height={20} /> 
+            ) : (
+              'i'
+            )
+          }
         </button>
 
         {inform ? (

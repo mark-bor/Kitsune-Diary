@@ -51,10 +51,16 @@
     }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 500px) {
     .technologies {
+        padding: 40px;
+
+        .title {
+            text-align: left;
+        }
+
         .technologiesList {
-            width: 80vw;            
+            width: 100%;      
         }
     }
 }

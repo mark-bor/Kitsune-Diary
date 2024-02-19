@@ -83,9 +83,9 @@ export const PROJECTS: ProjectData[] = [
   },
   { 
     id: 3,
-    url: "#",
-    title: "Pasword Generator",
-    description: "Website for password generating. Numbers, upper and lower case letters, symbols are available.",
+    url: "https://kd-generators.netlify.app",
+    title: "Generators",
+    description: "A website with various generators such as passwords, dates and others.",
     steck: ["HTML", "CSS", "JavaScript", "Vue", "Vite", "Pinia"],
     status: "in-process",
     category: "pet-project",
@@ -104,7 +104,7 @@ export const PROJECTS: ProjectData[] = [
   { 
     id: 5,
     url: "#",
-    title: "Calculator",
+    title: "Calculators",
     description: "Calculator for counting deposit percent.",
     steck: [],
     status: "in-process",
