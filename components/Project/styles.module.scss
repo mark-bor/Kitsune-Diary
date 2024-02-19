@@ -36,12 +36,16 @@
             justify-content: center;
             align-items: center;
 
-            border-radius: 50%;
+            background-color: var(--secondary-bg-color);
+            border-radius: 5px;
             transition: 200ms;
             cursor: pointer;
+            opacity: 0.7;
+
+            font-weight: 600;
         }
         .button:hover {
-            background-color: var(--secondary-bg-color);
+            opacity: 1;
         }
 
         .description {
@@ -81,11 +85,6 @@
         padding: 10px;
 
         background-color: var(--primary-bg-color);
-
-        .button {
-            top: 10px;
-            right: 10px;
-        }
     }
 
     h2 {
