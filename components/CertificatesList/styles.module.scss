@@ -2,17 +2,15 @@
 @use '../../styles/mixins' as *;
 
 
-.certificates, .certificatesMobile {
-    padding: 50px 0;
-    
+.certificates {    
+    display: flex;
     justify-content: center;
     align-items: center;
     
-    overflow: hidden;
-
     .certificatesList {
-        padding: 38px 0;
-    
+        margin: 50px 0;
+        padding: 38px;
+        
         div:first-of-type {
             display: flex;
             align-items: center;
@@ -27,21 +25,37 @@
     }
 }
 
-.certificates {
-    display: flex;
+.certificatesList.desktop {
+    display: block;
 }
 
-.certificatesMobile {
+.certificatesList.mobile {
     display: none;
 }
 
 
+@media screen and (max-width: 1024px) {
+    .certificates {            
+        .certificatesList {
+            padding: 38px 20px;    
+        }        
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .certificates {            
+        .certificatesList {
+            padding: 38px 0;    
+        }        
+    }
+}
+
 @media screen and (max-width: 768px) {
-    .certificates {
+    .certificatesList.desktop {
         display: none;
     }
     
-    .certificatesMobile {
+    .certificatesList.mobile {
         display: flex;
     }
 }

@@ -1,26 +1,24 @@
+import { CertificateData } from "../../lib/samples/CERTIFICATES";
 import clsx from "clsx";
 import Icon from "../Icon/index";
 import styles from "./styles.module.scss";
 
 
 type CertificateProps = {
-  data: {
-    name: string,
-    provider: string,
-    description: string[],
-    date: string,
-    color: string,
-    url: string,
-  },
-  isActive?: boolean
+  data: CertificateData,
 }
 
  
-export default function Certificate({data, isActive = true}: CertificateProps) {
+export default function Certificate({data}: CertificateProps) {
   return (
     <section className={clsx(styles.certificate)}>
       <div className={styles.certificateHeader}>
-        <div className={styles.brand} style={{backgroundColor: data.color}}></div>
+        <div 
+          className={styles.brand} 
+          style={data.img ? {} : {backgroundColor: data.color}}
+        >
+          <img src={data.img} width={30} />
+        </div>
         <p className={styles.provider}>{data.provider}</p>
       </div>
 

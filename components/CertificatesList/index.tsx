@@ -1,7 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
-import { certificate } from '../../lib/samples/samples';
+import { CERTIFICATES } from '../../lib/samples/CERTIFICATES';
 import Certificate from '../Certificate/index';
+import clsx from "clsx";
 import styles from "./styles.module.scss";
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -17,36 +18,36 @@ export default function CertificatesList() {
     <>
       <section className={styles.certificates}>
         <Swiper
-          className={styles.certificatesList}
+          className={clsx(styles.certificatesList, styles.desktop)}
           modules={[Navigation, Pagination]}
           centeredSlides={true}
           slidesPerView={3}
           navigation
           pagination={{clickable: true}}
         >
-          {certificate.map((c, i) => (
+          {CERTIFICATES.map((c, i) => (
             <SwiperSlide 
               key={i}
               className={styles.certificateWrap} 
               style={{width: 'auto', marginRight: 0}}
             >
               {({ isActive }) => (
-                <Certificate data={c} isActive={isActive} />
+                <Certificate data={c} />
               )}
             </SwiperSlide>
           ))}
         </Swiper>
       </section>
 
-      <section className={styles.certificatesMobile}>
+      <section className={styles.certificates}>
         <Swiper
-          className={styles.certificatesList}
+          className={clsx(styles.certificatesList, styles.mobile)}
           modules={[Pagination]}
           centeredSlides={true}
           slidesPerView={1}
           pagination={{clickable: true}}
         >
-          {certificate.map((c, i) => (
+          {CERTIFICATES.map((c, i) => (
             <SwiperSlide key={i} className={styles.certificateWrap}>
               <Certificate data={c} />
             </SwiperSlide>
