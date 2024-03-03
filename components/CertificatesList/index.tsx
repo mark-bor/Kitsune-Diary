@@ -21,7 +21,7 @@ export default function CertificatesList() {
           className={clsx(styles.certificatesList, styles.desktop)}
           modules={[Navigation, Pagination]}
           centeredSlides={true}
-          slidesPerView={3}
+          slidesPerView={1}
           navigation
           pagination={{clickable: true}}
         >

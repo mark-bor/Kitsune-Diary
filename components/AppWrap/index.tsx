@@ -18,16 +18,16 @@ type AppWrapProps = {
 
 export default function AppWrap({children}: AppWrapProps) {
     const appTheme = useAppSelector(state => state.theme);
-    const [theme, setTheme] = useState('dark');
+    const [theme, setTheme] = useState<string>('dark');
+    const [font, setFont] = useState<string>();
 
-    useEffect(() => {
-        setTheme(appTheme)
-    }, [appTheme])
+    useEffect(() => setTheme(appTheme), [appTheme]);
+    useEffect(() => setFont(inter.className), [inter]);
     
     return (
         <div 
             id='app-wraper'
-            className={clsx(inter.className, styles.appWrap)} 
+            className={clsx(styles.appWrap, font)} 
             data-theme={theme}
         >
             <div className={styles.gradient}></div>

@@ -43,7 +43,7 @@ export default function AboutMe() {
               <Icon 
                 icon={sn.icon} 
                 name={sn.name} 
-                width={25} 
+                width={20} 
                 color={sn.icon==='cib:upwork' ? '#14A800' : ''} 
               />
               <span className={styles.linkName}>{sn.name}</span>
