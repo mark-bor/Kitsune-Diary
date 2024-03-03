@@ -38,17 +38,23 @@ export default function Project({data}: ProjectProps) {
           <>
             <p className={styles.description}>{data.description}</p>
 
-            <ul className={styles.steckList}>
-              {data.steck.map((s, i) => (
-                <li key={i} className={styles.steckItem}>{s}</li>
-              ))}
-            </ul>
+            {(data.steck && data.steck.length>0) ? (
+              <ul className={styles.steck}>
+                {data.steck?.slice(0, 5).map((s, i) => (
+                  <li key={i} className={styles.steckItem}>{s}</li>
+                ))}
+                <li className={clsx(styles.steckItem, styles.more)}>{`${data.steck.length - 5}+`}</li>
+              </ul>
+            ) : null}
           </>
         ) : null}
       </div>
 
       <h2>
-        <Link href={data.url} target='_blank' className={styles.title}>{data.title}</Link>
+        <Link 
+          href={`/projects/${data.id}`}
+          className={styles.title}
+        >{data.title}</Link>
         <span 
           className={clsx(
             styles.status, 

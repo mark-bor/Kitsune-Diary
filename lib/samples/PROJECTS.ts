@@ -15,8 +15,9 @@ export type ProjectsFiltersData = {
 }
 
 export type ProjectData = {
-  id: number
+  id: string
   url: string
+  github?: string
   title: string
   description: string
   steck: string[]
@@ -62,8 +63,8 @@ export const projectsFilters: ProjectsFiltersData[] = [
 
 export const PROJECTS: ProjectData[] = [
   { 
-    id: 1,
-    url: "https://lanze.org/",
+    id: "lanze",
+    url: "https://lanze.org",
     title: "Lanze",
     description: "Platform for freelancers and work searching that is base on blockchain.",
     steck: ["HTML", "CSS", "SCSS", "TypeScript", "React", "Next", "Redux"],
@@ -72,8 +73,9 @@ export const PROJECTS: ProjectData[] = [
     type: "other",
   },
   { 
-    id: 2,
-    url: "https://kitsune-diary.vercel.app/",
+    id: "kitsune-diary",
+    url: "https://kitsune-diary.vercel.app",
+    github: "https://github.com/mark-bor/Kitsune-Diary",
     title: "Kitsune Diary",
     description: "Personal website with blog and professional information.",
     steck: ["HTML", "CSS", "SCSS", "TypeScript", "React", "Next", "Redux"],
@@ -82,8 +84,9 @@ export const PROJECTS: ProjectData[] = [
     type: "other",
   },
   { 
-    id: 3,
+    id: "generators",
     url: "https://kd-generators.netlify.app",
+    github: "https://github.com/mark-bor/Generators",
     title: "Generators",
     description: "A website with various generators such as passwords, dates and others.",
     steck: ["HTML", "CSS", "JavaScript", "Vue", "Vite", "Pinia"],
@@ -92,8 +95,8 @@ export const PROJECTS: ProjectData[] = [
     type: "generators",
   },
   { 
-    id: 4,
-    url: "https://calendar-timer.netlify.app/",
+    id: "event-timer",
+    url: "https://calendar-timer.netlify.app",
     title: "Event Timer",
     description: "Timer for counting time to a certain day or event.",
     steck: ["HTML", "CSS", "JavaScript", "TypeScript", "Vue", "Vite", "Pinia"],
@@ -102,7 +105,7 @@ export const PROJECTS: ProjectData[] = [
     type: "timers",
   },
   { 
-    id: 5,
+    id: "calculators",
     url: "#",
     title: "Calculators",
     description: "Calculator for counting deposit percent.",
@@ -112,9 +115,10 @@ export const PROJECTS: ProjectData[] = [
     type: "calculators",
   },
   { 
-    id: 6,
-    url: "https://github.com/mark-bor/React-Native-CV-Application",
-    title: "My Mobile App",
+    id: "mobile-app",
+    url: "https://expo.dev/@marchi003/MyCV-Application?release-channel=default",
+    github: "https://github.com/mark-bor/React-Native-CV-Application",
+    title: "Mobile App",
     description: "Mobile app made with React Native. It can be started through Expo.",
     steck: ["JavaScript", "CSS", "React", "React Native", "Expo", "React Navigation"],
     status: "completed",

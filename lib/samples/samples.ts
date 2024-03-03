@@ -16,69 +16,6 @@ export const linksForContact = [
   },
 ]
 
-export const articles = [
-  { 
-    id: 1, 
-    url: "#", 
-    title: "Article",
-    date: "2023-01-01T00:00:00",
-    readingTime: 0,
-  },
-  { id: 2, 
-    url: "#",
-    title: "Article",
-    date: "2023-01-01T00:00:00",
-    readingTime: 0,
-  },
-  { id: 3, 
-    url: "#",
-    title: "Article",
-    date: "2023-01-01T00:00:00",
-    readingTime: 0,
-  },
-  { id: 4, 
-    url: "#",
-    title: "Article",
-    date: "2023-01-01T00:00:00",
-    readingTime: 0,
-  },
-]
-
-export const certificate = [
-  { 
-    name: "TypeScript",
-    provider: "ITVDN",
-    description: ["TypeScript", "Classes and interfaces", "Universals", "Variables and date types", "Modules"],
-    date: "Jun 25, 2023",
-    color: "#457FD6",
-    url: "https://takct-server.netlify.app/Certificates/TypeScript.pdf",
-  },
-  { 
-    name: "Front-end",
-    provider: "Prometheus",
-    description: ["HTML", "CSS", "Sass/SCSS", "JavaScript", "React", "Bootstrap"],
-    date: "Dec 10, 2022",
-    color: "#6B237D",
-    url: "https://takct-server.netlify.app/Certificates/Front-end.pdf",
-  },
-  { 
-    name: "QA course",
-    provider: "DataArt",
-    description: ["Manual Testing", "Agile/Scrum", "Test Documentation", "Test Planning", "Test Case Design"],
-    date: "May 26, 2022",
-    color: "#FF9900",
-    url: "https://takct-server.netlify.app/Certificates/QA.pdf",
-  },
-  { 
-    name: "UX/UI design",
-    provider: "ITVDN",
-    description: ["UX/UI", "Responsive Design", "Web Design", "Mobile Design"],
-    date: "May 5, 2022",
-    color: "#78A2E1",
-    url: "https://takct-server.netlify.app/Certificates/UXUI-design.pdf",
-  },
-]
-
 export const resumes = [
   {
     name: 'FE 1', 

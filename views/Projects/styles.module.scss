@@ -2,7 +2,7 @@
 @use '../../styles/mixins' as *;
 
 .projects {
-    padding: 70px 0;
+    padding: 95px 0;
 
     display: grid;
     grid-template-columns: 260px auto;
@@ -48,9 +48,9 @@
     padding: 20px;
 
     display: flex;
-    gap: 20px;    
+    gap: 20px; 
 }
-.projectsListList {
+.projectsList.list {
     flex-direction: column;
 
     .project {
@@ -58,7 +58,7 @@
         height: 100px;
     }
 }
-.projectsListGrid {
+.projectsList.grid {
     flex-wrap: wrap;
 
     .project {
@@ -67,8 +67,13 @@
     }
 }
 
+.message {
+    margin: 20px 0;
+    text-align: center;
+}
+
 @media screen and (max-width: 1120px) {
-    .projectsListGrid {        
+    .projectsList.grid {        
         .project {
             width: calc(33.33% - (20px * 2 / 3));
             height: 180px;
@@ -77,7 +82,7 @@
 }
 
 @media screen and (max-width: 930px) {
-    .projectsListGrid {        
+    .projectsList.grid {        
         .project {
             width: calc(50% - (20px * 1 / 2));
         }
@@ -96,7 +101,7 @@
         margin: 0 20px 10px auto;
     }
 
-    .projectsListGrid {        
+    .projectsList.gid {        
         .project {
             width: calc(33.33% - (20px * 2 / 3));
         }
@@ -104,7 +109,7 @@
 }
 
 @media screen and (max-width: 670px) {
-    .projectsListGrid {        
+    .projectsList.grid {        
         .project {
             width: calc(50% - (20px * 1 / 2));
         }

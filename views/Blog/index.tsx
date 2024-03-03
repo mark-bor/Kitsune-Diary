@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import { articles } from "../../lib/samples/samples";
+import { ARTICLES } from "../../lib/samples/ARTICLES";
 import Page from "../../components/Page/index";
 import Article from "../../components/Article/index";
 import styles from "./styles.module.scss";
@@ -30,13 +30,17 @@ export default function Blog() {
         </ul>
       </section>
 
-      <ul className={styles.articles}>
-        {articles.map((a, i) => (
-          <li key={i} className={styles.articleLinkWrap}>
-            <Article data={a} />
-          </li>
-        ))}
-      </ul>
+      {(ARTICLES && ARTICLES.length>0) ? (
+        <ul className={styles.articles}>
+          {ARTICLES.map((a, i) => (
+            <li key={i} className={styles.articleLinkWrap}>
+              <Article data={a} />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <h2 className={styles.message}>No articles</h2>
+      )}
     </Page>
   )
 }

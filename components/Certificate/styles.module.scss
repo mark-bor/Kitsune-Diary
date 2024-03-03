@@ -4,8 +4,8 @@
 
 .certificate {
     position: relative;
-    width: 220px;
-    height: 330px;
+    width: 430px;
+    height: 300px;
     padding: 20px;
 
     background-color: var(--primary-bg-color);
@@ -61,42 +61,35 @@
 
     .descriptionList {
         margin-top: 10px;
-        margin-left: 8px;
 
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 3px;
         text-align: left;
 
         .description {
-            padding-left: 5px;
+            display: inline-block;
+            padding: 3px 7px;
 
-            list-style-type: disc;
-            list-style-position: outside;
-            text-align: left;
-            font-size: 14px;
-            line-height: 1.15;
-        }
-
-        .description::marker {
-            content: '•';
+            background-color: var(--secondary-bg-color);
+            border-radius: 5px;
 
             font-size: 14px;
-            line-height: 1.15;
+            line-height: 1.15em;
         }
     }
 
     .date {
         position: absolute;
-        left: 15px;
-        bottom: 10px;
+        right: 20px;
+        bottom: 15px;
 
         font-size: 12px;
     }
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
     .certificate {
         width: 260px;
         height: 360px;
@@ -114,11 +107,7 @@
         .descriptionList {
             .description {
                 font-size: 15px;
-            }
-    
-            .description::marker {
-                font-size: 15px;
-            }
+            }    
         }
     
         .date {

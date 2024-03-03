@@ -49,18 +49,22 @@ export default function Projects() {
             ))}
           </div>
 
-          <ul 
-            className={clsx(
-              styles.projectsList, 
-              listStyle==='list' ? styles.projectsListList : styles.projectsListGrid
-            )}
-          >
-            {projects.map((p, i) => (
-              <li key={i} className={styles.project}>
-                <Project data={p} />
-              </li>
-            ))}
-          </ul>
+          {(projects && projects.length>0) ? (
+            <ul 
+              className={clsx(
+                styles.projectsList, 
+                listStyle==='list' ? styles.list : styles.grid
+              )}
+            >
+              {projects.map((p, i) => (
+                <li key={i} className={styles.project}>
+                  <Project data={p} />
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <h2 className={styles.message}>No projects</h2>
+          )}
         </div>
       </section>
     </Page>

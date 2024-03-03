@@ -55,7 +55,7 @@
             margin-bottom: 10px;
         }
 
-        .steckList {
+        .steck {
             width: calc(100% - 20px);
 
             position: absolute;
@@ -76,6 +76,9 @@
                 font-size: 14px;
                 font-weight: 400;
                 line-height: 1.15em;
+            }
+            .steckItem.more {
+                color: var(--primary-bg-color);
             }
         }
     }
