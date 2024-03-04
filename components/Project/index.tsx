@@ -14,12 +14,13 @@ type ProjectProps = {
 export default function Project({data}: ProjectProps) {
   const [inform, setInform] = useState(false);
   
-  const toggleInform = () => {
-    setInform(!inform)
+  const toggleInform = (event: any) => {
+    event.preventDefault();
+    setInform(!inform);
   }
 
   return (
-    <section className={styles.project}>
+    <Link href={`/projects/${data.id}`} className={styles.project}>
       <div className={clsx(styles.information, inform ? styles.active : null)}>
         <button 
           className={styles.button}
@@ -51,10 +52,7 @@ export default function Project({data}: ProjectProps) {
       </div>
 
       <h2>
-        <Link 
-          href={`/projects/${data.id}`}
-          className={styles.title}
-        >{data.title}</Link>
+        <span className={styles.title}>{data.title}</span>
         <span 
           className={clsx(
             styles.status, 
@@ -66,6 +64,6 @@ export default function Project({data}: ProjectProps) {
       <p className={styles.description}>{data.description}</p>
 
       <p className={styles.kindOf}>{data.category}</p>
-    </section> 
+    </Link> 
   )
 }

@@ -11,7 +11,7 @@ export type CertificateData = {
 export const CERTIFICATES: CertificateData[] = [
   { 
     name: "TypeScript",
-    img: "https://itvdn.com/Content/img/about/logo-black.png",
+    img: "https://yt3.googleusercontent.com/ERYZVkctUtQRn1F2IViDTlSyVCD_RQjMcfHLYD3rdPVKY2Wrv0Kqp7nynm1kmVrJQJ0z4L_E=s900-c-k-c0x00ffffff-no-rj",
     provider: "ITVDN",
     description: ["TypeScript", "Classes and interfaces", "Universals", "Variables and date types", "Modules"],
     date: "Jun 25, 2023",
@@ -38,7 +38,7 @@ export const CERTIFICATES: CertificateData[] = [
   },
   { 
     name: "UX/UI design",
-    img: "https://itvdn.com/Content/img/about/logo-black.png",
+    img: "https://yt3.googleusercontent.com/ERYZVkctUtQRn1F2IViDTlSyVCD_RQjMcfHLYD3rdPVKY2Wrv0Kqp7nynm1kmVrJQJ0z4L_E=s900-c-k-c0x00ffffff-no-rj",
     provider: "ITVDN",
     description: ["UX/UI", "Responsive Design", "Web Design", "Mobile Design"],
     date: "May 5, 2022",

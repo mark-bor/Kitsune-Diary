@@ -53,7 +53,7 @@ export default function Projects() {
             <ul 
               className={clsx(
                 styles.projectsList, 
-                listStyle==='list' ? styles.list : styles.grid
+                listStyle==='grid' ? styles.grid : styles.list
               )}
             >
               {projects.map((p, i) => (
