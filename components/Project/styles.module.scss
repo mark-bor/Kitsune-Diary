@@ -105,11 +105,6 @@
             font-weight: 700;
             line-height: 1.07em;
         }
-        .title:hover {
-            text-decoration: 1px solid;
-            text-decoration-color: var(--primary-t-color);
-            text-decoration-line: underline;
-        }
     
         .status {
             padding: 3px 7px;
@@ -144,6 +139,15 @@
 
         font-size: 14px;
         font-weight: 600;
+    }
+}
+.project:hover {
+    h2 {
+        .title {
+            text-decoration: 1px solid;
+            text-decoration-color: var(--primary-t-color);
+            text-decoration-line: underline;
+        }
     }
 }
 
