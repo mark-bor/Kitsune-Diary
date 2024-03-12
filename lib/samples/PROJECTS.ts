@@ -106,10 +106,10 @@ export const PROJECTS: ProjectData[] = [
   },
   { 
     id: "calculators",
-    url: "#",
+    url: "https://calculators-spot.web.app",
     title: "Calculators",
-    description: "Calculator for counting deposit percent.",
-    steck: [],
+    description: "A website with various calculators such as mathematical formulas, financial and others.",
+    steck: ["HTML", "CSS", "SCSS", "TypeScript", "Angular"],
     status: "in-process",
     category: "pet-project",
     type: "calculators",
