@@ -44,7 +44,9 @@ export default function Project({data}: ProjectProps) {
                 {data.steck?.slice(0, 5).map((s, i) => (
                   <li key={i} className={styles.steckItem}>{s}</li>
                 ))}
-                <li className={clsx(styles.steckItem, styles.more)}>{`${data.steck.length - 5}+`}</li>
+                {(data.steck.length-5)>0 ? (
+                  <li className={clsx(styles.steckItem, styles.more)}>{data.steck.length-5}+</li>
+                ) : null}
               </ul>
             ) : null}
           </>
