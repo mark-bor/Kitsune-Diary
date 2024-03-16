@@ -86,7 +86,7 @@ export const PROJECTS: ProjectData[] = [
   { 
     id: "generators",
     url: "https://generators-spot.netlify.app/",
-    github: "https://github.com/mark-bor/Generators",
+    github: "https://github.com/mark-bor/Generators-Spot",
     title: "Generators",
     description: "A website with various generators such as passwords, dates and others. It also has small Back-end part.",
     steck: ["HTML", "CSS", "TypeScript", "Vue", "Nuxt"],
@@ -95,10 +95,11 @@ export const PROJECTS: ProjectData[] = [
     type: "generators",
   },
   { 
-    id: "event-timer",
+    id: "calendar-timer",
     url: "https://calendar-timer.netlify.app",
-    title: "Event Timer",
-    description: "Timer for counting time to a certain day or event.",
+    github: "https://github.com/mark-bor/Calendar-Timer",
+    title: "Calendar Timer",
+    description: "One page site with timer for counting time to a certain day or event.",
     steck: ["HTML", "CSS", "JavaScript", "TypeScript", "Vue", "Vite", "Pinia"],
     status: "completed",
     category: "pet-project",
@@ -107,6 +108,7 @@ export const PROJECTS: ProjectData[] = [
   { 
     id: "calculators",
     url: "https://calculators-spot.web.app",
+    github: "https://github.com/mark-bor/Calculators-Spot",
     title: "Calculators",
     description: "A website with various calculators such as mathematical formulas, financial and others.",
     steck: ["HTML", "CSS", "SCSS", "TypeScript", "Angular"],
