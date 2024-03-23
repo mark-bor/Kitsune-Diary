@@ -53,6 +53,44 @@
     }
 }
 
+.articleFilters {
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+
+    li {
+        .articleFilter {
+            // padding: 0 1px;
+            cursor: pointer;
+
+            padding: 2px 7px;
+
+            border-radius: 5px;
+            background-color: var(--primary-bg-color);
+    
+            // font-size: 12px;
+            // font-weight: 400;
+            // line-height: 1.2em;
+
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.3em;
+            letter-spacing: 0.02em;
+        }
+    }
+    li.active {
+        .articleFilter {
+            // border-bottom: 1px solid var(--primary-t-color);
+            text-decoration-style: solid;
+            text-decoration-color: var(--primary-t-color);
+            text-decoration-line: underline;
+        }
+    }
+}
+
 .articles {
     padding: 45px;
     padding-bottom: 60px;

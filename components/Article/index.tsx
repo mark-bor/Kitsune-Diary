@@ -23,8 +23,11 @@ export default function Article({data}: ArticleProps) {
       ></div>
 
       <div className={styles.details}>
-        <h3 className={styles.title}>{data.title}</h3>
-        
+        <h3>
+          <span className={styles.title}>{data.title}</span>
+          <span className={styles.type}>{data.type}</span>
+        </h3>
+
         <div className={styles.articleFooter}>
           <p className={styles.readingTime}>{data.readingTime} min</p>  
           <p className={styles.date}>{reformatDate(data.date)}</p>
