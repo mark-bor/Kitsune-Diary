@@ -1,19 +1,22 @@
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import { ARTICLES } from "../../lib/samples/ARTICLES";
+import { links } from "../../lib/samples/samples";
+import { articleFilters, ARTICLES, ArticleData } from "../../lib/samples/ARTICLES";
 import Page from "../../components/Page/index";
 import Article from "../../components/Article/index";
+import clsx from "clsx";
 import styles from "./styles.module.scss";
 
 
-const links = [
-  {name: 'twiterX', icon: 'fa6-brands:x-twitter', url: '#'},
-  {name: 'telegram', icon: 'logos:telegram', url: '#'},
-  {name: 'instagram', icon: 'skill-icons:instagram', url: '#'},
-]
-
-
 export default function Blog() {
+  const [filter, setFilter] = useState<string>('all');
+
+  const articles: ArticleData[] = useMemo(() => {
+    if (filter==='all' || !filter) return ARTICLES;
+    return ARTICLES.filter((a) => a.type===filter);
+  }, [filter]);
+
   return (
     <Page title='Blog'>
       <section className={styles.links}>
@@ -30,9 +33,21 @@ export default function Blog() {
         </ul>
       </section>
 
-      {(ARTICLES && ARTICLES.length>0) ? (
+      <ul className={styles.articleFilters}>
+        {articleFilters.map((f, i) => (
+          <li className={f.key===filter ? styles.active : ''}>
+            <button 
+              key={i}
+              className={styles.articleFilter}
+              onClick={() => setFilter(f.key)}
+            >{f.label}</button>
+          </li>
+        ))}
+      </ul>
+
+      {(articles && articles.length>0) ? (
         <ul className={styles.articles}>
-          {ARTICLES.map((a, i) => (
+          {articles.map((a, i) => (
             <li key={i} className={styles.articleLinkWrap}>
               <Article data={a} />
             </li>
