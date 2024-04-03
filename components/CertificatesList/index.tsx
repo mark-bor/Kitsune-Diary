@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
 import clsx from "clsx";
-import { CERTIFICATES } from '../../lib/samples/CERTIFICATES';
 import Certificate from '../Certificate/index';
 import { useGetAllCertificatesQuery } from '../../lib/api/certificates/index';
 import styles from "./styles.module.scss";
