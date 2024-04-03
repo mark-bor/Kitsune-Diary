@@ -21,7 +21,7 @@ export default function AppWrap({children}: AppWrapProps) {
     const [theme, setTheme] = useState<string>('dark');
     const [font, setFont] = useState<string>();
 
-    useEffect(() => setTheme(appTheme), [appTheme]);
+    useEffect(() => setTheme(appTheme.theme), [appTheme]);
     useEffect(() => setFont(inter.className), [inter]);
     
     return (

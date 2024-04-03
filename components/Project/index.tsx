@@ -2,7 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import clsx from "clsx";
 import Icon from "../Icon/index";
-import { ProjectData } from "../../lib/samples/PROJECTS";
+import {ProjectData } from '../../lib/api/projects/index';
 import styles from "./styles.module.scss";
 
 

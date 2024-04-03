@@ -1,21 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
+import { hasCookie, getCookie, setCookie } from 'cookies-next';
 import Icon from '../../components/Icon/index';
 import Page from '../../components/Page/index';
-import { PROJECTS } from '../../lib/samples/PROJECTS';
 import ProjectFilters from '../../components/ProjectFilters/index';
 import Project from '../../components/Project/index';
 import clsx from "clsx";
+import {
+  useGetAllProjectsQuery,
+  GetProjectsData
+} from '../../lib/api/projects/index';
 import styles from "./styles.module.scss";
+
 
 const listStyles: {name: string, icon: 'grid-2x2' | 'rows-3'}[] = [
   {name: 'grid', icon: 'grid-2x2'},
   {name: 'list', icon: 'rows-3'},
 ]
 
+
 export default function Projects() {
+  let localDB: GetProjectsData;
+
+  if (hasCookie('projects_filter')) {
+    const localData: any = getCookie('projects_filter');
+    localDB = JSON.parse(localData);
+  }
+  else {
+    localDB = {status: [], category: [], type: []}
+  }
+
   const [filter, setFilter] = useState(false);
+  const [filters, setFilters] = useState<GetProjectsData>(localDB);
   const [listStyle, setListStyle] = useState('grid');
-  const [projects, setProjects] = useState([...PROJECTS]);
+  const {
+    data, isLoading,
+    error, isError
+  } = useGetAllProjectsQuery(filters || localDB);
+  
+  useMemo(() => {
+    setCookie( 'projects_filter', JSON.stringify(filters));
+  }, [filters])
+
+  const filterProjects = async (filterName: string, value: string) => {
+    let newFilter: string[] = [...filters[filterName]];
+
+    newFilter.includes(value) 
+      ? newFilter = newFilter.filter(e => e!=value) 
+      : newFilter.push(value);
+
+    setFilters({
+      ...filters,
+      [filterName]: newFilter
+    });
+  }
 
   return (
     <Page title='Projects'>
@@ -26,10 +63,11 @@ export default function Projects() {
 
         <div>
           <ProjectFilters 
-            projects={PROJECTS} 
-            setProjects={setProjects}
+            projects={data || []} 
             isFilter={filter} 
             setIsFilter={setFilter} 
+            filters={filters}
+            setFilters={filterProjects}
           />
         </div>
 
@@ -49,21 +87,27 @@ export default function Projects() {
             ))}
           </div>
 
-          {(projects && projects.length>0) ? (
+          {(data && data.length>0) ? (
             <ul 
               className={clsx(
                 styles.projectsList, 
                 listStyle==='grid' ? styles.grid : styles.list
               )}
             >
-              {projects.map((p, i) => (
+              {data.map((p, i) => (
                 <li key={i} className={styles.project}>
                   <Project data={p} />
                 </li>
               ))}
             </ul>
           ) : (
-            <h2 className={styles.message}>No projects</h2>
+            <h2 className={styles.message}>{
+              isLoading ? (
+                'Loading...'
+              ) : (
+                'No projects'
+              )
+            }</h2>
           )}
         </div>
       </section>
