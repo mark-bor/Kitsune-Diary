@@ -40,15 +40,10 @@ export const resumes = [
     color: '#672D50', 
     url: 'https://flowcv.com/resume/rrmtgok5b3'
   },
-    {
-      name: 'GW', 
+  {
+    name: 'GW', 
     color: '#D9D9D9', 
     url: 'https://flowcv.com/resume/vffhu00pnf'
-  },
-    {
-      name: 'FE 2', 
-    color: '#502C84', 
-    url: 'https://takct-server.netlify.app/CV/M%20Bordakov%20-%20Front-end.pdf'
   },
 ]
 

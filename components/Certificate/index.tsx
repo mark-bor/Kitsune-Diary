@@ -1,6 +1,6 @@
-import { CertificateData } from "../../lib/samples/CERTIFICATES";
 import clsx from "clsx";
 import Icon from "../Icon/index";
+import { CertificateData } from "../../lib/samples/CERTIFICATES";
 import styles from "./styles.module.scss";
 
 
@@ -17,7 +17,7 @@ export default function Certificate({data}: CertificateProps) {
           className={styles.brand} 
           style={data.img ? {} : {backgroundColor: data.color}}
         >
-          <img src={data.img} width={30} />
+          <img src={data.img} alt='brand logo' width={30} />
         </div>
         <p className={styles.provider}>{data.provider}</p>
       </div>

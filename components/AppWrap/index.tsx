@@ -22,7 +22,7 @@ export default function AppWrap({children}: AppWrapProps) {
     const [font, setFont] = useState<string>();
 
     useEffect(() => setTheme(appTheme.theme), [appTheme]);
-    useEffect(() => setFont(inter.className), [inter]);
+    useEffect(() => setFont(inter.className), []);
     
     return (
         <div 
