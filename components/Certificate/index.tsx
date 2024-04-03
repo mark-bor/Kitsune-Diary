@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import Icon from "../Icon/index";
-import { CertificateData } from "../../lib/samples/CERTIFICATES";
+import { CertificateData } from "../../lib/api/certificates/certificates.types";
 import styles from "./styles.module.scss";
 
 
