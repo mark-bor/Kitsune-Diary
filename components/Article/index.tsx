@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArticleData } from "../../lib/samples/ARTICLES";
+import { ArticleData } from "../../lib/api/articles/index";
 import styles from "./styles.module.scss";
 
 

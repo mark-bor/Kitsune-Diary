@@ -1,4 +1,4 @@
-import { ProjectData } from '../samples/PROJECTS';
+import { ProjectData } from '../api/projects/index';
 
 export function useFilterByType(projects: ProjectData[], value: string) {
   return projects?.filter((project) => {

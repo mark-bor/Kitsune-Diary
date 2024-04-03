@@ -1,6 +1,26 @@
 @use '../../styles/colors' as *;
 @use '../../styles/mixins' as *;
 
+.messageSection {
+    padding: 88px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .mirage {
+        width: 430px;
+        height: 300px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: var(--primary-bg-color);
+        border-radius: $secondary-radius;
+        text-align: center;
+    }
+}
 
 .certificates {    
     display: flex;
@@ -57,5 +77,14 @@
     
     .certificatesList.mobile {
         display: flex;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .messageSection {
+        .mirage {
+            width: 260px;
+            height: 360px;
+        }
     }
 }

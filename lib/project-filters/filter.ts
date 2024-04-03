@@ -1,4 +1,4 @@
-import { ProjectData } from '../samples/PROJECTS';
+import { ProjectData } from '../api/projects/index';
 
 type OptionalData = {
   setFilter: any

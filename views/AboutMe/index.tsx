@@ -21,7 +21,6 @@ export default function AboutMe() {
       <section className={styles.hero}>
         <div className={styles.leftPartOfBlock}>
           <p className={styles.profile}>👋 Hi, I'm a skilled Front-end developer with over 6 months of experience. I specialize in creating responsive, user-friendly web interfaces with server communication using HTML, CSS, JavaScript, TypeScript, React, and Vue.</p>
-          <p className={styles.profile}>🌟 I like turning ideas into interactive web applications and collaborating with cross-functional teams to deliver exceptional results. I'm always eager to learn and stay up-to-date with the latest web technologies.</p>
         </div>
 
         <div className={styles.rightPartOfBlock}>
