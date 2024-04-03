@@ -1,102 +1,44 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { hasCookie, getCookie, setCookie } from 'cookies-next';
+import React from 'react';
 import { Disclosure } from '@headlessui/react'
 import Icon from '../../components/Icon/index';
 import clsx from 'clsx';
 import Checkbox from '../../components/Checkbox/index';
-import { 
-  projectsFilters, ProjectsFiltersData, 
-  ProjectData 
-} from '../../lib/samples/PROJECTS';
 import {
-  filter,
-  useFilterByStatus,
-  useFilterByCategory,
-  useFilterByType,
-} from '../../lib/projects/index';
+  PROJECTS_FILTERS,
+  ProjectsFiltersData
+} from '../../lib/samples/PROJECTS_FILTERS';
+import { ProjectData, GetProjectsData } from '../../lib/api/projects/index';
 import styles from "./styles.module.scss";
 
 
 type ProjectFiltersProps = {
   projects: ProjectData[]
-  setProjects: any
   isFilter: boolean
   setIsFilter: any
-}
-
-type LocalDBData = {
-  status: string[], 
-  category: string[],
-  type: string[], 
+  filters: GetProjectsData
+  setFilters: any
 }
 
 
 export default function ProjectFilters({
   projects, 
-  setProjects,
   isFilter, 
-  setIsFilter
+  setIsFilter,
+  filters,
+  setFilters
 }: ProjectFiltersProps) {
 
-  let localDB: LocalDBData;
-
-  if (hasCookie('projects_filter')) {
-    const localData: any = getCookie('projects_filter');
-    localDB = JSON.parse(localData);
-  }
-  else {
-    localDB = {status: [], category: [], type: []}
-  }
-
-  const [status, setStatus] = useState<string[]>([...localDB.status])
-  const [category, setCategory] = useState<string[]>([...localDB.category])
-  const [type, setType] = useState<string[]>([...localDB.type])
-  const [ldb, setLDB] = useState<boolean>(false)
-
   const checkFilters = (filterName: string, value: string) => {
-    if (localDB) {
-      if (filterName==='status') return localDB.status.includes(value) || false
-      if (filterName==='category') return localDB.category.includes(value) || false
-      if (filterName==='type') return localDB.type.includes(value) || false
+    if (filters) {
+      if (filterName==='status') return filters.status.includes(value) || false
+      if (filterName==='category') return filters.category.includes(value) || false
+      if (filterName==='type') return filters.type.includes(value) || false
     }
   }
 
   const numberOfProjects = (filter: ProjectsFiltersData, value: string) => {
     return filter.useFilterBy(projects, value).length
   }
-
-  const filterProjects = (filterName?: string, value?: string) => {
-    filter(
-      status, useFilterByStatus, projects,
-      (filterName==='status' && value) ? {setFilter: setStatus, value} : undefined
-    ).then((arrByStatus) =>
-      filter(
-        category, useFilterByCategory, arrByStatus, 
-        (filterName==='category' && value) ? {setFilter: setCategory, value} : undefined
-      ).then((arrByCategory) =>
-        filter(
-          type, useFilterByType, arrByCategory, 
-          (filterName==='type' && value) ? {setFilter: setType, value} : undefined
-        ).then(async (arrByType) => {
-
-          await setProjects(arrByType);
-          setLDB(!ldb);
-
-        })
-      )
-    )
-  }
-
-  useEffect(() => {
-    if (projects?.length > 0) filterProjects();
-  }, []);
-
-  useMemo(() => {
-    setCookie(
-      'projects_filter', 
-      JSON.stringify({ status, category, type })
-    )
-  }, [ldb])
 
   return (
     <section className={clsx(styles.filters, isFilter ? styles.filtersActive : null)}>
@@ -106,7 +48,7 @@ export default function ProjectFilters({
 
       <h2 className={styles.title}>Filter by</h2>
 
-      {projectsFilters?.map((filter, i) => (
+      {PROJECTS_FILTERS?.map((filter, i) => (
         <div key={i} className={styles.filter}>
           <Disclosure>
             {({ open }) => (
@@ -131,7 +73,7 @@ export default function ProjectFilters({
                           number={numberOfProjects(filter, o.key)}
                           value={o.key}
                           defaultChecked={checkFilters(filter.key, o.key)}
-                          onChange={() => filterProjects(filter.key, o.key)} 
+                          onChange={() => setFilters(filter.key, o.key)} 
                         />
                       </li>
                     ))}
