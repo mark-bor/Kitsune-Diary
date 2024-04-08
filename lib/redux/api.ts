@@ -6,7 +6,14 @@ export const api = createApi({
   // The cache reducer expects to be added at `state.api` (already default - this is optional)
   reducerPath: 'api',
   // All of our requests will have URLs starting with '/fakeApi'
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://kd-server.onrender.com/api' }),
+  baseQuery: fetchBaseQuery({ 
+    baseUrl: 'https://kd-server.onrender.com/api',
+    prepareHeaders(headers, api) {
+      const api_key = process.env.KD_SERVER_API_KEY || process.env.NEXT_PUBLIC_KD_SERVER_API_KEY;
+      headers.set('API-Key', api_key || '');
+      return headers;
+    },
+  }),
   // The "endpoints" represent operations and requests for this server
   endpoints: ({}) => ({}),
 });

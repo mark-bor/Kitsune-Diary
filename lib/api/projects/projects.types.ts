@@ -1,3 +1,11 @@
+export type ErrorData = {
+    data: {
+        statusCode: number,
+        message: string
+    },
+    status: number
+}
+
 export type ProjectData = {
     id: string
     url: string
