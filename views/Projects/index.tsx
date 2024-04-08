@@ -7,7 +7,8 @@ import Project from '../../components/Project/index';
 import clsx from "clsx";
 import {
   useGetAllProjectsQuery,
-  GetProjectsData
+  GetProjectsData,
+  ErrorData
 } from '../../lib/api/projects/index';
 import styles from "./styles.module.scss";
 
@@ -57,10 +58,6 @@ export default function Projects() {
   return (
     <Page title='Projects'>
       <section className={styles.projects}>
-        <button className={styles.filterButtonOpen} onClick={() => setFilter(true)}>
-          <Icon name='filter' width={30} height={30} />
-        </button>
-
         <div>
           <ProjectFilters 
             projects={data || []} 
@@ -72,19 +69,25 @@ export default function Projects() {
         </div>
 
         <div>
-          <div className={styles.projectsListStyles}>
-            {listStyles.map((ls, i) => (
-              <button 
-                key={i}
-                className={clsx(
-                  styles.listStylesButton, 
-                  ls.name===listStyle ? styles.listStylesButtonActive : null
-                )}
-                onClick={() => setListStyle(ls.name)}
-              >
-                <Icon name={ls.icon} width={20} height={20} />
-              </button>
-            ))}
+          <div className={styles.controllers}>
+            <button className={styles.filterButtonOpen} onClick={() => setFilter(true)}>
+              <Icon name='filter' width={30} height={30} />
+            </button>
+
+            <div className={styles.projectsListStyles}>
+              {listStyles.map((ls, i) => (
+                <button 
+                  key={i}
+                  className={clsx(
+                    styles.listStylesButton, 
+                    ls.name===listStyle ? styles.listStylesButtonActive : null
+                  )}
+                  onClick={() => setListStyle(ls.name)}
+                >
+                  <Icon name={ls.icon} width={20} height={20} />
+                </button>
+              ))}
+            </div>
           </div>
 
           {(data && data.length>0) ? (
@@ -101,13 +104,12 @@ export default function Projects() {
               ))}
             </ul>
           ) : (
-            <h2 className={styles.message}>{
-              isLoading ? (
-                'Loading...'
-              ) : (
-                'No projects'
-              )
-            }</h2>
+            <h2 className={styles.message}>
+              {isLoading ? 'Loading...' : null}
+              {isError ? (
+                `Code ${(error as ErrorData).status}. ${(error as ErrorData).data.message}`
+              ) : null}
+            </h2>
           )}
         </div>
       </section>
