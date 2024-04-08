@@ -9,8 +9,7 @@ export const api = createApi({
   baseQuery: fetchBaseQuery({ 
     baseUrl: 'https://kd-server.onrender.com/api',
     prepareHeaders(headers, api) {
-      const api_key = process.env.KD_SERVER_API_KEY || process.env.NEXT_PUBLIC_KD_SERVER_API_KEY;
-      headers.set('API-Key', api_key || '');
+      headers.set('API-Key', process.env.NEXT_PUBLIC_KD_SERVER_API_KEY || '');
       return headers;
     },
   }),
