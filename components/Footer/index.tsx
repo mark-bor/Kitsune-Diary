@@ -30,7 +30,6 @@ export default function Footer() {
 
         <section className={styles.contacts}>
           <p className={styles.phone_mail}>mark12bord@gmail.com</p>
-          <p className={styles.phone_mail}>+380 95 762 56 69</p>
 
           <ul className={styles.socialNetworks}>
             {linksForContact.map((lfc, i) => (

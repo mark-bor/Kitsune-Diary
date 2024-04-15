@@ -150,6 +150,32 @@
         }
     }
 }
+.project.list {
+    display: flex;
+
+    .information.active {
+        .description {
+            width: auto;
+        }
+    }
+    
+    h2 {
+        width: 30%;
+        margin-right: 15px;
+        margin-bottom: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .description {
+        width: 60%;
+    }
+
+    .kindOf {
+        left: calc(((100% - 20px) / 3.33) + 25px);
+    }
+}
 
 @media screen and (max-width: 425px) {
     .project {

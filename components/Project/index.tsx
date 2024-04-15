@@ -2,16 +2,17 @@ import { useState } from "react";
 import Link from "next/link";
 import clsx from "clsx";
 import Icon from "../Icon/index";
-import {ProjectData } from '../../lib/api/projects/index';
+import { ProjectData } from '../../lib/api/projects/index';
 import styles from "./styles.module.scss";
 
 
 type ProjectProps = {
+  listStyle: string,
   data: ProjectData,
 }
 
 
-export default function Project({data}: ProjectProps) {
+export default function Project({listStyle, data}: ProjectProps) {
   const [inform, setInform] = useState(false);
   
   const toggleInform = (event: any) => {
@@ -20,7 +21,12 @@ export default function Project({data}: ProjectProps) {
   }
 
   return (
-    <Link href={`/projects/${data.id}`} className={styles.project}>
+    <Link
+      href={`/projects/${data.id}`}
+      className={clsx(
+        styles.project, 
+        listStyle==='list' ? styles.list : ''
+      )}>
       <div className={clsx(styles.information, inform ? styles.active : null)}>
         <button 
           className={styles.button}

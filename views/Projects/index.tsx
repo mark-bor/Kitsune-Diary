@@ -99,7 +99,7 @@ export default function Projects() {
             >
               {data.map((p, i) => (
                 <li key={i} className={styles.project}>
-                  <Project data={p} />
+                  <Project listStyle={listStyle} data={p} />
                 </li>
               ))}
             </ul>
@@ -107,7 +107,7 @@ export default function Projects() {
             <h2 className={styles.message}>
               {isLoading ? 'Loading...' : null}
               {isError ? (
-                `Code ${(error as ErrorData).status}. ${(error as ErrorData).data.message}`
+                `Code ${(error as ErrorData)?.status}. ${(error as ErrorData)?.data?.message || ''}`
               ) : null}
             </h2>
           )}

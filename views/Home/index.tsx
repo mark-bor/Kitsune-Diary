@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Page from '../../components/Page/index';
 import TechnologiesList from '../../components/TechnologiesList/index';
 import { Rubik } from 'next/font/google'
@@ -10,10 +11,14 @@ const rubik = Rubik({
 })
 
 export default function Home() {
+  const [font, setFont] = useState<string>();
+
+  useEffect(() => setFont(rubik.className), [rubik]);
+
   return (
     <Page>
       <section className={styles.hero}>
-        <h1 className={clsx(rubik.className, styles.text)}>Welcome to Kitsune Diary!</h1>
+        <h1 className={clsx(font, styles.text)}>Welcome to Kitsune Diary!</h1>
       </section>
 
       <TechnologiesList />

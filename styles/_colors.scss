@@ -5,8 +5,8 @@ $secondary-bg-dark: #925FF0;
 
 // $gradient-bg: linear-gradient(to right top, #f5c63c, #ffc86b, #ffce93, #ffd7b9, #ffe4da, #ffe4da, #FFFAFA, #ffe4da, #ffe4da, #ffd7b9, #ffce93, #ffc86b, #f5c63c);
 // $gradient-bg-dark: linear-gradient(to right top, #925ff0, #7151c2, #544295, #3c336a, #272340, #272340, #272340, #272340, #3c336a, #544295, #7151c2, #925ff0);
-$gradient-bg: linear-gradient(to right top, #fffafa, #f5c63c);
-$gradient-bg-dark: linear-gradient(to right top, #0b0b0b, #925ff0);
+$gradient-bg: radial-gradient(circle, #f5c63c, #fffafa);
+$gradient-bg-dark: radial-gradient(circle, #925ff0, #0b0b0b);
 
 $primary-t: #0B0B0B;
 $primary-t-dark: #FFFAFA;

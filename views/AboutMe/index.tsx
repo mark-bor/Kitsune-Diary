@@ -52,10 +52,7 @@ export default function AboutMe() {
         </nav>
 
         <div className={styles.leftPartOfBlock}>
-          <p className={styles.emailAndPhone}>
-            <span>mark12bord@gmail.com</span>
-            <span>+380957625669</span>
-          </p>
+          <p className={styles.emailAndPhone}>mark12bord@gmail.com</p>
         </div>
 
         <div className={styles.rightPartOfBlock}>
