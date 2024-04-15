@@ -8,8 +8,10 @@ export const api = createApi({
   // All of our requests will have URLs starting with '/fakeApi'
   baseQuery: fetchBaseQuery({ 
     baseUrl: 'https://kd-server.onrender.com/api',
+    mode: 'cors',
     prepareHeaders(headers, api) {
       headers.set('API-Key', process.env.NEXT_PUBLIC_KD_SERVER_API_KEY || '');
+      headers.set('Content-Type', 'application/json');
       return headers;
     },
   }),

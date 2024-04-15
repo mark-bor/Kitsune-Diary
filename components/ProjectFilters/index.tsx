@@ -63,6 +63,7 @@ export default function ProjectFilters({
                 </Disclosure.Button>
 
                 <Disclosure.Panel className={styles.filterlist}>
+                  <hr className={styles.line} />
                   <ul>
                     {filter.options.map((o, i) => (
                       <li key={i}>
