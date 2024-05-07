@@ -1,8 +1,10 @@
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
 import clsx from "clsx";
 import Certificate from '../Certificate/index';
 import { useGetAllCertificatesQuery } from '../../lib/api/certificates/index';
+import CERTIFICATES from '../../lib/data/CERTIFICATES';
 import styles from "./styles.module.scss";
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -14,10 +16,18 @@ import 'swiper/css/effect-cube';
 
  
 export default function CertificatesList() {
+  const [certificates, setCertificates] = useState<typeof CERTIFICATES>();
+
   const {
     data, isLoading,
     error, isError
   } = useGetAllCertificatesQuery('');
+
+  useEffect(() => {
+    setTimeout(() => {
+      (isLoading || isError || !data) ? setCertificates(CERTIFICATES) : setCertificates(data);
+    }, 2000);
+  }, [data]);
 
   if (isLoading) return (
     <section className={styles.messageSection}>
@@ -27,7 +37,7 @@ export default function CertificatesList() {
     </section>
   );
 
-  if (isError || !data) return (
+  if (isError || !certificates) return (
     <section className={styles.messageSection}>
       <div className={styles.mirage}>
         <h2>Certificates cannot be loaded</h2>
@@ -46,7 +56,7 @@ export default function CertificatesList() {
           navigation
           pagination={{clickable: true}}
         >
-          {data.map((c, i) => (
+          {certificates.map((c, i) => (
             <SwiperSlide 
               key={i}
               className={styles.certificateWrap} 
@@ -68,7 +78,7 @@ export default function CertificatesList() {
           slidesPerView={1}
           pagination={{clickable: true}}
         >
-          {data.map((c, i) => (
+          {certificates.map((c, i) => (
             <SwiperSlide key={i} className={styles.certificateWrap}>
               <Certificate data={c} />
             </SwiperSlide>

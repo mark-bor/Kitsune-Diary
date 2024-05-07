@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { hasCookie, getCookie, setCookie } from 'cookies-next';
 import Icon from '../../components/Icon/index';
 import Page from '../../components/Page/index';
@@ -10,6 +10,7 @@ import {
   GetProjectsData,
   ErrorData
 } from '../../lib/api/projects/index';
+import PROJECTS from "../../lib/data/PROJECTS";
 import styles from "./styles.module.scss";
 
 
@@ -33,6 +34,8 @@ export default function Projects() {
   const [filter, setFilter] = useState(false);
   const [filters, setFilters] = useState<GetProjectsData>(localDB);
   const [listStyle, setListStyle] = useState('grid');
+  const [projects, setProjects] = useState<typeof PROJECTS>();
+
   const {
     data, isLoading,
     error, isError
@@ -40,8 +43,14 @@ export default function Projects() {
   
   useMemo(() => {
     setCookie( 'projects_filter', JSON.stringify(filters));
-  }, [filters])
+  }, [filters]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      (isLoading || isError || !data) ? setProjects(PROJECTS) : setProjects(data);
+    }, 2000);
+  }, [data]);
+  
   const filterProjects = async (filterName: string, value: string) => {
     let newFilter: string[] = [...filters[filterName]];
 
@@ -90,14 +99,14 @@ export default function Projects() {
             </div>
           </div>
 
-          {(data && data.length>0) ? (
+          {(projects && projects.length>0) ? (
             <ul 
               className={clsx(
                 styles.projectsList, 
                 listStyle==='grid' ? styles.grid : styles.list
               )}
             >
-              {data.map((p, i) => (
+              {projects.map((p, i) => (
                 <li key={i} className={styles.project}>
                   <Project listStyle={listStyle} data={p} />
                 </li>
@@ -106,9 +115,7 @@ export default function Projects() {
           ) : (
             <h2 className={styles.message}>
               {isLoading ? 'Loading...' : null}
-              {isError ? (
-                `Code ${(error as ErrorData)?.status}. ${(error as ErrorData)?.data?.message || ''}`
-              ) : null}
+              {isError ? 'No projects' : null}
             </h2>
           )}
         </div>

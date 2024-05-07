@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { links } from "../../lib/samples/samples";
@@ -7,15 +7,24 @@ import Page from "../../components/Page/index";
 import Article from "../../components/Article/index";
 import { useGetAllArticlesQuery } from '../../lib/api/articles/index';
 import clsx from "clsx";
+import ARTICLES from "../../lib/data/ARTICLES";
 import styles from "./styles.module.scss";
 
 
 export default function Blog() {
   const [filter, setFilter] = useState<string>('all');
+  const [articles, setArticles] = useState<typeof ARTICLES>();
+  
   const {
     data, isLoading,
     error, isError
   } = useGetAllArticlesQuery(filter || 'all');
+
+  useEffect(() => {
+    setTimeout(() => {
+      (isLoading || isError || !data) ? setArticles(ARTICLES) : setArticles(data);
+    }, 2000);
+  }, [data]);
 
   return (
     <Page title='Blog'>
@@ -44,9 +53,9 @@ export default function Blog() {
         ))}
       </ul>
 
-      {(data && data.length>0) ? (
+      {(articles && articles.length>0) ? (
         <ul className={styles.articles}>
-          {data.map((a, i) => (
+          {articles.map((a, i) => (
             <li key={i} className={styles.articleLinkWrap}>
               <Article data={a} />
             </li>
