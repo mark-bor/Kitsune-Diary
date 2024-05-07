@@ -1,4 +1,5 @@
 export type CertificateData = {
+    id: number
     name: string,
     img: string,
     provider: string,

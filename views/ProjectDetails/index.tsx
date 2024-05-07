@@ -3,17 +3,25 @@ import { useRouter } from 'next/router';
 import Icon from '../../components/Icon/index';
 import Link from 'next/link';
 import Page from '../../components/Page/index';
-import { useGetProjectQuery } from '../../lib/api/projects/index';
+import { useGetProjectQuery, ProjectData } from '../../lib/api/projects/index';
 import clsx from "clsx";
+import PROJECTS from "../../lib/data/PROJECTS";
 import styles from "./styles.module.scss";
 
 
 export default function ProjectDetails() {
+  const [project, setProject] = useState<ProjectData>();
   const {query: { id }} = useRouter();
   const {
     data, isLoading,
     error, isError
   } = useGetProjectQuery(id?.toString() || '');
+
+  useEffect(() => {
+    setTimeout(() => {
+      (isLoading || isError || !data) ? setProject(PROJECTS.find((p) => p.id===id)) : setProject(data);
+    }, 2000);
+  }, [data]);
   
 
   if (isLoading) return (
@@ -26,7 +34,7 @@ export default function ProjectDetails() {
     </Page>
   );
 
-  if (isError || !data) return (
+  if (isError || !project) return (
     <Page title='Project Details Error!'>
       <section className={styles.projectDetails}>
         <div className={styles.project}>
@@ -41,19 +49,19 @@ export default function ProjectDetails() {
       <section className={styles.projectDetails}>
         <div className={styles.project}>
           <h1>
-            <span className={styles.title}>{data.title}</span>
+            <span className={styles.title}>{project.title}</span>
             <span 
               className={clsx(
                 styles.status, 
-                data.status==='completed' ? styles.statusClose : styles.statusOpen
+                project.status==='completed' ? styles.statusClose : styles.statusOpen
               )}
-            >{data.status}</span>
+            >{project.status}</span>
           </h1>
 
-          <p className={styles.description}>{data.description}</p>
+          <p className={styles.description}>{project.description}</p>
 
           <ul className={styles.steck}>
-            {data.steck.map((s, i) => (
+            {project.steck.map((s, i) => (
               <li
                 key={i}
                 className={styles.steckItem}
@@ -64,17 +72,17 @@ export default function ProjectDetails() {
           <ul className={styles.characteristics}>
             <li>
               <span className={styles.field}>Category:</span>
-              <span className={styles.value}>{data.category}</span>
+              <span className={styles.value}>{project.category}</span>
             </li>
             <li>
               <span className={styles.field}>Type:</span>
-              <span className={styles.value}>{data.type}</span>
+              <span className={styles.value}>{project.type}</span>
             </li>
           </ul>
 
-          {data.github ? (
+          {project.github ? (
             <Link
-              href={data.github}
+              href={project.github}
               target='_blank'
               className={styles.visitGitHubLink}
             >
@@ -89,7 +97,7 @@ export default function ProjectDetails() {
 
           <div className={styles.buttons}>
             <Link
-              href={data.url}
+              href={project.url}
               target='_blank'
               className={styles.visitLink}
             >
